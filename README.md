@@ -1,8 +1,8 @@
 <h1> Kelompok 7 : </h1>
-<li> 
-    Amelia Nur Indah ( 434221052 )
+<p><li> 
+    Amelia Nur Indah Puspita ( 434221052 )
     Lintang Angraini Nur Laili Rahma ( 434221057 )
-</li>
+</li></p>
 
 
 
