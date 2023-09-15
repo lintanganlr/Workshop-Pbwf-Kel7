@@ -1,3 +1,11 @@
+<h1> Kelompok 7 : </h1>
+<li> 
+    Amelia Nur Indah ( 434221052 )
+    Lintang Angraini Nur Laili Rahma ( 434221057 )
+</li>
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
