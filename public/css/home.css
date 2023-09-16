@@ -1,0 +1,17 @@
+
+.full-width-header {
+    width: 100%; /* Header akan memenuhi lebar penuh */
+    background-color: #7D1219; /* Ganti dengan warna latar belakang yang diinginkan */
+    height: 100px; /* Sesuaikan tinggi header sesuai kebutuhan Anda */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* agar footer tetap di bagian bawah jika kontennya tidak memanjang */
+}
+
+.container {
+    flex: 1; /* ini akan mengisi seluruh ruang yang tersedia */
+    padding: 20px; /* tambahkan padding sesuai kebutuhan Anda */
+}
