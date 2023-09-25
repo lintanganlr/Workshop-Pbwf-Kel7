@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
+            $table->date('tgl_artikel');
+            $table->string('judul_artikel', 100);
             $table->timestamps();
         });
     }

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->id();
+            $table->date('tgl_review');
+            $table->string('komentar', 1000);
             $table->timestamps();
         });
     }
