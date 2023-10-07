@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('username');
             $table->string('password');
+            $table->string('no_telp', 15);
+            $table->string('email', 30);
+            $table->string('alamat', 100);
             $table->rememberToken();
             $table->string('user_type');
             $table->timestamps();
