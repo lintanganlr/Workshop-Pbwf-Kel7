@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home-blade');
 });
 
 Route::get('/login', function () {
@@ -25,6 +25,3 @@ Route::get('/regis', function () {
     return view('register-blade');
 });
 
-Route::get('/', function () {
-    return view('home');
-});
