@@ -24,3 +24,7 @@ Route::get('/login', function () {
 Route::get('/regis', function () {
     return view('register-blade');
 });
+
+Route::get('/', function () {
+    return view('home');
+});
