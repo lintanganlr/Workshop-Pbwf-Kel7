@@ -5,7 +5,7 @@
         <div class="row py-3">
             <div class="col-12 text-center">
                 <h1 class="display-3 text-white animated zoomIn">Services</h1>
-                <a href="" class="h4 text-white">Home</a>
+                <a href="/" class="h4 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
                 <a href="" class="h4 text-white">Services</a>
             </div>
@@ -26,18 +26,26 @@
                     <div class="row g-5">
                         <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.9s">
                             <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/service-dokter.jpg" alt="">
-                            </div>
+                                <a href="service.dokter">
+                                    <img class="img-fluid" src="img/service-dokter.jpg" alt="Deskripsi Gambar">
+                                </a>
+                            </div>                            
                             <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                <h5 class="m-0">Konsultasi Dokter</h5>
-                            </div>
+                                <a href="service.dokter">
+                                    <h5 class="m-0">Konsultasi Dokter</h5>
+                                </a>
+                            </div>                            
                         </div>
                         <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.9s">
                             <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/service-perawat.jpg" alt="">
+                                <a href="service.perawat">
+                                    <img class="img-fluid" src="img/service-perawat.jpg" alt="">
+                                </a>
                             </div>
                             <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                <h5 class="m-0">Pembersihan Luka</h5>
+                                <a href="service.perawat">
+                                    <h5 class="m-0">Pembersihan Luka</h5>
+                                </a>
                             </div>
                         </div>
                     </div>

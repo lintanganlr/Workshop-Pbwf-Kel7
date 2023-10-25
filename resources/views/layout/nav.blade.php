@@ -23,7 +23,7 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-    <a href="index.html" class="navbar-brand p-0">
+    <a href="/" class="navbar-brand p-0">
         <h1 class="m-0 text-primary"> GlucoSync.</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -31,10 +31,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Pelayanan</a>
-            <a href="service.html" class="nav-item nav-link">Artikel</a>
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/about" class="nav-item nav-link">About</a>
+            <a href="/service" class="nav-item nav-link">Pelayanan</a>
+            <a href="/artikel" class="nav-item nav-link">Artikel</a>
             <a href="service.html" class="nav-item nav-link">Ulasan</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tenaga Medis</a>
@@ -43,11 +43,11 @@
                     <a href="team.html" class="dropdown-item">Perawat</a>
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-        <a class="btn-getstarted" href="index.html#about">Sign In</a>
-        <a class="btn-getstarted" href="index.html#about">Sign Up</a>
+        <a class="btn-getstarted" href="login">Sign In</a>
+        <a class="btn-getstarted" href="regis">Sign Up</a>
     </div>
 </nav>
 <!-- Navbar End -->
