@@ -9,10 +9,10 @@
         <div class="col-md-6 text-center text-lg-end">
             <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
                 <div class="me-3 pe-3 border-end py-2">
-                    <p class="m-0"><i class="fa fa-envelope-open me-2"></i>info@example.com</p>
+                    <p class="m-0"><i class="fa fa-envelope-open me-2"></i>glucosync@gmail.com</p>
                 </div>
                 <div class="py-2">
-                    <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</p>
+                    <p class="m-0"><i class="fa fa-phone-alt me-2"></i>(021) 789816</p>
                 </div>
             </div>
         </div>
@@ -45,6 +45,27 @@
             </div>
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
+
+        <style>
+            /* CSS untuk tombol style kotak */
+            .btn-getstarted {
+                display: inline-block;
+                padding: 10px 20px; /* Sesuaikan dengan ukuran yang diinginkan */
+                background-color: #007BFF; /* Warna latar belakang */
+                color: #fff; /* Warna teks */
+                border: none; /* Hapus batasan */
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px; /* Membuat sudut tombol melengkung */
+                margin-right: 10px;
+            }
+
+            /* Efek hover */
+            .btn-getstarted:hover {
+                background-color: #0056b3; /* Warna latar belakang ketika dihover */
+            }
+        </style>
+
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
         <a class="btn-getstarted" href="login">Sign In</a>
         <a class="btn-getstarted" href="regis">Sign Up</a>

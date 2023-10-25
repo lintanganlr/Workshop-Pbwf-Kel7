@@ -16,7 +16,7 @@
     <!-- Hero End -->
 
 
-    <!-- About Start -->
+    <!-- Artikel Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5">
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <!-- Pricing End -->
+    <!-- Artikel End -->
 
 {{-- <section id="article" class="article">
         <div class="container">

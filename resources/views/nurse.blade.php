@@ -49,7 +49,7 @@
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid rounded-top w-100" src="img/nurse-1.jpg" alt="">
                             <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -58,15 +58,15 @@
                             </div>
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                            <h4 class="mb-2">Prof. Dr. dr. Ketut Suastika, Sp.PD-KEMD, FINASIM</h4>
-                            <p class="text-primary mb-0">Ahli endokrinologi dalam mengelola diabetes.</p>
+                            <h4 class="mb-2">Dian Novianti, S.Kep.</h4>
+                            <p class="text-primary mb-0">Perawat</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid rounded-top w-100" src="img/nurse-2.jpg" alt="">
                             <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -75,15 +75,15 @@
                             </div>
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                            <h4 class="mb-2">Prof. Dr. dr. Soewondo, Sp.PD-KEMD, Econs.Med</h4>
-                            <p class="text-primary mb-0">Pakar di bidang diabetes dan ekonomi kesehatan.</p>
+                            <h4 class="mb-2">Balquiss Azzahra, S.Kep</h4>
+                            <p class="text-primary mb-0">Perawat</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid rounded-top w-100" src="img/nurse-3.jpg" alt="">
                             <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -92,15 +92,15 @@
                             </div>
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                            <h4 class="mb-2">Prof. dr. Imam Subekti, Sp.PD-KEMD</h4>
-                            <p class="text-primary mb-0">Ahli endokrinologi dalam mengelola diabetes.</p>
+                            <h4 class="mb-2">Agus Pratama, S.Kep.</h4>
+                            <p class="text-primary mb-0">Perawat</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid rounded-top w-100" src="img/nurse-4.jpg" alt="">
                             <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -109,8 +109,8 @@
                             </div>
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                            <h4 class="mb-2">Dr. dr. Wuryaningsih, Sp.PD-KEMD</h4>
-                            <p class="text-primary mb-0">Dokter spesialis diabetes dan gangguan hormonal.</p>
+                            <h4 class="mb-2">Rina Susanto, S.Kep</h4>
+                            <p class="text-primary mb-0">Perawat</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="img/team-5.jpg" alt="">
+                            <img class="img-fluid rounded-top w-100" src="img/nurse-5.jpg" alt="">
                             <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -127,8 +127,8 @@
                             </div>
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                            <h4 class="mb-2">Prof. dr. Siti Setiati, Sp.PD-KEMD, FINASIM</h4>
-                            <p class="text-primary mb-0">Ahli di bidang penyakit dalam dan endokrinologi</p>
+                            <h4 class="mb-2">Cynthia Angelica, S.Kep</h4>
+                            <p class="text-primary mb-0">Perawat</p>
                         </div>
                     </div>
                 </div>
