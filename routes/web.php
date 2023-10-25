@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\ForgotPasswordController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,21 +20,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
 
-Route::get('/regis', function () {
-    return view('register');
-});
 
-// Login
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\LoginController@login');
+Route::get('login', [LoginController::class, 'create'])->name('login.create');
+Route::get('login/login', [LoginController::class, 'create'])->name('login.create');
+Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
 
-// Registrasi
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
+Route::get('regis', [RegisterController::class, 'formregis'])->name('regis.create');
+Route::get('regis/login', [LoginController::class, 'create'])->name('login.create');
 
 // Lupa Password
 Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
