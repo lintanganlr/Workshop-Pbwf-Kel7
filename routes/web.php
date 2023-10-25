@@ -17,7 +17,7 @@ use App\Http\Controllers\auth\ForgotPasswordController;
 */
 
 Route::get('/', function () {
-    return view('artikel');
+    return view('contact');
 });
 
 

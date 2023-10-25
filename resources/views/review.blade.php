@@ -1,6 +1,5 @@
 @extends('layout.main')
 @section('content')
-
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
@@ -24,10 +23,10 @@
     <div class="container-fluid bg-primary py-5 hero-header mb-5">
         <div class="row py-3">
             <div class="col-12 text-center">
-                <h1 class="display-3 text-white animated zoomIn">Testimonial</h1>
+                <h1 class="display-3 text-white animated zoomIn">Ulasan</h1>
                 <a href="" class="h4 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
-                <a href="" class="h4 text-white">Testimonial</a>
+                <a href="" class="h4 text-white">Ulasan</a>
             </div>
         </div>
     </div>
@@ -42,15 +41,15 @@
                     <div class="owl-carousel testimonial-carousel rounded p-5 wow zoomIn" data-wow-delay="0.6s">
                         <div class="testimonial-item text-center text-white">
                             <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-1.jpg" alt="">
-                            <p class="fs-5">Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                            <p class="fs-5">Saya telah menggunakan layanan kesehatan diabetes ini selama beberapa bulan sekarang dan saya sangat terkesan.</p>
                             <hr class="mx-auto w-25">
-                            <h4 class="text-white mb-0">Client Name</h4>
+                            <h4 class="text-white mb-0">Mirna Salihin</h4>
                         </div>
                         <div class="testimonial-item text-center text-white">
                             <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-2.jpg" alt="">
-                            <p class="fs-5">Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                            <p class="fs-5">Website ini adalah sumber informasi yang sangat baik tentang diabetes. Saya baru saja didiagnosis dengan diabetes tipe 2, dan website ini telah membantu saya memahami kondisi saya dengan lebih baik.</p>
                             <hr class="mx-auto w-25">
-                            <h4 class="text-white mb-0">Client Name</h4>
+                            <h4 class="text-white mb-0">Jessica Mirna</h4>
                         </div>
                     </div>
                 </div>
@@ -66,12 +65,12 @@
             <div class="bg-primary p-5">
                 <form class="mx-auto" style="max-width: 600px;">
                     <div class="input-group">
-                        <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                        <button class="btn btn-dark px-4">Sign Up</button>
+                        <input type="text" class="form-control border-white p-3" placeholder="Ketik Ulasan...">
+                        <button class="btn btn-dark px-4">Kirim</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <!-- Newsletter End -->
-    @endsection
+@endsection
