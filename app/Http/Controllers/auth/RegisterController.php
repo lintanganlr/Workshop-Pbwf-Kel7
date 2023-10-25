@@ -42,8 +42,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
     }
-    
+
+    public function formregis(){
+        return view('regis.create');
+    }
+
     public function store(Request $request)
     {
         //

@@ -27,9 +27,15 @@ class LoginController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    
     public function create()
     {
-        //
+        return view('login.create');
+    } 
+    
+    public function password()
+    {
+        return view('login.forgot-password');
     }
 
     /**
