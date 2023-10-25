@@ -18,6 +18,9 @@ use App\Http\Controllers\ArtikelController;
 |
 */
 
+Route::get('/', function () {
+    return view('artikel');
+});
 
 // login//
 Route::get('login', [LoginController::class, 'create'])->name('login.create');

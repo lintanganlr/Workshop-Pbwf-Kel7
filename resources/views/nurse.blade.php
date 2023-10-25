@@ -25,7 +25,7 @@
     <div class="container-fluid bg-primary py-5 hero-header mb-5">
         <div class="row py-3">
             <div class="col-12 text-center">
-                <h1 class="display-3 text-white animated zoomIn">Dokter</h1>
+                <h1 class="display-3 text-white animated zoomIn">Perawat</h1>
                 <a href="" class="h4 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
                 <a href="" class="h4 text-white">Tenaga Medis</a>
@@ -41,8 +41,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
                     <div class="section-title bg-light rounded h-100 p-5">
-                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Doctor </h5>
-                        <h1 class="display-6 mb-4">Meet Our Certified & Experienced Doctor</h1>
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Nurse </h5>
+                        <h1 class="display-6 mb-4">Meet Our Certified & Experienced Nurse</h1>
                         <a href="appointment.html" class="btn btn-primary py-3 px-5">Appointment</a>
                     </div>
                 </div>
