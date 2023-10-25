@@ -35,12 +35,12 @@
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/service" class="nav-item nav-link">Pelayanan</a>
             <a href="/artikel" class="nav-item nav-link">Artikel</a>
-            <a href="service.html" class="nav-item nav-link">Ulasan</a>
+            <a href="/review" class="nav-item nav-link">Ulasan</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tenaga Medis</a>
                 <div class="dropdown-menu m-0">
-                    <a href="price.html" class="dropdown-item">Dokter</a>
-                    <a href="team.html" class="dropdown-item">Perawat</a>
+                    <a href="dokter" class="dropdown-item">Dokter</a>
+                    <a href="perawat" class="dropdown-item">Perawat</a>
                 </div>
             </div>
             <a href="contact" class="nav-item nav-link">Contact</a>

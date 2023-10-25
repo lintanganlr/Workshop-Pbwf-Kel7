@@ -11,7 +11,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        return view('review.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('review.create');
     }
 
     /**

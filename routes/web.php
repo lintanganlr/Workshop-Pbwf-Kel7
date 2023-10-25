@@ -6,6 +6,7 @@ use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,21 @@ Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('
 // artikel //
 Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel.artikel');
 Route::get('artikel.tampilan', [ArtikelController::class, 'baca'])->name('artikel.tampilan');
+
+// review //
+Route::get('review', [ReviewController::class, 'index'])->name('review.index');
+Route::get('review.create', [ReviewController::class, 'create'])->name('review.create');
+
+// Tenaga Medis //
+// Dokter //
+Route::get('dokter', function () {
+    return view('doctor'); // 
+});
+
+// perawat //
+Route::get('perawat', function () {
+    return view('nurse'); // 
+});
 
 // contact //
 Route::get('contact', function () {
