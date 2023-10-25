@@ -16,7 +16,7 @@ use App\Http\Controllers\auth\ForgotPasswordController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('artikel');
 });
 
 Route::get('/login', function () {
