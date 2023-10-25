@@ -24,4 +24,5 @@
     </div>
 </div>
   </section><!-- End Hero -->
+  @endsection
 
