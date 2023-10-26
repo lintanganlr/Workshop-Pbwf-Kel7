@@ -31,7 +31,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/home2" class="nav-item nav-link active">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/service" class="nav-item nav-link">Pelayanan</a>
             <a href="/artikel" class="nav-item nav-link">Artikel</a>

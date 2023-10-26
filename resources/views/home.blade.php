@@ -227,7 +227,7 @@
                     <div class="section-title bg-light rounded h-100 p-5">
                         <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Doctor </h5>
                         <h1 class="display-6 mb-4">Meet Our Certified & Experienced Doctor</h1>
-                        <a href="service.dokter" class="btn btn-primary py-3 px-5">Appointment</a>
+                        <a href="" class="btn btn-primary py-3 px-5">Appointment</a>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
@@ -354,7 +354,7 @@
                     <div class="section-title bg-light rounded h-100 p-5">
                         <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Nurse </h5>
                         <h1 class="display-6 mb-4">Meet Our Certified & Experienced Nurse</h1>
-                        <a href="service.perawat" class="btn btn-primary py-3 px-5">Appointment</a>
+                        <a href="" class="btn btn-primary py-3 px-5">Appointment</a>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">

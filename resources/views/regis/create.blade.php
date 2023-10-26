@@ -46,7 +46,7 @@
                     <label for="exampleInputtext1" class="form-label">Alamat</label>
                     <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
                   </div>
-                  <a href="/" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</a>
+                  <a href="login" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
                     <a class="text-primary fw-bold ms-2" href="/login">Sign In</a>
