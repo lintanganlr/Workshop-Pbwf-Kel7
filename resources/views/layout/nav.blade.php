@@ -47,27 +47,41 @@
         </div>
 
         <style>
-            /* CSS untuk tombol style kotak */
             .btn-getstarted {
                 display: inline-block;
-                padding: 10px 20px; /* Sesuaikan dengan ukuran yang diinginkan */
-                background-color: #007BFF; /* Warna latar belakang */
-                color: #fff; /* Warna teks */
-                border: none; /* Hapus batasan */
+                padding: 10px 20px;
+                background-color: #7D1219;
+                color: #fff;
+                border: none;
                 text-align: center;
                 text-decoration: none;
-                border-radius: 5px; /* Membuat sudut tombol melengkung */
+                border-radius: 5px;
                 margin-right: 10px;
             }
 
-            /* Efek hover */
             .btn-getstarted:hover {
-                background-color: #0056b3; /* Warna latar belakang ketika dihover */
+                border: #ffffff;
+            }
+
+            .btn-getstart {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #fff;
+                color: #7D1219;
+                border: 2px solid #7D1219;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            .btn-getstart:hover {
+                border: #7D1219;
             }
         </style>
 
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-        <a class="btn-getstarted" href="login">Sign In</a>
+        <a class="btn-getstart" href="login">Sign In</a>
         <a class="btn-getstarted" href="regis">Sign Up</a>
     </div>
 </nav>
