@@ -1,5 +1,5 @@
 
-@extends('layout.main')
+@extends('layout.main3')
 @section('content')
 
     <!-- Hero Start -->
