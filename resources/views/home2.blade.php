@@ -76,7 +76,7 @@
                      <h6 class="text-white mb-0">Sunday</h6>
                      <p class="mb-0"> 8:00am - 5:00pm</p>
                  </div>
-                 <a class="btn btn-light" href="">Appointment</a>
+                 <a class="btn btn-light" href="service">Appointment</a>
              </div>
          </div>
      </div>
