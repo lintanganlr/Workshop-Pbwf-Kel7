@@ -45,6 +45,24 @@
             </div>
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
+        <style>
+            .btn-getstarted {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #7D1219;
+                color: #fff;
+                border: none;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            .btn-getstarted:hover {
+                border: #ffffff;
+            }
+        </style>
+        <a class="btn-getstarted" href="logout">Logout</a>
     </div>
 </nav>
 <!-- Navbar End -->
