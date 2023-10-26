@@ -34,6 +34,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+// home 2 //
+Route::get('/home2', function () {
+    return view('home2');
+});
+
 // about //
 Route::get('about', function () {
     return view('about'); // 
