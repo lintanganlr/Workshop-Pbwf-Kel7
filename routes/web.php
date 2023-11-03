@@ -42,7 +42,7 @@ Route::get('/home2', function () {
 
 // about //
 Route::get('about', function () {
-    return view('about'); // 
+    return view('about'); //
 });
 
 // service //
@@ -61,17 +61,17 @@ Route::get('review.create', [ReviewController::class, 'create'])->name('review.c
 // Tenaga Medis //
 // Dokter //
 Route::get('dokter', function () {
-    return view('doctor'); // 
+    return view('doctor'); //
 });
 
 // perawat //
 Route::get('perawat', function () {
-    return view('nurse'); // 
+    return view('nurse'); //
 });
 
 // contact //
 Route::get('contact', function () {
-    return view('contact'); // 
+    return view('contact'); //
 });
 
 
