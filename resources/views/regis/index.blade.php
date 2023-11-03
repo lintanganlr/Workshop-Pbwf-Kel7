@@ -21,14 +21,15 @@
               <div class="card-body">
                 <p class="text-center" style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 25px; justify-content: center;color:#7D1219">GlucoSync.</p>
                 <p class="text-center"style="margin-top:-10px">Diabetes Friendly</p>
-                <form>
+                <form action="regis/register" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <input type="text" value="{{Session::get('name')}}"  class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <input type="text" value="{{Session::get('username')}}" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -36,17 +37,17 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">No Telpon</label>
-                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <input type="text" value="{{Session::get('no_telp')}}" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" value="{{Session::get('email')}}"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <input type="text" value="{{Session::get('alamat')}}" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
                   </div>
-                  <a href="login" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</a>
+                  <a  class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
                     <a class="text-primary fw-bold ms-2" href="/login">Sign In</a>

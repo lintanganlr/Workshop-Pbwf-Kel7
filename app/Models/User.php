@@ -20,7 +20,7 @@ class User extends Authenticatable
         'name',
         'username', // Add username to the fillable attributes
         'password',
-        'no_telp', // Add no_telp to the fillable attributes
+        'notelp', // Add no_telp to the fillable attributes
         'email',
         'alamat', // Add alamat to the fillable attributes
         'user_type',

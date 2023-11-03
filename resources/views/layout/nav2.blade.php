@@ -62,7 +62,7 @@
                 border: #ffffff;
             }
         </style>
-        <a class="btn-getstarted" href="/">Logout</a>
+        <a class="btn-getstarted" href="/login/logout">Logout</a>
     </div>
 </nav>
 <!-- Navbar End -->

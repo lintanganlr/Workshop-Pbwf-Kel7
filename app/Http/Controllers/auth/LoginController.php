@@ -4,6 +4,8 @@ namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -21,61 +23,45 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('login.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    function login (Request $request)
+    {
+        Session::flash('username',$request->username);
+        $request->validate(
+            [
+                'username'=>'required',
+                'password'=>'required',
+            ],
+            [
+                'username.required'=>'Username wajib diisi',
+                'password.required'=>'Password wajib diisi',
+            ]
+        );
+
+        $infologin = [
+            'username'=> $request->username,
+            'password'=> $request->password
+        ];
+
+        if(Auth::attempt($infologin)){
+            //kalau sukses
+            return redirect('/home2');
+        }else {
+            // kalau gagal
+            return redirect('/')->withErrors('Username dan Password yang dimasukkan tidak sesuai');
+        }
+    }
     
-    public function create()
-    {
-        return view('login.create');
-    } 
-    
-    public function password()
-    {
-        return view('login.forgot-password');
-    }
+    // public function password()
+    // {
+    //     return view('login.forgot-password');
+    // }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    function logout (){
+        Auth::logout();
+        return redirect('/');
     }
 }
 
