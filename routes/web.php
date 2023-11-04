@@ -28,7 +28,7 @@ Route::get('/login/logout', [LoginController::class, 'logout']);
 
 // regis //
 Route::get('regis', [RegisterController::class, 'register']);
-Route::post('regis/register', [RegisterController::class, 'create']);
+Route::post('regis/register', [RegisterController::class, 'stores'])->name('regis/register');
 
 // home//
 Route::get('/', function () {
