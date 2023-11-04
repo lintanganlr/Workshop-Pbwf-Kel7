@@ -40,7 +40,7 @@
                         </div>
                         <a class="text-primary fw-bold" href="login/forgot-password">Forgot Password ?</a>
                     </div>
-                    <div class="mb-3 d-grid">
+                    <div class="mb-3 d-grid" href="/about" >
                         <button name="submit" type="submit" class="btn btn-primary">Sign In</button>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">

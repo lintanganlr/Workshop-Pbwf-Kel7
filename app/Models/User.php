@@ -23,9 +23,10 @@ class User extends Authenticatable
         'notelp', // Add no_telp to the fillable attributes
         'email',
         'alamat', // Add alamat to the fillable attributes
-        'user_type',
+        // 'user_type',
     ];
 
+    public $timestamp = false;
     /**
      * The attributes that should be hidden for serialization.
      *
