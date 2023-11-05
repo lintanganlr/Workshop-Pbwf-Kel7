@@ -42,7 +42,7 @@ Route::get('/home2', function () {
 
 // about //
 Route::get('about', function () {
-    return view('about'); 
+    return view('about'); =
 });
 
 // service //

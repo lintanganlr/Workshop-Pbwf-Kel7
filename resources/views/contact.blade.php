@@ -90,8 +90,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-12 wow slideInUp" data-wow-delay="0.6s">
                     <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                        frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
+                        src="https://www.google.com/maps/dir//Klinik+Vaskular+RS+Universitas+Airlangga,+PQJM%2B3XG,+Klinik+Vaskular+RS+Universitas+Airlangga+Kampus+C,+Mulyorejo,+Kec.+Mulyorejo,+Surabaya,+Jawa+Timur+60115,+Indonesia/@-7.262556,112.771272,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x2dd7fa21897c9adf:0x71d39a57215f02d!2m2!1d112.784948!2d-7.269807!3e0?hl=id&entry=ttu
+                        frameborder="0 style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </div>
             </div>
