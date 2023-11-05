@@ -12,15 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_user');
             $table->string('name');
             $table->string('username');
             $table->string('password');
-            $table->string('no_telp', 15);
+            $table->string('notelp', 15);
             $table->string('email', 30);
             $table->string('alamat', 100);
             $table->rememberToken();
-            $table->string('user_type');
             $table->timestamps();
         });
     }

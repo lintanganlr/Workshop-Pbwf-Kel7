@@ -4,80 +4,43 @@ namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function register()
     {
-        //
+        return view('regis.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-
-    protected $redirectTo = '/home';
-
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-    }
-
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
-    
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'password' => 'required|min:6',
+            'notelp' => 'required',
+            'email' => 'required|email|unique:users',
+            'alamat' => 'required'
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $data = [
+            'name' => $request->input('name'),
+            'username' => $request->input('username'),
+            'password' => Hash::make($request->input('password')),
+            'notelp' => $request->input('notelp'),
+            'email' => $request->input('email'),
+            'alamat' => $request->input('alamat')
+        ];
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        User::create($data);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if (Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')])) {
+            return redirect('/home2');
+        } else {
+            return redirect('/')->withErrors('Username dan Password yang dimasukkan tidak sesuai');
+        }
     }
 }
