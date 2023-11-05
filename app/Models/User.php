@@ -18,15 +18,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'username', // Add username to the fillable attributes
+        'username', // Tambahkan username ke atribut fillable
         'password',
-        'notelp', // Add no_telp to the fillable attributes
+        'notelp', // Tambahkan no_telp ke atribut fillable
         'email',
-        'alamat', // Add alamat to the fillable attributes
-        // 'user_type',
+        'alamat', // Tambahkan alamat ke atribut fillable
     ];
 
-    public $timestamp = false;
     /**
      * The attributes that should be hidden for serialization.
      *

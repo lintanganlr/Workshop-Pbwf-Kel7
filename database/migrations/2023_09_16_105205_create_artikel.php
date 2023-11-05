@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); 
             $table->date('tgl_artikel');
             $table->string('judul_artikel', 100);
+            $table->string('deskripsi', 2000);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
+        
+
     }
 
     /**

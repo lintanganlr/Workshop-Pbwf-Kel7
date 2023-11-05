@@ -21,14 +21,14 @@ use App\Http\Controllers\ReviewController;
 
 
 // login//
-Route::get('login', [LoginController::class, 'index']);
-Route::post('/login/login', [LoginController::class, 'login']);
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
 Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
 Route::get('/login/logout', [LoginController::class, 'logout']);
 
 // regis //
 Route::get('regis', [RegisterController::class, 'register']);
-Route::post('regis/register', [RegisterController::class, 'stores'])->name('regis/register');
+Route::post('regis/register', [RegisterController::class, 'store'])->name('regis.register');
 
 // home//
 Route::get('/', function () {
@@ -42,7 +42,7 @@ Route::get('/home2', function () {
 
 // about //
 Route::get('about', function () {
-    return view('about'); // 
+    return view('about'); 
 });
 
 // service //
@@ -61,37 +61,56 @@ Route::get('review.create', [ReviewController::class, 'create'])->name('review.c
 // Tenaga Medis //
 // Dokter //
 Route::get('dokter', function () {
-    return view('doctor'); // 
+    return view('doctor'); 
 });
 
 // perawat //
 Route::get('perawat', function () {
-    return view('nurse'); // 
+    return view('nurse'); 
 });
 
 // contact //
 Route::get('contact', function () {
-    return view('contact'); // 
+    return view('contact'); 
 });
 
 
+// admin //
+Route::get('admin', function () {
+    return view('admin.artikel.index'); 
+});
+Route::get('forms-basic-inputs.html', function () {
+    return view('admin.formsbasicinputs');  
+});
 
 
+Route::get('forms-input-groups.html', function () {
+    return view('admin.formsinputgroups'); 
+});
+
+Route::get('form-layouts-vertical.html', function () {
+    return view('admin.formlayoutsvertical');  
+});
+
+Route::get('form-layouts-horizontal.html', function () {
+    return view('admin.formlayoutshorizontal');  
+});
+Route::get('tables-basic.html', function () {
+    return view('admin.tablesbasic');  
+});
 
 
+Route::get('index.html', function () {
+    return view('admin.index');  
+});
 
+Route::get('list', function () {
+    return view('admin.list');  
+});
 
-
-
-
-
-
-
-
-
-
-
-
+Route::get('review', function () {
+    return view('admin.review');  
+});
 
 
 
