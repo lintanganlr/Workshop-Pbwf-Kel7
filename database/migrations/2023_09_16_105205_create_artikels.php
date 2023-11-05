@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artikel', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id'); 
+        Schema::create('artikels', function (Blueprint $table) {
+            $table->id('id_artikel');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
             $table->date('tgl_artikel');
             $table->string('judul_artikel', 100);
             $table->string('deskripsi', 2000);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
         });
-        
+
 
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artikel');
+        Schema::dropIfExists('artikels');
     }
 };

@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+      content="width=device-width, initial-scale=1.0, artikel-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
@@ -226,41 +226,88 @@
                 <div class="col-12">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between pb-0">
-                      <h6>Artikel</h6>
+                      <h6>Data artikel</h6>
                       <div>
-                        <a href=" " class="btn bg-gradient-dark mb-3 me-2">
-                            <i class="fas fa-plus"></i> Tambah Artikel
+                        <a href="{{ route('artikel.create') }}" class="btn bg-gradient-dark mb-3 me-2">
+                            <i class="fas fa-plus"></i> Tambah artikel
                         </a>
-                        <a href=" " class="btn btn-primary">
+                        <a class="btn btn-primary">
                             <i class="bi bi-arrow-bar-left"></i> Sampah
                         </a>
                     </div>
                     </div>
+                    @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show col-md-12" id="success-alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                @endif
+                @if(session('errors'))
+                <div class="alert alert-danger alert-dismissible fade show col-md-12" id="success-alert">
+                    {{ session('errors') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
                     <div class="card-body p-0 pt-0 pb-4">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
                                   <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Admin</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Artikel</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID User</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal Upload</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul Artikel</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Deskripsi</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                                 <th class="text-secondary opacity-7"></th>
                               </tr>
-    <tbody>
-                <td>
-                    <a href=" "><button class="btn btn-link text-dark px-4 mb-2">
-                        <i class="fas fa-pencil-alt text-dark me-2"></i>Edit</button>
-                                <form action=" "
-                                    method="POST" style="display: inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus data ?')"
-                                    class="btn btn-link text-danger text-gradient px-4 mb-2"><i class="far fa-trash-alt me-2"></i>Delete</button>
-                                </form>
-                </td>
-    </tbody>
+                              <tbody>
+                                @foreach ($artikels as $artikel )
+                                     <tr>
+                                         <th scope="row">{{ $artikel->id_artikel}}</th>
+                                         <td>{{ $artikel->id_user }}</td>
+                                         <td>{{ $artikel->tgl_artikel }}</td>
+                                         <td>{{ $artikel->judul_artikel }}</td>
+                                         <td>{{ $artikel->deskripsi }}</td>
+                                         <td>
+                                             @if($artikel->status == 1)
+
+                                             <h6>Aktif</h6>
+                                             @endif
+                                         </td>
+                                         {{-- <td>
+                                             @if($artikel->status == 1)
+                                             <a href="{{ route('',$artikel->id_artikel) }}"> <button class="btn btn-link text-dark px-4 mb-2">
+                                                <i class="fas fa-pencil-alt text-dark me-2"></i>Edit</button>
+
+                                                         <form action="{{ route('', $artikel->id_artikel) }}"
+                                                             method="POST" style="display: inline-block;">
+                                                             @csrf
+                                                             @method('DELETE')
+                                                             <button type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus data ?')"
+                                                                         class="btn btn-link text-danger text-gradient px-4 mb-2"><i class="far fa-trash-alt me-2"></i>Delete</button>
+                                                         </form>
+                                                         @else
+                                                         <form action ($artikel->id_artikel)"
+                                                             method="POST" style="display: inline-block;">
+                                                             @csrf
+                                                             @method('PUT')
+                                                             <button type="submit" onclick="return confirm('Apakah anda ingin memulihkan data ?')"
+                                                             class="btn btn-success"><i class="bi bi-arrow-clockwise"></i></button>
+
+                                                         @endif
+                                         </td> --}}
+
+                                     </tr>
+                                 @endforeach
+
+                             </tbody>
                           </table>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UploadArtikelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,8 +119,15 @@ Route::get('artikel', function () {
 });
 
 
-
-
+Route::get('/artikel',[UploadArtikelController::class,'index'])->name('artikel.index');
+Route::get('/artikel/create',[UploadArtikelController::class,'create'])->name('artikel.create');
+Route::post('/artikel/store',[UploadArtikelController::class,'store'])->name('artikel.store');
+// Route::get('/artikel/edit/{id}',[UploadArtikelController::class,'edit'])->name('artikel.edit');
+// Route::put('/artikel/update/{id}',[UploadArtikelController::class,'update'])->name('artikel.update');
+// Route::delete('/artikel/delete/{id}',[UploadArtikelController::class,'destroy'])->name('artikel.destroy');
+// Route::get('/artikel/trash',[UploadArtikelController::class,'trash'])->name('artikel.trash');
+// Route::put('/artikel/restore/{id}',[UploadArtikelController::class,'restore'])->name('artikel.restore');
+// Route::put('/artikel/restoreall',[UploadArtikelController::class,'restoreall'])->name('artikel.restoreall');
 
 
 
