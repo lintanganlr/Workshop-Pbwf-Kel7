@@ -42,7 +42,7 @@ Route::get('/home2', function () {
 
 // about //
 Route::get('about', function () {
-    return view('about'); =
+    return view('about'); 
 });
 
 // service //
@@ -77,7 +77,7 @@ Route::get('contact', function () {
 
 // admin //
 Route::get('admin', function () {
-    return view('admin.artikel.index'); 
+    return view('admin.index'); 
 });
 Route::get('forms-basic-inputs.html', function () {
     return view('admin.formsbasicinputs');  
