@@ -43,6 +43,14 @@
                                             placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select bg-light border-0" style="height: 55px;">
+                                            <option selected>Appoinment Time</option>
+                                            <option value="1">08.00</option>
+                                            <option value="2">10.00</option>
+                                        </select>
+                                    </div>
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit">Buat Janji!</button>
                                 </div>

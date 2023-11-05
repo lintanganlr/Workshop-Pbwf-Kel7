@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-
-<html
-  lang="en"
-  class="light-style layout-menu-fixed layout-compact"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-
-    <meta name="description" content="" />
-    @extends('admin.layout.template')
-  </head>
-
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
@@ -50,7 +29,7 @@
             </li>
             <!-- Pages -->
             <li class="menu-item">
-              <a href="/admin" class="menu-link">
+              <a href="admin.artikel" class="menu-link">
                 <i class="menu-icon bx bx-book-open"></i>
                 <div data-i18n="Basic">Artikel</div>
               </a>

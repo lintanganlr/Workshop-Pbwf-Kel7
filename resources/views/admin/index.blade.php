@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html
   lang="en"
   class="light-style layout-menu-fixed layout-compact"
@@ -75,7 +74,7 @@
             </li>
             <!-- Pages -->
             <li class="menu-item">
-              <a href="/admin" class="menu-link">
+              <a href="artikel" class="menu-link">
                 <i class="menu-icon bx bx-book-open"></i>
                 <div data-i18n="Basic">Artikel</div>
               </a>
@@ -748,7 +747,7 @@
               </div>
             </div>
             <!-- / Content -->
-            
+
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
