@@ -12,7 +12,7 @@ class UsersSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-{
+    {
     DB::table('users')->insert([
         [
             'name' => 'Lintang',
@@ -31,7 +31,5 @@ class UsersSeeder extends Seeder
             'alamat' => 'sidoarjo',
         ],
     ]);
-}
-
-
+    }
 }

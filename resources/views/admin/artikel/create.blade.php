@@ -231,11 +231,23 @@
    <form class="row g-3" action="{{ route('artikel.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
     <div class="col-12">
-      <label for="inputNanme4" class="form-label">Tangggal Artikel</label>
-      <input type="text" class="form-control @error('tgl_artikel') is-invalid @enderror"  name="tgl_artikel">
-      @error('tgl_artikel')
-        <div class='invalid-feedback'>{{ $message }}</div>
-      @enderror
+      <label for="id_user" class="form-label">Pilih User: </label>
+      <select class="form-control" id="id_user" name="id_user">
+          <option style="color-text= light" value=""></option>
+          @foreach ($users as $id_user => $name)
+              <option value="{{ $id_user }}">{{ $name }}</option>
+          @endforeach
+      </select>
+    </div>
+  
+    <div class="col-12">
+      <label for="id_user" class="form-label">Pilih User: </label>
+      <select class="form-control" id="id_user" name="id_user">
+          <option style="color-text= light" value=""></option>
+          @foreach ($adminUsers as $id => $name)
+              <option value="{{ $id }}">{{ $name }}</option>
+          @endforeach
+      </select>
     </div>
 
     <div class="col-12">
