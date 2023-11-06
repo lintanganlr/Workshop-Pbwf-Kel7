@@ -29,9 +29,9 @@ class UploadArtikelController extends Controller
         return view('admin.artikel.create', ['artikels' => $artikels]);
 
         
-        $users = DB::table('users')
-        ->where('email', 'LIKE', '%@admin%')
-        ->pluck('id_user', 'name');
+        // $users = DB::table('users')
+        // ->where('email', 'LIKE', '%@admin%')
+        // ->pluck('id_user', 'name');
 
 
     }
