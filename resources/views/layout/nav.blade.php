@@ -46,40 +46,6 @@
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
 
-        <style>
-            .btn-getstarted {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #7D1219;
-                color: #fff;
-                border: none;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-
-            .btn-getstarted:hover {
-                border: #ffffff;
-            }
-
-            .btn-getstart {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #fff;
-                color: #7D1219;
-                border: 2px solid #7D1219;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-
-            .btn-getstart:hover {
-                border: #7D1219;
-            }
-        </style>
-
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
         <a class="btn-getstart" href="login">Sign In</a>
         <a class="btn-getstarted" href="regis">Sign Up</a>
