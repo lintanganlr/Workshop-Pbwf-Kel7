@@ -20,7 +20,6 @@ use App\Http\Controllers\UploadArticleController;
 |
 */
 
-
 // login//
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
@@ -146,3 +145,11 @@ Route::post('/article/store',[UploadArticleController::class,'store'])->name('ar
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//COBA//
+Route::get('/cube', function () {
+    return view('login.index');
+});
+Route::get('/cube2', function () {
+    return view('regis.index');
+});
