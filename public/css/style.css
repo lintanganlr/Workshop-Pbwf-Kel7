@@ -341,3 +341,36 @@ h6,
   color: var(--color-inverse);
   background: rgba(var(--color-primary-rgb), 0.85);
 }
+
+/* nav */
+.btn-getstarted {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7D1219;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn-getstarted:hover {
+    border: #ffffff;
+}
+
+.btn-getstart {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #7D1219;
+    border: 2px solid #7D1219;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn-getstart:hover {
+    border: #7D1219;
+}

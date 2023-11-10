@@ -142,3 +142,7 @@ Route::post('/article/store',[UploadArticleController::class,'store'])->name('ar
 // Route::get('satuan/{id}/edit', [SatuanController::class, 'edit'])->name('satuan.edit');
 // Route::put('satuan/{id}', [SatuanController::class, 'update'])->name('satuann.update');
 // Route::delete('satuan/{id}', [SatuanController::class, 'destroy'])->name('satuan.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
