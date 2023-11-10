@@ -9,7 +9,7 @@ class artikel extends Model
 {
     use HasFactory;
 
-    protected $table = 'artikel';
+    protected $table = 'artikels';
 
     // Kolom yang dapat diisi (fillable) secara mass assignment
     protected $fillable = [

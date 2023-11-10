@@ -22,7 +22,7 @@ class ArtikelController extends Controller
     public function baca($id)
     {
         $artikel = Artikel::find($id); // Mengambil artikel berdasarkan ID
-        return view('artikel.tampilan', ['artikel' => $artikel]);
+        return view('artikel.tampilan', ['artikels' => $artikels]);
     }
 
     /**
@@ -58,7 +58,7 @@ class ArtikelController extends Controller
     public function show($id)
     {
         $artikel = Artikel::find($id);
-        return view('artikel.show', ['artikel' => $artikel]);
+        return view('artikel.show', ['artikels' => $artikels]);
     }
 
     /**
@@ -67,7 +67,7 @@ class ArtikelController extends Controller
     public function edit($id)
     {
         $artikel = Artikel::find($id);
-        return view('artikel.edit', ['artikel' => $artikel]);
+        return view('artikel.edit', ['artikels' => $artikels]);
     }
 
     /**

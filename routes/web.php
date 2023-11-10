@@ -7,7 +7,7 @@ use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\UploadArtikelController;
+use App\Http\Controllers\UploadArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,27 +109,24 @@ Route::get('list', function () {
     return view('admin.list');
 });
 
-Route::get('review', function () {
-    return view('admin.review');
+// Route::get('review', function () {
+//     return view('admin.review');
+// });
+
+
+Route::get('article', function () {
+    return view('admin.article.index');
 });
 
-
-Route::get('artikel', function () {
-    return view('admin.artikel.index');
-});
-
-
-Route::get('/artikel',[UploadArtikelController::class,'index'])->name('artikel.index');
-Route::get('/artikel/create',[UploadArtikelController::class,'create'])->name('artikel.create');
-Route::post('/artikel/store',[UploadArtikelController::class,'store'])->name('artikel.store');
-// Route::get('/artikel/edit/{id}',[UploadArtikelController::class,'edit'])->name('artikel.edit');
-// Route::put('/artikel/update/{id}',[UploadArtikelController::class,'update'])->name('artikel.update');
-// Route::delete('/artikel/delete/{id}',[UploadArtikelController::class,'destroy'])->name('artikel.destroy');
-// Route::get('/artikel/trash',[UploadArtikelController::class,'trash'])->name('artikel.trash');
-// Route::put('/artikel/restore/{id}',[UploadArtikelController::class,'restore'])->name('artikel.restore');
-// Route::put('/artikel/restoreall',[UploadArtikelController::class,'restoreall'])->name('artikel.restoreall');
-
-
+Route::get('/article',[UploadArticleController::class,'index'])->name('article.index');
+Route::get('/article/create',[UploadArticleController::class,'create'])->name('article.create');
+Route::post('/article/store',[UploadArticleController::class,'store'])->name('article.store');
+// Route::get('/article/edit/{id}',[UploadArticleontroller::class,'edit'])->name('article.edit');
+// Route::put('/article/update/{id}',[UploadArticleontroller::class,'update'])->name('article.update');
+// Route::delete('/article/delete/{id}',[UploadArticleontroller::class,'destroy'])->name('article.destroy');
+// Route::get('/article/trash',[UploadArticleontroller::class,'trash'])->name('article.trash');
+// Route::put('/article/restore/{id}',[UploadArticleontroller::class,'restore'])->name('article.restore');
+// Route::put('/article/restoreall',[UploadArticleontroller::class,'restoreall'])->name('article.restoreall');
 
 // Lupa Password
 // Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
