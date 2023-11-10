@@ -19,31 +19,25 @@ class UploadArtikelController extends Controller
         return view('admin.artikel.index', ['artikels' => $artikels]);
     }
 
+    public function create()
+    {
+        $artikels = DB::table('artikels')
+            ->select('*')
+            ->where('status', 1)
+            ->get();
 
-    // public function trash(){
+        return view('admin.artikel.create', ['artikels' => $artikels]);
 
-    //     $query = 'SELECT a.id_artikel, a.id_artikel, a.tgl_artikel, a.judul_artikel, a.deskripsi, a.status
-    //               FROM artikels a
-    //               JOIN users u ON a.id_user = u.id_user
-    //               WHERE a.status = ?';
-    //     $kondisi = [0];
-    //     $artikel = DB::select($query,$kondisi);
-    //     return view('admin.artikel.trash',['artikels'=>$artikels]);
+        
+        // $users = DB::table('users')
+        // ->where('email', 'LIKE', '%@admin%')
+        // ->pluck('id_user', 'name');
 
-    // }
 
-public function create()
-{
-    $artikels = DB::table('artikels')
-        ->select('*')
-        ->where('status', 1)
-        ->get();
+    }
 
-    return view('admin.artikel.create', ['artikels' => $artikels]);
-}
-
-public function store(Request $request)
-{
+    public function store(Request $request)
+    {
     $validatedData = $request->validate([
         'tgl_artikel' => 'required',
         'judul_artikel' => 'required',
@@ -74,7 +68,7 @@ public function store(Request $request)
     if ($result) {
         return redirect()->route('artikel.index')->with('success', 'Berhasil !');
     }
-}
+    }
 
 
     // public function edit($id){
