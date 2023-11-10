@@ -48,7 +48,7 @@
 
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
         <a class="btn-getstart" href="login">Sign In</a>
-        <a class="btn-getstarted" href="regis">Sign Up</a>
+        <a class="btn-getstarted" href="register">Sign Up</a>
     </div>
 </nav>
 <!-- Navbar End -->
