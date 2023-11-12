@@ -1,4 +1,4 @@
-@extends('layout.main3')
+@extends('layout.main')
 @section('content')
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">

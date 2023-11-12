@@ -1,4 +1,4 @@
-<!-- Topbar Start -->
+{{-- <!-- Topbar Start -->
 <div class="container-fluid bg-light ps-5 pe-0 d-none d-lg-block">
     <div class="row gx-0">
         <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
@@ -65,4 +65,4 @@
         <a class="btn-getstarted" href="/login/logout">Logout</a>
     </div>
 </nav>
-<!-- Navbar End -->
+<!-- Navbar End --> --}}

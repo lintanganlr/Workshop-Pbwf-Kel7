@@ -46,7 +46,7 @@
         </div>
         <!-- Spinner End -->
 
-    @include('layout.nav2')
+    @include('layout.nav')
         @yield('content')
     @include('layout.footer')
 
