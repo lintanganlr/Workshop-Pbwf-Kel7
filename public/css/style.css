@@ -220,18 +220,108 @@ h6,
     content: "";
     top: 50%;
     bottom: 0;
-    left: 15px;
-    right: 15px;
-    border-radius:100px / 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .7);
+    left: 30px;
+    right: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
     z-index: -1;
 }
 
 .team-item:hover .team-text::after,
 .service-item:hover .bg-light::after {
-    opacity: 1;
+    opacity: 2;
+}
+
+.team-item {
+    display: flex;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.rounded-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.team-text {
+    position: relative;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    width: 50%;
+    .team-item .team-text::after,
+.service-item .bg-light::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.team-item:hover .team-text::after,
+.service-item:hover .bg-light::after {
+    opacity: 2;
+}
+
+.team-item {
+    display: flex;
+}
+
+.position-relative {
+    position: relative;
+    margin-top: 10px;
+}
+
+.rounded-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img-fluid {
+    width: 348px;
+    height: 313,2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.team-text {
+    position: relative;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    width: 50%;
+    margin-top: 7.5rem;
+}
+
+.rounded-bottom {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+}
+
+.rounded-bottom {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .bg-offer {

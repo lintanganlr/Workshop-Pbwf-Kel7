@@ -1,4 +1,4 @@
-@extends('layout.main3')
+@extends('layout.main')
 @section('content')
 
     <!-- Full Screen Search Start -->
@@ -25,7 +25,7 @@
         <div class="row py-3">
             <div class="col-12 text-center">
                 <h1 class="display-3 text-white animated zoomIn">Contact Us</h1>
-                <a href="" class="h4 text-white">Home</a>
+                <a href="/" class="h4 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
                 <a href="" class="h4 text-white">Contact</a>
             </div>

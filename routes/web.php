@@ -24,7 +24,8 @@ use App\Http\Controllers\UploadArticleController;
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
 Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
-Route::get('/login/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 // regis //
 Route::get('regis', [RegisterController::class, 'register']);
@@ -32,6 +33,9 @@ Route::post('regis/register', [RegisterController::class, 'store'])->name('regis
 
 // home//
 Route::get('/', function () {
+    return view('home');
+});
+Route::get('/home', function () {
     return view('home');
 });
 
@@ -146,10 +150,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//COBA//
-Route::get('/cube', function () {
-    return view('login.index');
-});
-Route::get('/cube2', function () {
-    return view('regis.index');
+//PEMBAYARAN//
+Route::get('pembayaran', function () {
+    return view('pembayaran');
 });

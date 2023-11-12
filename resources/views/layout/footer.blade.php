@@ -1,6 +1,6 @@
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
+    <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -58px;">
         <div class="container pt-5">
             <div class="row g-5 pt-4">
                 <div class="col-lg-3 col-md-6">
@@ -48,9 +48,9 @@
                     <p class="mb-md-0">&copy; <a class="text-white border-bottom" href="#">GlucoSync</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a><br>
+                    {{-- <p class="mb-0">Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a><br>
                         Distributed by <a class="text-white border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>

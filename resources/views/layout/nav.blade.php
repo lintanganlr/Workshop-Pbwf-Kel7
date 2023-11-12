@@ -31,7 +31,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/service" class="nav-item nav-link">Pelayanan</a>
             <a href="/artikel" class="nav-item nav-link">Artikel</a>
@@ -46,9 +46,46 @@
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
 
-        <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-        <a class="btn-getstart" href="login">Sign In</a>
-        <a class="btn-getstarted" href="register">Sign Up</a>
+        @guest
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+            <a class="btn-getstart" href="/login">Sign In</a>
+            <a class="btn-getstarted" href="/register">Sign Up</a>
+        @else
+            {{-- <style>
+                .btn-getstarted {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #7D1219;
+                    color: #fff;
+                    border: none;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                }
+
+                .btn-getstarted:hover {
+                    border: #ffffff;
+                }
+            </style> --}}
+            {{-- <a class="btn-getstarted" href="/logout">Logout</a> --}}
+            <form method="POST" action="{{ route('logout') }}" style="display: inline-block;">
+                @csrf
+                <button type="submit" style="
+                    padding: 10px 20px;
+                    background-color: #7D1219;
+                    color: #fff;
+                    border: none;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                ">Logout</button>
+            </form>
+            
+            
+        @endguest
     </div>
 </nav>
+
 <!-- Navbar End -->
