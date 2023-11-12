@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tenaga_medis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_tenaga_medis', 50);
             $table->boolean('jenis_tenaga_medis')->nullable(false);
             $table->text('spesialisasi_medis')->nullable(false);
             $table->timestamps();
