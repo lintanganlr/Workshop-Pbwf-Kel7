@@ -51,39 +51,16 @@
             <a class="btn-getstart" href="/login">Sign In</a>
             <a class="btn-getstarted" href="/register">Sign Up</a>
         @else
-            {{-- <style>
-                .btn-getstarted {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    background-color: #7D1219;
-                    color: #fff;
-                    border: none;
-                    text-align: center;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    margin-right: 10px;
-                }
-
-                .btn-getstarted:hover {
-                    border: #ffffff;
-                }
-            </style> --}}
-            {{-- <a class="btn-getstarted" href="/logout">Logout</a> --}}
-            <form method="POST" action="{{ route('logout') }}" style="display: inline-block;">
-                @csrf
-                <button type="submit" style="
-                    padding: 10px 20px;
-                    background-color: #7D1219;
-                    color: #fff;
-                    border: none;
-                    text-align: center;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    margin-right: 10px;
-                ">Logout</button>
-            </form>
-            
-            
+        <span _ngcontent-halodoc-c164="" class="text-truncate mr-2" title="profile">
+            <!-- Teks dan tautan ke halaman profil -->
+            <a href="profile" style="display: flex; align-items: center;">
+                <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
+                <span style="font-size: 18px;">
+                    Hi, {{ auth()->check() ? auth()->user()->name : 'Guest' }}!
+                </span>
+            </a>
+        </span>              
+    
         @endguest
     </div>
 </nav>

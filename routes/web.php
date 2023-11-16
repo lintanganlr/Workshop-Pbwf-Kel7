@@ -154,3 +154,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('pembayaran', function () {
     return view('pembayaran');
 });
+
+//PROFILE CUSTOMER//
+Route::get('profile', function () {
+    return view('profile-user');
+});
