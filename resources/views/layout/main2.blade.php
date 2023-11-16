@@ -46,9 +46,8 @@
         </div>
         <!-- Spinner End -->
 
-    @include('layout.nav')
+    @include('layout.nav-profile')
         @yield('content')
-    @include('layout.footer')
 
 
     <!-- Back to Top -->
