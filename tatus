@@ -1,0 +1,388 @@
+[33mcommit 80f4da846de1e7206711a9655a085d4b1c54745b[m[33m ([m[1;36mHEAD -> [m[1;32martikel-userprofile[m[33m, [m[1;31morigin/artikel-userprofile[m[33m)[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sun Nov 19 06:19:34 2023 +0700
+
+    artikel waktu upload masih error
+
+[33mcommit e99bb0ca39710c87d5417507d5e3d4fb555da084[m[33m ([m[1;31morigin/membuat-admin[m[33m, [m[1;32mmembuat-admin[m[33m)[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Fri Nov 17 15:52:37 2023 +0700
+
+    bismilah crud artikel
+
+[33mcommit 5cb55e47ab33367277437389d350765614bd00cb[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Fri Nov 17 15:40:08 2023 +0700
+
+    membuat crud artikel
+
+[33mcommit df718c12edc5375d80dece59c81e36b56ca987ec[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Fri Nov 10 12:54:37 2023 +0700
+
+    menambahkan admin ke main
+
+[33mcommit 85ae74f17097d0ffbe32680fe48811d6ef0d8b1a[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Mon Nov 6 12:17:52 2023 +0700
+
+    menambahkan section ke create admin
+
+[33mcommit 76ea2c79ac8a1dd3ab50bf9f755e218e948ef0e9[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Mon Nov 6 09:24:40 2023 +0700
+
+    bikin home
+
+[33mcommit dc4f2ade0ce30477a315bbf82216010929f419c7[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Mon Nov 6 09:21:35 2023 +0700
+
+    menjadikan navbar,sidebar ke template
+
+[33mcommit 8e4eed1df1e777576e7335387e9fd16913a1a9d4[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Mon Nov 6 00:13:02 2023 +0700
+
+    membuat index dan create upload artikel
+
+[33mcommit c9bb720f1c7874fc2ed28527f1b78eef76a67e3e[m
+Merge: e8d21d5 99b4f04
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Sun Nov 5 21:57:08 2023 +0700
+
+    Merge pull request #8 from lintanganlr/login-dan-regis-controller
+    
+    usersseeder isi data admin
+
+[33mcommit 99b4f04e99ffde2890a59ae0216db0533e8e1372[m[33m ([m[1;31morigin/login-dan-regis-controller[m[33m, [m[1;32mlogin-dan-regis-controller[m[33m)[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sun Nov 5 21:55:09 2023 +0700
+
+    usersseeder isi data admin
+
+[33mcommit e8d21d520716b70b00b7359173b7e4ac5d26e88e[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Sun Nov 5 19:55:04 2023 +0700
+
+    membuat view admin artikel
+
+[33mcommit 0076538edfbcde4e7a97960591875334ff4bdddf[m
+Merge: 96fa178 2d983ed
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Sun Nov 5 17:16:15 2023 +0700
+
+    Merge pull request #7 from lintanganlr/login-dan-regis-controller
+    
+    hapus fitur yang tidak digunakan
+
+[33mcommit 2d983ed95b0d6a41ff1c1eb0cb3de0146e46d9c5[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sun Nov 5 17:15:55 2023 +0700
+
+    hapus fitur yang tidak digunakan
+
+[33mcommit 96fa1788c68825c9da4f832b3b801fba52a727dd[m
+Merge: 12276dc 15538c3
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Sun Nov 5 17:04:27 2023 +0700
+
+    Merge pull request #6 from lintanganlr/login-dan-regis-controller
+    
+    admin dan artikel
+
+[33mcommit 15538c392206d1169996b44a9f9ccf284d4c01c9[m
+Merge: 0897495 12276dc
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Sun Nov 5 17:04:18 2023 +0700
+
+    Merge branch 'main' into login-dan-regis-controller
+
+[33mcommit 0897495f3eec514f884d71de36817273abdc960d[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sun Nov 5 17:02:09 2023 +0700
+
+    admin dan artikel
+    
+    menambah dan mengubah tampilan admin sama membuat controller,view,model artikel
+
+[33mcommit 12276dc1ccba30cc953fd60072d0434812c81a58[m
+Merge: 7b3ff16 286d45e
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Sat Nov 4 16:33:21 2023 +0700
+
+    Merge pull request #5 from lintanganlr/login-dan-regis-controller
+    
+    bug di databasenya tidak bisa masuk
+
+[33mcommit 286d45e3c3ccfddcfba3dd89ff6cc7ecb751a508[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sat Nov 4 16:32:20 2023 +0700
+
+    bug di databasenya tidak bisa masuk
+
+[33mcommit 7b3ff164ee8e376b6cf59e1138aac7f405aa2ff5[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Fri Nov 3 21:29:42 2023 +0700
+
+    membenarkan service
+
+[33mcommit 1bff451a608a6657948af47c48d472f9156a2854[m
+Merge: e50c8f5 4123806
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Fri Nov 3 21:19:39 2023 +0700
+
+    Merge pull request #4 from lintanganlr/login-dan-regis-controller
+    
+    login-regis-logout controller
+
+[33mcommit 41238065b8415821e00301800d2353ecc5b95cf4[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Fri Nov 3 21:18:15 2023 +0700
+
+    login-regis-logout controller
+
+[33mcommit e50c8f5035c30f1315512bea3f54de4212de04ed[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 18:01:59 2023 +0700
+
+    home2
+
+[33mcommit 40b4d9bd66e88d4b8f4eb3eaac0f8a4e570720aa[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 08:56:25 2023 +0700
+
+    ngapus search di about
+
+[33mcommit 42006ddc8dd098abb76e7e8d4d3863e2a344b0f3[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 08:54:37 2023 +0700
+
+    home2 dan navbar2
+
+[33mcommit 059fd4543a0486f9535ef2bc0317a39267aaa44d[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 08:42:02 2023 +0700
+
+    mengubah di tiap halaman gaada logout login
+
+[33mcommit 0f70c6daecf72a4ebbf6a787840995e20244dd51[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 08:35:29 2023 +0700
+
+    nambah logout
+
+[33mcommit efb38e98550767d0b1fb12cf26f7504b5a47d295[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 08:27:35 2023 +0700
+
+    home2
+
+[33mcommit ab3eed4cbaf709bd129c5e6968c807d4282d4493[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 08:23:29 2023 +0700
+
+    nambah page ketika sudah login
+
+[33mcommit dbe4c38b42f1c915d59827c1f71e673d51ef0a13[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 08:16:01 2023 +0700
+
+    mengatur login
+
+[33mcommit 89a0c306a09b7b2bdb3c877b780505d03dc14053[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 06:33:11 2023 +0700
+
+    membenarkan home dan segalanya
+
+[33mcommit 52ff2dc54d406bc7f1cd99a09aa7b19170e807e6[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 04:55:54 2023 +0700
+
+    mengubah review, nyambungin dokter dan nurse, sama merubah routesnya
+
+[33mcommit 4ec2f12a191bfbcf436ac2da9641c7b292459533[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 04:27:29 2023 +0700
+
+    rubah routes service
+
+[33mcommit 59da1610f0425a6da85177f67b245d1070cd3493[m
+Merge: 6a8612c 2a3c062
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 04:23:59 2023 +0700
+
+    Merge branch 'main' of https://github.com/lintanganlr/Workshop-Pbwf-Kel7
+
+[33mcommit 6a8612c7f0cec3d920f91646dc324e68a7553cb0[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Thu Oct 26 04:01:45 2023 +0700
+
+    menyambungkan anatara controller, view dengan routesnya
+
+[33mcommit 2a3c0625dd9cc890ce9e5580eb0d5158221c1892[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 01:57:47 2023 +0700
+
+    push contact, dokter, nurse
+
+[33mcommit d547e8c8c0894be34cb589ab61b1a9432625b5d1[m
+Merge: 2dcc9b7 bbf77b9
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 00:31:07 2023 +0700
+
+    Merge branch 'main' of https://github.com/lintanganlr/Workshop-Pbwf-Kel7
+
+[33mcommit 2dcc9b7b26430dec75c251ced83204f507631abb[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Thu Oct 26 00:30:56 2023 +0700
+
+    kurang tampilan artikel sama view tenaga medis
+
+[33mcommit bbf77b940759075df9f55f68f965cec9f751817c[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Wed Oct 25 23:11:17 2023 +0700
+
+    login,regis,password done
+
+[33mcommit c249d9ad2057b9e959439aed8b530e16baa48dd1[m
+Merge: 153b74d ed08594
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 19:52:21 2023 +0700
+
+    Merge pull request #3 from lintanganlr/ngubah-login-di-make-an-appoinment
+    
+    tampilan tidak ada asssets
+
+[33mcommit ed085945eb84f860dc9f72dfc23ad1a6318e09b9[m[33m ([m[1;31morigin/ngubah-login-di-make-an-appoinment[m[33m, [m[1;32mngubah-login-di-make-an-appoinment[m[33m)[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 19:51:45 2023 +0700
+
+    tampilan tidak ada asssets
+
+[33mcommit 153b74d43c18ea80fc4c0fa0b478abe5b2575b84[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Wed Oct 25 19:49:19 2023 +0700
+
+    login-regis
+
+[33mcommit 8cc54903ffa31511da1e118364c488065c8cfc94[m
+Merge: 2fe5eae a752765
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 16:46:01 2023 +0700
+
+    Merge pull request #2 from lintanganlr/ngubah-login-di-make-an-appoinment
+    
+    ngasih template baru
+
+[33mcommit a752765e33b19c2f1af2de5c97a89a69ac86d93d[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 16:45:00 2023 +0700
+
+    ngasih nav, footer, main
+
+[33mcommit 4269e45c0422d706f61f764452ced4feb0daf3f9[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 15:45:36 2023 +0700
+
+    ngubah main
+
+[33mcommit 2fe5eaedaae14c2328623d383b3d377880bad8e6[m
+Merge: 21cc7ef 0f6700c
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Wed Oct 25 15:38:27 2023 +0700
+
+    Merge pull request #1 from lintanganlr/buat-mvc-serta-route-login-dan-regis
+    
+    login regis mvc
+
+[33mcommit 0f6700cc2842bdf59df9cf22eca708d683194c38[m[33m ([m[1;31morigin/buat-mvc-serta-route-login-dan-regis[m[33m, [m[1;32mbuat-mvc-serta-route-login-dan-regis[m[33m)[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Wed Oct 25 15:15:04 2023 +0700
+
+    login regis mvc
+
+[33mcommit b940a46d10aba74f2fa0dbaf39beed0015b9bc10[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Wed Oct 25 14:30:59 2023 +0700
+
+    view
+
+[33mcommit b1f7d34ef6140f1d6df9b34d0e4e5fb486875e21[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Tue Oct 24 23:49:57 2023 +0700
+
+    menambahkan layout (nav dan footer, artikel, about, dan main
+
+[33mcommit 21cc7efaf0a989129073c3a7cfee1585a40fa2ac[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Mon Oct 9 13:59:10 2023 +0700
+
+    view homepage
+
+[33mcommit 19f1ae1e11b05801fff81bbd6a6a1c926a261ecb[m
+Author: ameliaanindah <134347073+ameliaanindah@users.noreply.github.com>
+Date:   Mon Oct 9 13:53:07 2023 +0700
+
+    buat view homepage
+
+[33mcommit 2348971aa40de8bc89edecb8a4e6881922c3f3ff[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Mon Oct 9 11:13:29 2023 +0700
+
+    view login dan regis
+
+[33mcommit b78fab7f3875f6022c325c05e2497c8fd9bd3736[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sat Oct 7 08:25:54 2023 +0700
+
+    merubah database dan buat models
+
+[33mcommit c8ebaeb6a1a8a266444fbcde2008acc23d67e72e[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Mon Sep 25 13:47:41 2023 +0700
+
+    masukin atribut entitas
+
+[33mcommit e1acce4fef31694a15f46d7d837697a0b31de929[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sat Sep 16 22:42:12 2023 +0700
+
+    bikin view home
+
+[33mcommit b1008386bb5cf2123d73a715b03c815905237591[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sat Sep 16 17:56:47 2023 +0700
+
+    salah buat database
+
+[33mcommit 5f462596751213f879165bbd82d74b7b32b1a08a[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Sat Sep 16 17:54:59 2023 +0700
+
+    migration database
+
+[33mcommit f3997ea9a2fb4b0a07246767bd5dc2fc1b29ef4d[m
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Fri Sep 15 17:27:36 2023 +0700
+
+    Update nama kelompok
+
+[33mcommit 3ddff688ae0d7198014080a82315bc45e227070d[m
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Fri Sep 15 17:24:19 2023 +0700
+
+    Update nama kelompok
+
+[33mcommit 1d91cc3ef5b54ec82dd18db64ab3496bb31c0107[m
+Author: lintanganlr <134348901+lintanganlr@users.noreply.github.com>
+Date:   Fri Sep 15 17:22:47 2023 +0700
+
+    Update nama kelompok
+
+[33mcommit bf92f38539ad2874833a2054ceb1d935b7a06891[m
+Author: lintanganlr <lintangangraini3@gmail.com>
+Date:   Fri Sep 15 16:57:15 2023 +0700
+
+    first commit
