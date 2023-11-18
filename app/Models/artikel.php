@@ -13,8 +13,10 @@ class artikel extends Model
 
     // Kolom yang dapat diisi (fillable) secara mass assignment
     protected $fillable = [
+        'id_roles',
         'tgl_artikel',
         'judul_artikel',
+        'image',
         'deskripsi',
     ];
 

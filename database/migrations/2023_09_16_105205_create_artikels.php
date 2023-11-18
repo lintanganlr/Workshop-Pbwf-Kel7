@@ -28,8 +28,19 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+
+    public function up()
+    {
+    Schema::table('artikels', function (Blueprint $table) {
+        $table->string('image')->nullable();
+    });
+    }
+
+    public function down()
     {
         Schema::dropIfExists('artikels');
+        Schema::table('artikels', function (Blueprint $table) {
+            $table->dropColumn('image');
+        });
     }
 };
