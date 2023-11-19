@@ -36,6 +36,7 @@
 </div>
 <style>
 /* CSS untuk style card */
+/* dicube */
 .card {
   border: 1px solid #ccc;
   border-radius: 8px;
