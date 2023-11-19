@@ -21,7 +21,7 @@ class LoginController extends Controller
     // New method: index
     public function index()
     {
-        return view('login.index'); // Assuming 'auth.login' is your login view
+        return view('auth.login'); // Assuming 'auth.login' is your login view
     }
 
     // Fix the logout function

@@ -12,7 +12,8 @@
                             <p class="text-center"style="margin-top:-10px">Diabetes Friendly</p>
 
                             <div class="card-body">
-                                <form method="POST" action="{{ route('login') }}">
+                                <form method="POST" action="{{ route('login.submit') }}">
+
                                     @csrf
                                     
                                     <div class="row mb-3">

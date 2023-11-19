@@ -24,13 +24,14 @@ use App\Http\Controllers\TenagaMedisController;
 
 // login//
 Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
-Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
-Route::get('/login/logout', [LoginController::class, 'logout']);
+Route::post('login', [LoginController::class, 'login'])->name('login.submit');
+Route::get('login/forgot-password', [LoginController::class, 'password'])->name('login.forgot-password');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 // regis //
-Route::get('/register', [RegisterController::class, 'index'])->name('regis.index');
-Route::post('regis/register', [RegisterController::class, 'store'])->name('regis.register');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+Route::post('regis/register', [RegisterController::class, 'create'])->name('regis.register');
 
 // home//
 Route::get('/', function () {
