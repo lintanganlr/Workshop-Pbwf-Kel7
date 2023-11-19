@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tenaga_medis', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_tenaga_medis', 50);
-            $table->boolean('jenis_tenaga_medis')->nullable(false);
-            $table->text('spesialisasi_medis')->nullable(false);
-            $table->string('image_path', 255)->nullable();
+        Schema::create('tenagamedis', function (Blueprint $table) {
+            $table->id('id');
+            $table->unsignedBigInteger('id_roles');
+            $table->foreign('id_roles')->references('id')->on('roles');
+            $table->string('nama_medis', 30);
+            $table->string('spesialisasi_medis', 30);
+            $table->string('image');
             $table->timestamps();
         });
     }

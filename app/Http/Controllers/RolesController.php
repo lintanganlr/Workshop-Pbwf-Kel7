@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Roles;
+use App\Http\Requests\StoreRolesRequest;
+use App\Http\Requests\UpdateRolesRequest;
 
-class ServiceController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       return view('service');
+        //
     }
 
     /**
@@ -22,18 +24,10 @@ class ServiceController extends Controller
         //
     }
 
-    public function formdokter(){
-        return view('appoinment.dokter');
-    }
-
-    public function formperawat(){
-        return view('appoinment.perawat');
-    }
-
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRolesRequest $request)
     {
         //
     }
@@ -41,7 +35,7 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Roles $roles)
     {
         //
     }
@@ -49,7 +43,7 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Roles $roles)
     {
         //
     }
@@ -57,7 +51,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRolesRequest $request, Roles $roles)
     {
         //
     }
@@ -65,7 +59,7 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Roles $roles)
     {
         //
     }

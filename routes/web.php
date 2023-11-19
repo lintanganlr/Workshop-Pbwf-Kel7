@@ -7,8 +7,9 @@ use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\UploadArticleController;
-use App\Http\Controllers\PasienController;
+use App\Http\Controllers\UploadArtController;
+use App\Http\Controllers\TenagaMedisController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +21,12 @@ use App\Http\Controllers\PasienController;
 |
 */
 
+
 // login//
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
 Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('logout');
-
+Route::get('/login/logout', [LoginController::class, 'logout']);
 
 // regis //
 Route::get('regis', [RegisterController::class, 'register']);
@@ -33,9 +34,6 @@ Route::post('regis/register', [RegisterController::class, 'store'])->name('regis
 
 // home//
 Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', function () {
     return view('home');
 });
 
@@ -104,8 +102,8 @@ Route::get('tables-basic.html', function () {
 });
 
 
-Route::get('index.html', function () {
-    return view('admin.index');
+Route::get('/admin', function () {
+    return view('admin.home');
 });
 
 Route::get('list', function () {
@@ -121,15 +119,33 @@ Route::get('article', function () {
     return view('admin.article.index');
 });
 
-Route::get('/article',[UploadArticleController::class,'index'])->name('article.index');
-Route::get('/article/create',[UploadArticleController::class,'create'])->name('article.create');
-Route::post('/article/store',[UploadArticleController::class,'store'])->name('article.store');
-// Route::get('/article/edit/{id}',[UploadArticleontroller::class,'edit'])->name('article.edit');
-// Route::put('/article/update/{id}',[UploadArticleontroller::class,'update'])->name('article.update');
-// Route::delete('/article/delete/{id}',[UploadArticleontroller::class,'destroy'])->name('article.destroy');
+Route::get('article/create', function () {
+    return view('admin.article.create');
+});
+
+
+Route::get('/article',[UploadArtController::class,'index'])->name('article.index');
+Route::get('/article/create',[UploadArtController::class,'create'])->name('article.create');
+Route::post('/article/store',[UploadArtController::class,'store'])->name('article.store');
+Route::get('/article/edit/{id}',[UploadArtController::class,'edit'])->name('article.edit');
+Route::put('/article/update/{id}',[UploadArtController::class,'update'])->name('article.update');
+Route::delete('/article/delete/{id}',[UploadArtController::class,'destroy'])->name('article.destroy');
 // Route::get('/article/trash',[UploadArticleontroller::class,'trash'])->name('article.trash');
 // Route::put('/article/restore/{id}',[UploadArticleontroller::class,'restore'])->name('article.restore');
 // Route::put('/article/restoreall',[UploadArticleontroller::class,'restoreall'])->name('article.restoreall');
+
+
+// TENAGA MEDIS
+Route::get('/tenagamedis',[TenagaMedisController::class,'index'])->name('tenagamedis.index');
+Route::get('/tenagamedis/create',[TenagaMedisController::class,'create'])->name('tenagamedis.create');
+Route::post('/tenagamedis/store',[TenagaMedisController::class,'store'])->name('tenagamedis.store');
+Route::get('/tenagamedis/edit/{id}',[TenagaMedisController::class,'edit'])->name('tenagamedis.edit');
+Route::put('/tenagamedis/update/{id}',[TenagaMedisController::class,'update'])->name('tenagamedis.update');
+Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'])->name('tenagamedis.destroy');
+// Route::get('/article/trash',[TenagaMedisicleontroller::class,'trash'])->name('article.trash');
+// Route::put('/article/restore/{id}',[TenagaMedisicleontroller::class,'restore'])->name('article.restore');
+// Route::put('/article/restoreall',[TenagaMedisicleontroller::class,'restoreall'])->name('article.restoreall');
+
 
 // Lupa Password
 // Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -145,20 +161,3 @@ Route::post('/article/store',[UploadArticleController::class,'store'])->name('ar
 // Route::get('satuan/{id}/edit', [SatuanController::class, 'edit'])->name('satuan.edit');
 // Route::put('satuan/{id}', [SatuanController::class, 'update'])->name('satuann.update');
 // Route::delete('satuan/{id}', [SatuanController::class, 'destroy'])->name('satuan.destroy');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//PEMBAYARAN//
-Route::get('pembayaran', function () {
-    return view('pembayaran');
-});
-
-//PROFILE CUSTOMER//
-// Route::get('profile', function () {
-//     return view('profile-user');
-// });
-Route::get('profile', [PasienController::class, 'index'])->name('index');
-Route::get('/profile/create', [PasienController::class, 'create'])->name('profile.create');
-Route::post('/simpan', [PasienController::class, 'simpan']);
