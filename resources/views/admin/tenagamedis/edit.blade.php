@@ -25,14 +25,14 @@
                                     </div>
                                 @endif
 
-                                <h4 class="card-title">Create Artikel</h4>
+                                <h4 class="card-title">Create medis</h4>
                                 <div class="form-group">
                                     <label for="roles">Pilih Role</label>
                                     <select name="id_roles" class="form-control" id="roles" type="number">
                                         <option value="{{ $tenagamedis->roles->id}}" selected="">{{ $tenagamedis->roles->nama_role}}</option>
-                                        @if($tenagamedis->roles->id == 1)
+                                        @if($tenagamedis->roles->id == 2)
                                         <option value="2">Dokter</option>
-                                    @elseif($tenagamedis->roles->id == 2)
+                                    @elseif($tenagamedis->roles->id == 3)
                                         <option value="3">Perawat</option>
                                     @else
                                         <option value="3">Perawat</option>
@@ -41,32 +41,18 @@
                                     </select>
                                 </div>
 
-                                {{-- <div class="form-group">
-                                    <label for="id_role">Pilih Role</label>
-                                    <select name="nama_role" id="id_role" class="custom-select rounded-0">
-                                        <option selected disabled>Pilih Role</option>
-                                        @foreach ($roles as $role)
-                                            <option value="{{ $role->nama_role }}">{{ $role->nama_role }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> --}}
-
-                                <div class="form-group">
-                                    <label for="tgl_artikel">Tanggal Upload</label>
-                                    <input type="date" id="tgl_artikel" name="tgl_artikel" class="form-control demo" value="{{ old('tgl_artikel', $tenagamedis->tgl_artikel) }}">
-                                </div>
+                <div class="form-group">
+                    <label for="nama_medis">Nama Medis</label>
+                    <input type="text" id="nama_medis" name="nama_medis" class="form-control demo" value="{{ old('nama_medis', $tenagamedis->nama_medis) }}">
+                </div>
 
                 <div class="form-group">
-                    <label for="judul_artikel">Judul</label>
-                    <input type="text" id="judul_artikel" name="judul_artikel" class="form-control demo" value="{{ old('judul_artikel', $tenagamedis->judul_artikel) }}">
+                    <label for="spesialisasi_medis">Spesialisasi Medis</label>
+                    <input type="text" id="spesialisasi_medis" name="spesialisasi_medis" class="form-control demo" value="{{ old('spesialisasi_medis', $tenagamedis->spesialisasi_medis) }}">
                 </div>
-{{-- <div class="form-group">
-    <label for="image">Upload Foto</label>
-    <input type="file" name="image" id="image" class="form-control" value="{{ old('image', $tenagamedis->image) }}">
-</div> --}}
 
 <div class="row mb-3">
-    <label for="image" class="col-sm-2 col-form-label">Upload Foto Artikel</label>
+    <label for="image" class="col-sm-2 col-form-label">Upload Foto Medis</label>
     <div class="col-sm-10">
         <input type="file"
             class="form-control-file @error('image') is-invalid @enderror"
@@ -77,46 +63,20 @@
         </div>
         @enderror
         @if($tenagamedis->image)
-            <img src="{{ asset('artikelimg/' . $tenagamedis->image) }}" alt="Foto artikel" width="50">
+            <img src="{{ asset('medisimg/' . $tenagamedis->image) }}" alt="Foto Medis" width="50">
         @else
             <p>Tidak ada file yang dipilih</p>
         @endif
     </div>
 </div>
-                                {{-- <div class="form-group">
-                                    <label for="position-top-right">Top right</label>
-                                    <input type="text" id="position-top-right" class="form-control demo" data-position="top right" value="#0088cc">
-                                </div>
-                            </div> --}}
-                <!-- editor -->
-                <div class="form-group">
-                    <label for="deskripsi">Deskripsi</label>
-                    <textarea  id="deskripsi" name="deskripsi" class="form-control demo">{{ old('deskripsi', $tenagamedis->deskripsi) }}</textarea>
-                </div>
-                {{-- <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <label for="deskripsi">Deskripsi</label>
-                                <input type="text" name="deskripsi" class="form-control">
-                                <!-- Create the editor container -->
-                                <div id="editor" style="height: 500px;">
-                                        <br>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                <!-- ============================================================== -->
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+<div class="border-top">
+    <div class="card-body">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</div>
+</div>
+</div>
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->

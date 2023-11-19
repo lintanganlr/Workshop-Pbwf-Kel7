@@ -52,9 +52,7 @@ class UploadArtController extends Controller
          return redirect()->route('article.index')->with('success', 'Data artikel berhasil disimpan');
      }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(UploadArt $uploadArt)
     {
         //
@@ -114,56 +112,6 @@ class UploadArtController extends Controller
          return redirect()->route('article.index')->with('success', 'Data artikel berhasil diperbarui');
      }
 
-
-    // public function update(Request $request, $id)
-    // {
-    //     $this->validate($request, [
-    //         'id_role'       => 'required',
-    //         'tgl_artikel'   => 'required',
-    //         'judul_artikel' => 'required',
-    //         'image'         => 'image|mimes:jpeg,png,jpg,gif|max:2048|nullable',
-    //         'deskripsi'     => 'required',
-    //     ]);
-    //    $artikels = uploadart::find($id);
-    //    $artikels->id_roles           =  $request->id_role;
-    //    $artikels->tgl_artikel       =   $request->tgl_artikel;
-    //    $artikels->judul_artikel     =   $request->judul_artikel;
-    //    $artikels->image             =   $request->image;
-    //    $artikels->deskripsi         =   $request->deskripsi;
-
-    //    $artikels->save();
-
-    // $artikels = uploadart::find($id);
-    // $artikels->update($request->all());
-
-    //    return redirect('/article');
-
-    // }
-
-        // Mengunggah gambar (foto artikels)
-    //     if ($request->hasFile('/artikelimg')) {
-    //         $file = $request->file('/artikelimg');
-    //         $artikelimgName = time() . '.' . $file->getClientOriginalExtension();
-    //         $file->move(public_path('/artikelimg'), $artikelimgName);
-    //         // Hapus foto lama jika ada
-    //         if (!empty($pekerja->artikelimg)) {
-    //             $fotoPath = public_path('artikelimg/' . $pekerja->artikelimg);
-    //            s if (file_exists($fotoPath)) {
-    //                 unlink($fotoPath);
-    //             } else {
-    //                 // Tampilkan pesan bahwa file tidak ditemukan
-    //                 return redirect()->back()->with('error', 'File foto pekerja tidak ditemukan');
-    //             }
-    //         }
-    //         $pekerja->artikelimg = $artikelimgName;
-
-    //     }
-
-    //     return redirect()->route('article.index')->with('success', 'Data pekerja berhasil diperbarui');
-    // }
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         $artikels = uploadart::find($id);
