@@ -53,8 +53,8 @@ Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('ap
 Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
 
 // artikel //
-Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel.artikel');
-Route::get('artikel.tampilan', [ArtikelController::class, 'baca'])->name('artikel.tampilan');
+Route::get('artikel', [UploadArtController::class, 'tampilcust'])->name('artikel.tampilcust');
+Route::get('artikel.tampilan', [UploadArtController::class, 'tampilan'])->name('artikel.tampilan');
 
 // review //
 Route::get('review', [ReviewController::class, 'index'])->name('review.index');

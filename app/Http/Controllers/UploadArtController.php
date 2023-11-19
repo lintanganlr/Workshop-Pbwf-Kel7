@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Roles;
+use App\Models\Artikel;
 use App\Models\uploadart;
 use Illuminate\Http\Request;
 
@@ -118,5 +119,19 @@ class UploadArtController extends Controller
         $artikels->delete();
 
         return redirect()->back();
+    }
+
+    // tampil ke cust //
+    public function tampilcust()
+    {
+        // Fetching articles using the Artikel model
+        $artikels = Artikel::select('id', 'judul_artikel', 'image')->get();
+        return view('artikel.index', compact('artikels'));
+    }
+    public function tampilan($judul_artikel)
+    {
+        // Fetching a single article using the Artikel model
+        $artikel = Artikel::where('judul_artikel', $judul_artikel)->first();
+        return view('artikel.tampilan', compact('artikel'));
     }
 }
