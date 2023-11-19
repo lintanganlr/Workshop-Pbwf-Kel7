@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->id('id_artikel');
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id')->references('id_user')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('id_roles');
+            $table->foreign('id_roles')->references('id')->on('roles');
             $table->date('tgl_artikel');
             $table->string('judul_artikel', 100);
             $table->string('image');
