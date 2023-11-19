@@ -1,17 +1,14 @@
 @extends('admin.partials.main')
 @section('content')
 
-@extends('admin.partials.main')
-@section('content')
-
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body d-flex justify-content-between align-items-center">
-                <h5 class="card-title m-b-0">Upload Artikel</h5>
+                <h5 class="card-title m-b-0">Upload Medis</h5>
                 <a href="{{ route('tenagamedis.create') }}" class="btn bg-gradient-dark">
-                    <i class="fas fa-plus"></i> Tambah Artikel
+                    <i class="fas fa-plus"></i> Tambah medis
                 </a>
             </div>
 
@@ -19,25 +16,24 @@
                   <thead>
                     <tr>
                       <th scope="col">ID_Role</th>
-                      <th scope="col">ID_Artikel</th>
-                      <th scope="col">Tanggal</th>
-                      <th scope="col">Judul Artikel</th>
+                      <th scope="col">ID_Medis</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Spesialis</th>
                       <th scope="col">Gambar</th>
-                      <th scope="col">Deskripsi</th>
                       <th scope="col">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($artikels as $item)
+                    @foreach ($tenagamedis as $item)
                     <tr>
                         <th scope="row"></th>
                         <td>{{$item->id}}</td>
                         <td>{{$item->id_roles}}</td>
-                        <td>{{$item->tgl_artikel}}</td>
-                        <td>{{$item->judul_artikel}}</td>
+                        <td>{{$item->nama_medis}}</td>
+                        <td>{{$item->spesialisasi_medis}}</td>
                         <td>
                             @if($item->image)
-                            <img src="{{ asset('artikelimg/'. $item->image)}}" alt="{{$item->image}}"  width="50" >
+                            <img src="{{ asset('medisimg/'. $item->image)}}" alt="{{$item->image}}"  width="50" >
                             @else
                             Tidak ada foto
                             @endif
@@ -62,7 +58,4 @@
             </table>
         </div>
     </main>
-@endsection
-
-
 @endsection

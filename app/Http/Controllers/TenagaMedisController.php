@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Models\Roles;
 use App\Models\TenagaMedis;
+use Illuminate\Http\Request;
+
 
 class TenagaMedisController extends Controller
 {
@@ -12,7 +13,9 @@ class TenagaMedisController extends Controller
      */
     public function index()
     {
-        //
+        $tenagamedis = TenagaMedis::all();
+        // $roles = Roles::all();
+        return view('admin.tenagamedis.index', compact('tenagamedis'));
     }
 
     /**
@@ -20,7 +23,7 @@ class TenagaMedisController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tenagamedis.create');
     }
 
     /**
@@ -28,8 +31,25 @@ class TenagaMedisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input form disini sesuai dengan kebutuhan Anda
+        $tenagamedis = new TenagaMedis();
+        $tenagamedis->id_roles = $request->input('id_roles');
+        $tenagamedis->nama_medis = $request->input('nama_medis');
+        $tenagamedis->spesialisasi_medis = $request->input('spesialisasi_medis');
+
+        // Mengunggah gambar (foto pekerja)
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('medisimg'), $imageName); // Ganti direktori tujuan
+            $tenagamedis->image = $imageName;
+        }
+
+        $tenagamedis->save();
+
+        return redirect()->route('tenagamedis.index')->with('success', 'Data medis berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.

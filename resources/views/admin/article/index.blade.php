@@ -27,7 +27,7 @@
                   <tbody>
                     @foreach ($artikels as $item)
                     <tr>
-                        <th scope="row"></th>
+                        <th scope="col"></th>
                         <td>{{$item->id}}</td>
                         <td>{{$item->id_roles}}</td>
                         <td>{{$item->tgl_artikel}}</td>

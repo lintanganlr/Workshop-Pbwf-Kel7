@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tenagamedis', function (Blueprint $table) {
-            $table->id();
-            $table->boolean('jenis_tenaga_medis')->nullable(false);
-            $table->text('spesialisasi_medis')->nullable(false);
-            $table->timestamps();
+            $table->id('id');
+            $table->unsignedBigInteger('id_roles');
+            $table->foreign('id_roles')->references('id')->on('roles');
+            $table->string('nama_medis', 30);
+            $table->string('spesialisasi_medis', 30);
             $table->string('image');
+            $table->timestamps();
         });
     }
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UploadArtController;
+use App\Http\Controllers\TenagaMedisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,6 +139,12 @@ Route::delete('/article/delete/{id}',[UploadArtController::class,'destroy'])->na
 Route::get('/tenagamedis',[TenagaMedisController::class,'index'])->name('tenagamedis.index');
 Route::get('/tenagamedis/create',[TenagaMedisController::class,'create'])->name('tenagamedis.create');
 Route::post('/tenagamedis/store',[TenagaMedisController::class,'store'])->name('tenagamedis.store');
+Route::get('/tenagamedis/edit/{id}',[TenagaMedisController::class,'edit'])->name('tenagamedis.edit');
+Route::put('/tenagamedis/update/{id}',[TenagaMedisController::class,'update'])->name('tenagamedis.update');
+Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'])->name('tenagamedis.destroy');
+// Route::get('/article/trash',[TenagaMedisicleontroller::class,'trash'])->name('article.trash');
+// Route::put('/article/restore/{id}',[TenagaMedisicleontroller::class,'restore'])->name('article.restore');
+// Route::put('/article/restoreall',[TenagaMedisicleontroller::class,'restoreall'])->name('article.restoreall');
 
 
 // Lupa Password
