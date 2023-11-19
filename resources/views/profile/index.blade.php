@@ -47,7 +47,7 @@
                             <div class="card-title d-flex align-items-start justify-content-center" style="color:#7D1219">
                                 <i class='bx bx-plus-circle' style='font-size: 40px;'></i>
                             </div>
-                            <span>Tambah identitas pasien</span>
+                            <span>Tambah identitas pasien!</span>
                         </button>
                     </div>
                 </div>
