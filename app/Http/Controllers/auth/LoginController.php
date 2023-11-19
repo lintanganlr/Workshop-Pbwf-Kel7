@@ -1,68 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth; // Add this line
 
 class LoginController extends Controller
 {
-    // use AuthenticatesUsers;
+    use AuthenticatesUsers;
 
-    // protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
-    // public function __construct()
-    // {
-    //     $this->middleware('guest')->except('logout');
-    // }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function __construct()
     {
-        return view('login.index');
+        $this->middleware('guest')->except('logout');
     }
 
-    function login (Request $request)
+    // Fix the logout function
+    public function logout()
     {
-        Session::flash('username',$request->username);
-        $request->validate(
-            [
-                'username'=>'required',
-                'password'=>'required',
-            ],
-            [
-                'username.required'=>'Username wajib diisi',
-                'password.required'=>'Password wajib diisi',
-            ]
-        );
-
-        $infologin = [
-            'username'=> $request->username,
-            'password'=> $request->password
-        ];
-
-        if(Auth::attempt($infologin)){
-            //kalau sukses
-            return redirect('/home2');
-        }else {
-            // kalau gagal
-            return redirect('/')->withErrors('Username dan Password yang dimasukkan tidak sesuai');
-        }
-    }
-    
-    // public function password()
-    // {
-    //     return view('login.forgot-password');
-    // }
-
-    function logout (){
         Auth::logout();
         return redirect('/');
     }
 }
-
-

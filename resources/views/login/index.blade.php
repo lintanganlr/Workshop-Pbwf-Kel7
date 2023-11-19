@@ -43,10 +43,10 @@
                     <div class="mb-3 d-grid" href="/about" >
                         <button name="submit" type="submit" class="btn btn-primary">Sign In</button>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <p class="fs-4 mb-0 fw-bold">New to GlucoSync?</p>
-                        <a class="text-primary fw-bold ms-2" href="regis">Create an account</a>
-                    </div>
+                    <div class="d-flex align-items-center justify-content-center" style="margin-top: 10px;">
+                      <p class="fs-4 mb-0 fw-bold">New to GlucoSync?</p>
+                      <a class="text-primary fw-bold ms-2" href="regis" style="color: #7D1219">Create an account</a>
+                    </div>                  
                 </form>
               </div>
             </div>

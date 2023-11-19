@@ -31,7 +31,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/service" class="nav-item nav-link">Pelayanan</a>
             <a href="/artikel" class="nav-item nav-link">Artikel</a>
@@ -46,43 +46,23 @@
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
 
-        <style>
-            .btn-getstarted {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #7D1219;
-                color: #fff;
-                border: none;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-
-            .btn-getstarted:hover {
-                border: #ffffff;
-            }
-
-            .btn-getstart {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #fff;
-                color: #7D1219;
-                border: 2px solid #7D1219;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-
-            .btn-getstart:hover {
-                border: #7D1219;
-            }
-        </style>
-
-        <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-        <a class="btn-getstart" href="login">Sign In</a>
-        <a class="btn-getstarted" href="regis">Sign Up</a>
+        @guest
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+            <a class="btn-getstart" href="/login">Sign In</a>
+            <a class="btn-getstarted" href="/register">Sign Up</a>
+        @else
+        <span _ngcontent-halodoc-c164="" class="text-truncate mr-2" title="profile">
+            <!-- Teks dan tautan ke halaman profil -->
+            <a href="profile" style="display: flex; align-items: center;">
+                <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
+                <span style="font-size: 18px;">
+                    Hi, {{ auth()->check() ? auth()->user()->name : 'Guest' }}!
+                </span>
+            </a>
+        </span>              
+    
+        @endguest
     </div>
 </nav>
+
 <!-- Navbar End -->
