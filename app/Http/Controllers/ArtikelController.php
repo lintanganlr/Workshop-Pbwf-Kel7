@@ -12,92 +12,15 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikels = Artikel::all(); // Mengambil semua artikel dari database
-        return view('artikel.index', ['artikels' => $artikels]);
+        // Fetching articles using the Artikel model
+        $artikels = Artikel::select('id', 'judul_artikel', 'image')->get();
+        return view('artikel.index', compact('artikels'));
     }
 
-    /**
-     * Menampilkan halaman baca artikel.
-     */
-    public function baca($id)
+    public function tampilan($judul_artikel)
     {
-        $artikel = Artikel::find($id); // Mengambil artikel berdasarkan ID
-        return view('artikel.tampilan', ['artikels' => $artikels]);
-    }
-
-    /**
-     * Menampilkan form untuk membuat artikel baru.
-     */
-    public function create()
-    {
-        return view('artikel.create');
-    }
-
-    /**
-     * Menyimpan artikel baru ke dalam database.
-     */
-    public function store(Request $request)
-    {
-        // Validasi input dari form
-        $request->validate([
-            'tgl_artikel' => 'required',
-            'judul_artikel' => 'required',
-            'deskripsi' => 'required',
-        ]);
-
-        // Simpan artikel ke dalam database
-        Artikel::create($request->all());
-
-        return redirect()->route('artikel.index')
-            ->with('success', 'Artikel berhasil ditambahkan.');
-    }
-
-    /**
-     * Menampilkan artikel berdasarkan ID.
-     */
-    public function show($id)
-    {
-        $artikel = Artikel::find($id);
-        return view('artikel.show', ['artikels' => $artikels]);
-    }
-
-    /**
-     * Menampilkan form untuk mengedit artikel.
-     */
-    public function edit($id)
-    {
-        $artikel = Artikel::find($id);
-        return view('artikel.edit', ['artikels' => $artikels]);
-    }
-
-    /**
-     * Menyimpan perubahan artikel ke dalam database.
-     */
-    public function update(Request $request, $id)
-    {
-        // Validasi input dari form
-        $request->validate([
-            'tgl_artikel' => 'required',
-            'judul_artikel' => 'required',
-            'deskripsi' => 'required',
-        ]);
-
-        $artikel = Artikel::find($id);
-        $artikel->update($request->all());
-
-        return redirect()->route('artikel.index')
-            ->with('success', 'Artikel berhasil diperbarui.');
-    }
-
-    /**
-     * Menghapus artikel dari database.
-     */
-    public function destroy($id)
-    {
-        $artikel = Artikel::find($id);
-        $artikel->delete();
-
-        return redirect()->route('artikel.index')
-            ->with('success', 'Artikel berhasil dihapus.');
+        // Fetching a single article using the Artikel model
+        $artikel = Artikel::where('judul_artikel', $judul_artikel)->first();
+        return view('artikel.tampilan', compact('artikel'));
     }
 }
