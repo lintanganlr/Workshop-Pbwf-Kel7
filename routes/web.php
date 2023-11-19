@@ -29,7 +29,7 @@ Route::get('login/forgot-password', [LoginController::class, 'password' ])->name
 Route::get('/login/logout', [LoginController::class, 'logout']);
 
 // regis //
-Route::get('regis', [RegisterController::class, 'register']);
+Route::get('register', [RegisterController::class, 'register']);
 Route::post('regis/register', [RegisterController::class, 'store'])->name('regis.register');
 
 // home//
@@ -53,7 +53,7 @@ Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('ap
 Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
 
 // artikel //
-Route::get('artikel', [UploadArtController::class, 'tampilcust'])->name('artikel.tampilcust');
+Route::get('artikel', [UploadArtController::class, 'tampilcust'])->name('artikel.index');
 Route::get('artikel.tampilan', [UploadArtController::class, 'tampilan'])->name('artikel.tampilan');
 
 // review //
