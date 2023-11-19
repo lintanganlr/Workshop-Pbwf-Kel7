@@ -8,7 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UploadArticleController;
-
+use App\Http\Controllers\PasienController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +24,7 @@ use App\Http\Controllers\UploadArticleController;
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/login', [LoginController::class, 'login'])->name('login.login');
 Route::get('login/forgot-password', [LoginController::class, 'password' ])->name('login.forgot-password');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('logout');
 
 
 // regis //
@@ -156,6 +156,9 @@ Route::get('pembayaran', function () {
 });
 
 //PROFILE CUSTOMER//
-Route::get('profile', function () {
-    return view('profile-user');
-});
+// Route::get('profile', function () {
+//     return view('profile-user');
+// });
+Route::get('profile', [PasienController::class, 'index'])->name('index');
+Route::get('/profile/create', [PasienController::class, 'create'])->name('profile.create');
+Route::post('/simpan', [PasienController::class, 'simpan']);

@@ -1,97 +1,201 @@
 @extends('layout.main2')
 @section('content')
-<div _ngcontent-halodoc-c324="" class="profiles__header">
-    <div _ngcontent-halodoc-c324="" class="profiles__select">
-      <div _ngcontent-halodoc-c324="" class="profiles--title">Profil:</div>
-      <span _ngcontent-halodoc-c324="" class="flex items-center">
-        <mat-form-field _ngcontent-halodoc-c324="" color="primary" class="mat-mdc-form-field profiles__profile ng-tns-c82-27 mat-mdc-form-field-type-mat-select mat-form-field-appearance-fill mat-primary ng-star-inserted">
-          <!---->
-          <div class="mat-mdc-text-field-wrapper mdc-text-field ng-tns-c82-27 mdc-text-field--filled mdc-text-field--no-label">
-            <div class="mat-mdc-form-field-focus-overlay ng-tns-c82-27 ng-star-inserted"></div>
-            <!---->
-            <div class="mat-mdc-form-field-flex ng-tns-c82-27">
-              <!---->
-              <!---->
-              <!---->
-              <div class="mat-mdc-form-field-infix ng-tns-c82-27">
-                <!---->
-                <!---->
-                <!---->
-                <mat-select _ngcontent-halodoc-c324="" role="combobox" aria-autocomplete="none" aria-haspopup="listbox" class="mat-mdc-select ng-tns-c312-28 ng-tns-c82-27 ng-star-inserted" aria-labelledby="mat-select-value-11" id="mat-select-10" tabindex="0" aria-expanded="false" aria-required="false" aria-disabled="false" aria-invalid="false">
-                  <div cdk-overlay-origin="" class="mat-mdc-select-trigger ng-tns-c312-28">
-                    <div class="mat-mdc-select-value ng-tns-c312-28" id="mat-select-value-11">
-                      <!---->
-                      <span class="mat-mdc-select-value-text ng-tns-c312-28 ng-star-inserted">
-                        <!---->
-                        <mat-select-trigger _ngcontent-halodoc-c324="" class="ng-tns-c312-28 ng-star-inserted">
-                          <span _ngcontent-halodoc-c324="" class="profiles__profile--name">Lintang Angraini Nur Laili Rahma </span>
-                        </mat-select-trigger>
-                        <!---->
-                      </span>
-                      <!---->
-                    </div>
-                    <div class="mat-mdc-select-arrow-wrapper ng-tns-c312-28">
-                      <div class="mat-mdc-select-arrow ng-tns-c312-28">
-                        <svg viewBox="0 0 24 24" width="24px" height="24px" focusable="false" class="ng-tns-c312-28">
-                          <path d="M7 10l5 5 5-5z" class="ng-tns-c312-28"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <!---->
-                </mat-select>
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div matformfieldlineripple="" class="mdc-line-ripple ng-tns-c82-27 mdc-line-ripple--deactivating ng-star-inserted"></div>
-            <!---->
-          </div>
-          <div class="mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-bottom-align ng-tns-c82-27">
-            <!---->
-            <div class="mat-mdc-form-field-hint-wrapper ng-tns-c82-27 ng-trigger ng-trigger-transitionMessages ng-star-inserted" style="opacity: 1; transform: translateY(0%);">
-              <!---->
-              <div class="mat-mdc-form-field-hint-spacer ng-tns-c82-27"></div>
-            </div>
-            <!---->
-          </div>
-        </mat-form-field>
-      </span>
-    </div>
-    <div _ngcontent-halodoc-c324="" class="profiles__cta">
-      <div _ngcontent-halodoc-c324="" class="profiles__cta--settings">
-        <hd-base-dropdown _ngcontent-halodoc-c324="" _nghost-halodoc-c154="" class="ng-star-inserted">
-          <hd-base-button _ngcontent-halodoc-c154="" class="mat-mdc-menu-trigger ng-star-inserted" _nghost-halodoc-c105="" aria-haspopup="menu" aria-expanded="false">
-            <button _ngcontent-halodoc-c105="" mat-flat-button="" class="button-container mdc-button mdc-button--unelevated mat-mdc-unelevated-button secondary mat-unthemed mat-mdc-button-base" style="width: fit-content;">
-              <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
-              <span class="mdc-button__label">
-                <div _ngcontent-halodoc-c105="" class="leading-content ng-star-inserted"></div>
-                <!---->
-                <label _ngcontent-halodoc-c105="" class="button-label ng-star-inserted">Pengaturan</label>
-                <!---->
-                <!---->
-                <!---->
-                <div _ngcontent-halodoc-c105="" class="trailing-content ng-star-inserted"></div>
-                <!---->
-              </span>
-              <span class="mat-mdc-focus-indicator"></span>
-              <span matripple="" class="mat-ripple mat-mdc-button-ripple"></span>
-              <span class="mat-mdc-button-touch-target"></span>
-            </button>
-          </hd-base-button>
-          <!---->
-          <!---->
-          <!---->
-          <mat-menu _ngcontent-halodoc-c154="" class="ng-tns-c142-29 ng-star-inserted">
-            <!---->
-          </mat-menu>
-          <!---->
-          <!---->
-        </hd-base-dropdown>
-        <!---->
+<div>
+  <div class="container-cust">
+    <div class="profiles__header">
+      <div class="profiles__select">
+          <div class="profiles--title">Profil Pasien:</div>
       </div>
-      <button _ngcontent-halodoc-c324="" class="profiles__cta--logout">Keluar</button>
+      <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" class="profiles__logout">LogOut</button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="custom-profile-card">
+        <div class="tambah-profile">
+          <button id="tambahButton">
+              <div class="card-title d-flex align-items-start justify-content-center">
+                  <i class='bx bx-plus-circle' style='font-size: 40px;'></i>
+              </div>
+              <span>Tambah identitas pasien</span>
+          </button>
+        </div>          
+      </div>
+      <div class="custom-profile-card">
+          <div class="cust-header">
+            halo
+          </div>
+          <div class="cust-info">
+            hao
+          </div>
+      </div>
+      <!-- Tambah card sesuai kebutuhan -->
     </div>
   </div>
+  <div class="popup-form" id="popupForm">
+    <form id="formPasien">
+        <label for="nama">Nama Pasien:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="noTelepon">No Telepon Pasien:</label>
+        <input type="tel" id="noTelepon" name="noTelepon" required>
+
+        <label for="email">Email Pasien:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="alamat">Alamat Pasien:</label>
+        <input type="text" id="alamat" name="alamat" required>
+
+        <label for="jenisKelamin">Jenis Kelamin Pasien:</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+        </select>
+
+        <input type="submit" value="Simpan">
+    </form>
+  </div>
+
+  <style>
+    /* Contoh gaya CSS untuk struktur header profil */
+    .div{
+      position:relative;
+      padding: 1500px;
+      background-color: #f9f9f9;
+    }
+    .container-cust {
+    /* background-color: #f9f9f9; */
+    /* padding: 70px; Sesuaikan padding sesuai kebutuhan */
+    }
+    .profiles__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        /* background-color: #f9f9f9; */
+        
+        /* Gaya lain yang Anda inginkan */
+    }
+
+    .profiles--title {
+        font-weight: bold;
+        /* Gaya lain yang Anda inginkan */
+    }
+
+    .profiles__logout {
+        background-color: #7D1219; /* Warna latar belakang */
+        color: #ffffff; /* Warna teks */
+        font-size: 12px; /* Ukuran teks */
+        padding: 8px 16px; /* Padding tombol */
+        border: none; /* Hapus border jika tidak diperlukan */
+        border-radius: 4px; /* Untuk sudut yang lebih lembut */
+        cursor: pointer; /* Ubah cursor saat mengarah ke tombol */
+        /* Gaya lain yang Anda inginkan */
+    }
+
+    .profiles__logout:hover {
+        background-color: #5f0f15; /* Warna latar belakang saat dihover */
+        /* Gaya lain yang Anda inginkan saat dihover */
+    }
+    /* Gaya untuk card profil */
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .tambah-profile {
+      width: 327px;
+      height: 336px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9f9f9;
+      color: #7D1219;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    /* Styling untuk popup form */
+    .popup-form {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        z-index: 9999;
+    }
+    .card-tittle{
+      color:#7D1219;
+    }
+    /* Styling untuk button */
+    .tambah-profile button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    /* Styling untuk ikon */
+    .tambah-profile i {
+        font-size: 40px;
+        align-items: center;
+    }
+
+    /* Styling untuk span */
+    .tambah-profile span {
+        color: #7D1219; /* Warna teks */
+    }
+
+
+    /* Gaya untuk setiap card profil */
+    .custom-profile-card {
+        width: 327px;
+        height: 336px;
+        margin: 20px 10px 10px 30px; /* Atur margin atas 20px, kanan 20px, bawah 10px, kiri 30px */
+        /* Style lainnya sesuai kebutuhan */
+        position: relative; 
+    }
+
+    /* Mengatur bentuk header */
+    .custom-profile-card .cust-header {
+        width: 100%;/* Lebar sesuai dengan parent (.custom-profile-card) */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #7D1219;
+        /* Properti lainnya sesuai kebutuhan */
+        position: absolute;
+        height: 30%; /* Sesuaikan tinggi */
+    }
+
+    /* Mengatur bentuk informasi */
+    .custom-profile-card .cust-info {
+        width: 100%; /* Lebar sesuai dengan parent (.custom-profile-card) */
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #ce4545;
+        /* Properti lainnya sesuai kebutuhan */
+        height: 70%; /* Sesuaikan tinggi */
+        position: absolute;
+        bottom: 0;
+    }
+  </style>
+  <script>
+  // Memunculkan popup form saat tombol diklik
+  document.getElementById("tambahButton").addEventListener("click", function() {
+      document.getElementById("popupForm").style.display = "block";
+  });
+
+  // Menyembunyikan popup form saat formulir disubmit
+  document.getElementById("formPasien").addEventListener("submit", function(event) {
+      event.preventDefault(); // Menghentikan aksi bawaan submit form
+      document.getElementById("popupForm").style.display = "none";
+      // Lakukan hal lain dengan data formulir seperti mengirim ke server atau menampilkan kembali informasi yang diisi
+  });
+  </script>
+</div>
   
 @endsection
