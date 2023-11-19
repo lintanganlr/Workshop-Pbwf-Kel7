@@ -29,7 +29,7 @@ Route::get('login/forgot-password', [LoginController::class, 'password' ])->name
 Route::get('/login/logout', [LoginController::class, 'logout']);
 
 // regis //
-Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'index'])->name('regis.index');
 Route::post('regis/register', [RegisterController::class, 'store'])->name('regis.register');
 
 // home//
