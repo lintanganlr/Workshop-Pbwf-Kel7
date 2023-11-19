@@ -46,21 +46,20 @@
             <a href="contact" class="nav-item nav-link">Contact</a>
         </div>
 
-        @guest
+        @if (Auth::guest())
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-            <a class="btn-getstart" href="/login">Sign In</a>
-            <a class="btn-getstarted" href="/register">Sign Up</a>
+            <a class="btn-getstart" href="{{ route('login') }}">Sign In</a>
+            <a class="btn-getstarted" href="{{ route('register') }}">Sign Up</a>
         @else
-        <span _ngcontent-halodoc-c164="" class="text-truncate mr-2" title="profile">
-            <!-- Teks dan tautan ke halaman profil -->
-            <a href="profile" style="display: flex; align-items: center;">
-                <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
-                <span style="font-size: 18px;">
-                    Hi, {{ auth()->check() ? auth()->user()->name : 'Guest' }}!
-                </span>
-            </a>
-        </span>              
-    
+            <span class="text-truncate mr-2" title="profile">
+                <!-- Teks dan tautan ke halaman profil -->
+                <a href="profile" style="display: flex; align-items: center;">
+                    <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
+                    <span style="font-size: 18px;">
+                       Hi, {{ auth()->user()->name }}!
+                    </span>
+                </a>
+            </span>
         @endguest
     </div>
 </nav>

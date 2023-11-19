@@ -44,17 +44,22 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         return $this->create($request->all());
+        return redirect('/home');
     }
 
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'username'=>$data['username'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'notelp' => $data['notelp'],
-            'alamat' => $data['alamat'],
-        ]);
+    $user = User::create([
+        'name' => $data['name'],
+        'username' => $data['username'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'notelp' => $data['notelp'],
+        'alamat' => $data['alamat'],
+    ]);
+
+    // Arahkan pengguna ke halaman 'home'
+    return redirect('/home')->with('success', 'Registration successful!'); // Anda juga dapat menambahkan pesan sukses jika diperlukan
     }
+
 }

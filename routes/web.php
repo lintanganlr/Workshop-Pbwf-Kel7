@@ -32,11 +32,16 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 Route::post('regis/register', [RegisterController::class, 'create'])->name('regis.register');
+Route::post('/register', function (Request $request) {return redirect('/');})->name('register.submit');
 
 // home//
 Route::get('/', function () {
     return view('home');
 });
+
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 // home 2 //
 Route::get('/home2', function () {
