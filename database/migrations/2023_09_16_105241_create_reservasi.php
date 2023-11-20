@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('tgl_reservasi');
             $table->boolean('sttus_reservasi');
+            
             $table->date('tgl_tindakan');
             $table->timestamps();
         });
