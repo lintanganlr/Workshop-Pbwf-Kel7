@@ -29,7 +29,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" value="{{Session::get('password')}}" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div class="form-check">

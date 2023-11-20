@@ -26,7 +26,6 @@
                   <tbody>
                     @foreach ($tenagamedis as $item)
                     <tr>
-                        <th scope="row"></th>
                         <td>{{$item->id}}</td>
                         <td>{{$item->id_roles}}</td>
                         <td>{{$item->nama_medis}}</td>

@@ -31,9 +31,9 @@
                                     <select name="id_roles" class="form-control" id="roles" type="number">
                                         <option value="{{ $tenagamedis->roles->id}}" selected="">{{ $tenagamedis->roles->nama_role}}</option>
                                         @if($tenagamedis->roles->id == 2)
-                                        <option value="2">Dokter</option>
-                                    @elseif($tenagamedis->roles->id == 3)
                                         <option value="3">Perawat</option>
+                                    @elseif($tenagamedis->roles->id == 3)
+                                        <option value="2">Dokter</option>
                                     @else
                                         <option value="3">Perawat</option>
                                         <option value="2">Dokter</option>
