@@ -164,14 +164,7 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 // Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 // Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
-// Route::resource('satuan', SatuanController::Class);
-// Route::get('satuan/index', [SatuanController::class, 'index'])->name('satuan.index');
-// Route::get('satuan/create', [SatuanController::class, 'create'])->name('satuan.create');
-// Route::post('satuan/createProcess', [SatuanController::class, 'createProcess'])->name('satuan.create');
-// Route::post('satuan/satuan', [SatuanController::class, 'store'])->name('satuan.store');
-// Route::get('satuan/{id}/edit', [SatuanController::class, 'edit'])->name('satuan.edit');
-// Route::put('satuan/{id}', [SatuanController::class, 'update'])->name('satuann.update');
-// Route::delete('satuan/{id}', [SatuanController::class, 'destroy'])->name('satuan.destroy');
+
 
 Auth::routes();
 
@@ -189,3 +182,38 @@ Route::get('pembayaran', function () {
 Route::get('profile', [PasienController::class, 'index'])->name('index');
 Route::get('/profile/create', [PasienController::class, 'create'])->name('profile.create');
 Route::post('/simpan', [PasienController::class, 'simpan']);
+
+// INDAH //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //
