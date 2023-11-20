@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $artikel->judul_artikel }}</h5>
                     <p class="card-text">{{ $artikel->tgl_artikel }}</p>
-                    <a href="{{ route('artikel.tampilan', $artikel->id) }}" class="btn btn-primary">Read More</a>
+                    <a href="{{ '/artikel/tampilan/'.$artikel->id }}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
