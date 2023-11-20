@@ -13,8 +13,13 @@
     </div>
 </div>
 <!-- Hero End -->
-{{-- tes --}}
-<!-- Konten artikel.index -->
+
+<!-- Konten artikel.tampilan -->
+
+<div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <!-- ... Bagian header ... -->
+</div>
+
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="row g-5">

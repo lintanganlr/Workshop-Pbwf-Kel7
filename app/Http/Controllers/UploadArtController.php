@@ -130,9 +130,10 @@ class UploadArtController extends Controller
     }
     public function tampilan($id)
     {
+        // return 12;
         // Fetching a single article using the ID
-        $artikel = Artikel::findOrFail($id);
-        return view('artikel.tampilan', compact('artikel'));
+        $artikels = Artikel::findOrFail($id);
+        return view('artikel.tampilan', compact('artikels'));
     }
 
 
