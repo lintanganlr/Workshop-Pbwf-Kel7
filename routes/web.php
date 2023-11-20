@@ -9,6 +9,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UploadArtController;
 use App\Http\Controllers\TenagaMedisController;
+use App\Http\Controllers\PasienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +61,11 @@ Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('
 
 // artikel //
 Route::get('artikel', [UploadArtController::class, 'tampilcust'])->name('artikel.index');
-Route::get('artikel.tampilan', [UploadArtController::class, 'tampilan'])->name('artikel.tampilan');
+Route::get('artikel/{id}', [UploadArtController::class, 'show'])->name('article.show'); // Define route for showing a single article
+Route::get('artikel/tampilan/{id}', [UploadArtController::class, 'tampilan'])->name('artikel.tampilan');
+
+Route::get('artikel/tampilan', [UploadArtController::class, 'tampilan'])->name('artikel.tampilan');
+
 
 // review //
 Route::get('review', [ReviewController::class, 'index'])->name('review.index');
@@ -167,3 +172,20 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 // Route::get('satuan/{id}/edit', [SatuanController::class, 'edit'])->name('satuan.edit');
 // Route::put('satuan/{id}', [SatuanController::class, 'update'])->name('satuann.update');
 // Route::delete('satuan/{id}', [SatuanController::class, 'destroy'])->name('satuan.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//PEMBAYARAN//
+Route::get('pembayaran', function () {
+    return view('pembayaran');
+});
+
+//PROFILE CUSTOMER//
+// Route::get('profile', function () {
+//     return view('profile-user');
+// });
+Route::get('profile', [PasienController::class, 'index'])->name('index');
+Route::get('/profile/create', [PasienController::class, 'create'])->name('profile.create');
+Route::post('/simpan', [PasienController::class, 'simpan']);

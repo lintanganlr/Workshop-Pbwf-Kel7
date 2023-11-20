@@ -15,9 +15,9 @@ class UploadArtController extends Controller
     public function index()
     {
         $artikels = uploadart::all();
-        // $roles = Roles::all();
         return view('admin.article.index', compact('artikels'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -128,10 +128,12 @@ class UploadArtController extends Controller
         $artikels = Artikel::select('id', 'judul_artikel', 'image')->get();
         return view('artikel.index', compact('artikels'));
     }
-    public function tampilan($judul_artikel)
+    public function tampilan($id)
     {
-        // Fetching a single article using the Artikel model
-        $artikel = Artikel::where('judul_artikel', $judul_artikel)->first();
+        // Fetching a single article using the ID
+        $artikel = Artikel::findOrFail($id);
         return view('artikel.tampilan', compact('artikel'));
     }
+
+
 }
