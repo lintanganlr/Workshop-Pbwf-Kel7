@@ -184,7 +184,7 @@ Route::get('/profile/create', [PasienController::class, 'create'])->name('profil
 Route::post('/simpan', [PasienController::class, 'simpan']);
 
 // INDAH //
-
+// TES COBA ISO GA //
 
 
 
