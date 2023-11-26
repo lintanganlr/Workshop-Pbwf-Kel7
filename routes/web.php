@@ -187,6 +187,16 @@ Route::post('/simpan', [PasienController::class, 'simpan']);
 // TES COBA ISO GA //
 
 
+Route::get('/service/main',[ServiceController::class,'main'])->name('service.main');
+Route::get('/service/create',[ServiceController::class,'create'])->name('service.create');
+Route::post('/service/store',[ServiceController::class,'store'])->name('service.store');
+Route::get('/service/edit/{id}',[ServiceController::class,'edit'])->name('service.edit');
+Route::put('/service/update/{id}',[ServiceController::class,'update'])->name('service.update');
+Route::delete('/service/delete/{id}',[ServiceController::class,'destroy'])->name('service.destroy');
+// Route::get('/service/trash',[Uploadserviceontroller::class,'trash'])->name('service.trash');
+// Route::put('/service/restore/{id}',[Uploadserviceontroller::class,'restore'])->name('service.restore');
+// Route::put('/service/restoreall',[Uploadserviceontroller::class,'restoreall'])->name('service.restoreall');
+
 
 
 
