@@ -16,5 +16,10 @@ class TenagaMedis extends Model
     {
         return $this->hasOne(Roles::class, 'id', 'id_roles');
     }
+
+    // public function services()
+    // {
+    //     return $this->hasMany(Service::class, 'id_tenagamedis');
+    // }
 }
 
