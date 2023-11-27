@@ -33,7 +33,10 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 Route::post('regis/register', [RegisterController::class, 'create'])->name('regis.register');
-Route::post('/register', function (Request $request) {return redirect('/');})->name('register.submit');
+Route::get('/check-route', function () {
+    dd(route('register.submit'));
+});
+
 
 // home//
 Route::get('/', function () {
@@ -56,7 +59,7 @@ Route::get('about', function () {
 
 // service //
 Route::get('service', [ServiceController::class, 'index'])->name('service');
-Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
+Route::get('service/dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
 Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
 
 // artikel //

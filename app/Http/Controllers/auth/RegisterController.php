@@ -23,6 +23,7 @@ class RegisterController extends Controller
 
     public function index()
     {
+        // return 1;
         return view('auth.register'); // Mengasumsikan 'auth.login' adalah tampilan login Anda
     }
 
@@ -39,13 +40,14 @@ class RegisterController extends Controller
 }
 
 
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
+public function register(Request $request)
+{
+    $this->validator($request->all())->validate();
 
-        return $this->create($request->all());
-        return redirect('/home');
-    }
+    $this->create($request->all());
+    // return 'berhasil';
+    return redirect('/')->with('success', 'Registration successful!');
+}
 
     protected function create(array $data)
     {
