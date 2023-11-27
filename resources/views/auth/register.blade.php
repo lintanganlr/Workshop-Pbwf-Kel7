@@ -11,7 +11,8 @@
                             <p class="text-center" style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 25px; justify-content: center;color:#7D1219">GlucoSync.</p>
                             <p class="text-center"style="margin-top:-10px">Diabetes Friendly</p>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('register.submit') }}">
+                                <form method="POST" action="{{ route('register') }}">
+                                    
 
                                     @csrf
             
