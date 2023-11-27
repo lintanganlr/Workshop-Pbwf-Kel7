@@ -48,7 +48,7 @@
                             <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
                             <div class="text-start">
                                 <h5 class="mb-0">Our Office</h5>
-                                <span>Jl. Dharmahusada Permai, Mulyorejo, Kec. Mulyorejo, Kota SBY, Jawa Timur 60115, Indonesia</span>
+                                <span>Jl. Dharmahusada Permai, Mulyorejo, Kec. Mulyorejo, Surabaya, Jawa Timur 60115</span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-2">
@@ -62,37 +62,14 @@
                             <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                             <div class="text-start">
                                 <h5 class="mb-0">Call Us</h5>
-                                <span>(021) 789816</span>
+                                <span>0815-2595-4792</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="5" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
                 <div class="col-xl-4 col-lg-12 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/dir//Klinik+Vaskular+RS+Universitas+Airlangga,+PQJM%2B3XG,+Klinik+Vaskular+RS+Universitas+Airlangga+Kampus+C,+Mulyorejo,+Kec.+Mulyorejo,+Surabaya,+Jawa+Timur+60115,+Indonesia/@-7.262556,112.771272,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x2dd7fa21897c9adf:0x71d39a57215f02d!2m2!1d112.784948!2d-7.269807!3e0?hl=id&entry=ttu
-                        frameborder="0 style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.7445834558857!2d112.7848442!3d-7.269879599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbdf60c8469f%3A0x3036be09c9fe39b6!2sRumah%20Sakit%20Universitas%20Airlangga%20(RS%20UNAIR)!5e0!3m2!1sid!2sid!4v1701068970779!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
