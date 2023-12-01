@@ -15,14 +15,15 @@
                                 <form method="POST" action="{{ route('login') }}">
 
                                     @csrf
-                                    
+
                                     <div class="row mb-3">
+
                                         <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('username') }}</label>
-            
                                         <div class="col-md-6">
                                             <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
             
                                             @error('username')
+
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -31,11 +32,11 @@
                                     </div>
 
                                     <div class="row mb-3">
+
                                         <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('password') }}</label>
-                                
                                         <div class="col-md-6">
                                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                
+
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -71,7 +72,7 @@
                                     <div class="d-flex align-items-center justify-content-center" style="margin-top: 10px;">
                                         <p class="fs-5 mb-0 ">New to GlucoSync?</p>
                                         <a class="text-primary fw-bold ms-2"  href="register">Create an account</a>
-                                    </div> 
+                                    </div>
                                 </form>
                             </div>
                         </div>
