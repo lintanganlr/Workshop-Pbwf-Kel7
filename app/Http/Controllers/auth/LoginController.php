@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -22,7 +23,8 @@ class LoginController extends Controller
     // New method: index
     public function index()
     {
-        return view('auth.login'); // Assuming 'auth.login' is your login view
+        // return view('auth.login'); // Assuming 'auth.login' is your login view
+    BERHASIL;
     }
 
     // Fix the logout function
@@ -33,11 +35,13 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-    $credentials = $request->only('email', 'password');
+        // dd($request->all());
+    $credentials = $request->only('username', 'password');
+        // dd($credentials);
 
     if (Auth::attempt($credentials)) {
         // Authentication passed
-        return redirect()->intended('/home');
+        return redirect()->intended('/');
     }
 
     // Log failed login attempts
@@ -46,5 +50,6 @@ class LoginController extends Controller
     // Authentication failed
     return back()->withErrors(['email' => 'These credentials do not match our records.']);
     }
-
 }
+
+

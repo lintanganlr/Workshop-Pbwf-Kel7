@@ -13,7 +13,14 @@ class ServiceController extends Controller
     public function index(){
         return view('service');
     }
+    //CUSTOMER??
+    public function formdokter(){
+        return view('appoinment.dokter');
+    }
 
+    public function formperawat(){
+        return view('appoinment.perawat');
+    }
 
     // ADMIN
     public function main()
