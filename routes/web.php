@@ -1,18 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\auth\RegisterController;
-use App\Http\Controllers\auth\LoginController;
-use App\Http\Controllers\auth\ForgotPasswordController;
+use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UploadArtController;
 use App\Http\Controllers\TenagaMedisController;
 use App\Http\Controllers\PasienController;
 
 /*
-|--------------------------------------------------------------------------
+|------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -24,18 +22,27 @@ use App\Http\Controllers\PasienController;
 
 
 // login//
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'login'])->name('login.submit');
-Route::get('login/forgot-password', [LoginController::class, 'password'])->name('login.forgot-password');
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('login', [AuthManager::class, 'index'])->name('login');
+// Route::post('login', [AuthManager::class, 'login'])->name('login.submit');
+// Route::get('login/forgot-password', [AuthManager::class, 'password'])->name('login.forgot-password');
+// Route::get('logout', [AuthManager::class, 'logout'])->name('logout');
+Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
+Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');
+Route::get('/login', [AuthManager::class, 'halamanlogin'])->name('login');
+Route::get('/register', [AuthManager::class, 'halamanregister'])->name('register');
+
+// // Usage
+// $authManager = new AuthManagerController();
+
 
 // regis //
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-Route::post('regis/register', [RegisterController::class, 'create'])->name('regis.register');
-Route::get('/check-route', function () {
-    dd(route('register.submit'));
-});
+// Route::get('/register', [RegisterController::class, 'index'])->name('register');
+// Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+// Route::post('regis/register', [RegisterController::class, 'create'])->name('regis.register');
+// Route::get('/check-route', function () {
+//     dd(route('register.submit'));
+// });
 
 
 // home//
@@ -169,7 +176,7 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
