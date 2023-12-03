@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('username')->nullable();
             $table->string('password');
             $table->string('notelp', 15);
-            $table->string('email', 30);
+            $table->string('email', 30)->unique;
             $table->string('alamat', 100);
-            $table->rememberToken();
+            // $table->rememberToken();
             $table->timestamps();
         });
     }
