@@ -6,10 +6,10 @@
       <div class="profiles__select">
           <div class="profiles--title">Profil Pasien:</div>
       </div>
-      <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit" class="profiles__logout">LogOut</button>
-      </form>
+ <form method="GET" action="{{ route('logout') }}">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
     </div>
     <div class="row">
       <div class="custom-profile-card">
@@ -20,7 +20,7 @@
               </div>
               <span>Tambah identitas pasien</span>
           </button>
-        </div>          
+        </div>
       </div>
       <div class="custom-profile-card">
           <div class="cust-header">
@@ -74,7 +74,7 @@
         align-items: center;
         padding: 15px;
         /* background-color: #f9f9f9; */
-        
+
         /* Gaya lain yang Anda inginkan */
     }
 
@@ -157,7 +157,7 @@
         height: 336px;
         margin: 20px 10px 10px 30px; /* Atur margin atas 20px, kanan 20px, bawah 10px, kiri 30px */
         /* Style lainnya sesuai kebutuhan */
-        position: relative; 
+        position: relative;
     }
 
     /* Mengatur bentuk header */
@@ -197,5 +197,5 @@
   });
   </script>
 </div>
-  
+
 @endsection
