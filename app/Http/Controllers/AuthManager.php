@@ -33,10 +33,18 @@ class AuthManager extends Controller
 
         $minta = $request->only('email', 'password');
         if(Auth::attempt($minta)){
-            return redirect()->intended(route('home'))->with("success", "Access Granted!");
+            $user = Auth::user();
+
+            // Mengecek jika alamat email mengandung '@admin.com'
+            if (strpos($user->email, '@admin.com') !== false) {
+                return redirect()->route('admin.dashboard')->with("success", "Logged in as admin!");
+            } else {
+                return redirect()->route('home')->with("success", "Logged in as user!");
+            }
         }
         return redirect(route('login'))->with("error", "Login Invalid!");
     }
+
 
     function registerPost(Request $request){
         $request->validate([
@@ -76,4 +84,3 @@ class AuthManager extends Controller
 
 
 }
-

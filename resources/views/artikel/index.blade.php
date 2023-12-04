@@ -22,8 +22,8 @@
     <div class="row g-4">
         @foreach($artikels as $artikel)
         <div class="col-lg-4">
-            <div class="card">
-                <img src="{{ asset('artikelimg/' . $artikel->image) }}" class="card-img-top" alt="{{ $artikel->judul_artikel }}">
+            <div class="custom-card">
+                <img src="{{ asset('artikelimg/' . $artikel->image) }}" class="card-img-top custom-img" alt="{{ $artikel->judul_artikel }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $artikel->judul_artikel }}</h5>
                     <p class="card-text">{{ $artikel->tgl_artikel }}</p>

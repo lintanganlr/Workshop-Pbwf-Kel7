@@ -464,3 +464,26 @@ h6,
 .btn-getstart:hover {
     border: #7D1219;
 }
+
+/* artikel */
+.custom-img {
+    width: 324px; /* Lebar pasti yang diinginkan */
+    height: 194.4px; /* Tinggi pasti yang diinginkan */
+    object-fit: cover; /* Mengatur gambar untuk menyesuaikan dengan dimensi yang ditetapkan */
+}
+
+
+.custom-card {
+    display: inline-block; /* Membuat div mengikuti lebar kontennya */
+    background-color: white; /* Memberikan latar belakang putih */
+    max-width: px; /* Maksimum lebar yang diinginkan */
+    width: fit-content; /* Mengikuti lebar kontennya */
+    border-radius: 8px; /* Memberikan sudut bulat pada card jika diinginkan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan jika diinginkan */
+    margin-bottom: 20px; /* Jarak antar card */
+    /* Tambahan gaya lainnya sesuai kebutuhan */
+}
+
+.custom-card .card-body {
+    padding: 10px; /* Atur padding untuk konten dalam card */
+}

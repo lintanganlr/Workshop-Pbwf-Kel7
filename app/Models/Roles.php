@@ -19,13 +19,5 @@ class Roles extends Model
     //     return $this->hasMany(uploadart::class);
     // }
 
-    public function artikels(): HasMany
-    {
-        return $this->hasMany(uploadart::class);
-    }
 
-    public function tenagamedis(): HasMany
-    {
-        return $this->hasMany(TenagaMedis::class);
-    }
 }
