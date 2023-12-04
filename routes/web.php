@@ -66,7 +66,7 @@ Route::get('about', function () {
 
 // service //
 Route::get('service', [ServiceController::class, 'index'])->name('service');
-Route::get('service/dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
+Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
 Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
 
 // artikel //

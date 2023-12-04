@@ -44,7 +44,7 @@
         </div>
         @enderror
         @if($service->image)
-            <img src="{{ asset('serviceimg/' . $service->image) }}" alt="Foto service" width="50">
+            <img src="{{ asset('serviceimg/' . $service->image) }}" alt="Foto service" width="199.99px" height="120.36px">
         @else
             <p>Tidak ada file yang dipilih</p>
         @endif
