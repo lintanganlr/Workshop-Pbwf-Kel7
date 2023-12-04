@@ -1,4 +1,4 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -169,34 +169,34 @@ main {
 }
 
 .ButtonSubmitLogReg{
-    width: 86px; 
-    height: 33px; 
+    width: 86px;
+    height: 33px;
     position: relative;
     justify-content: center;
     left: 35%;
     transform: translateX(-50%);
-    top: -160px; 
+    top: -160px;
 }
 
 .Submit{
-    left: 17px; 
-    top: 7px; 
-    position: absolute; 
-    text-align: center; 
-    color: #540006; 
-    font-size: 14px; 
-    font-family: Poppins; 
-    font-weight: 600; 
+    left: 17px;
+    top: 7px;
+    position: absolute;
+    text-align: center;
+    color: #540006;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
     word-wrap: break-word
 }
 
 .Rectangle5177{
-    width: 86px; 
-    height: 33px; 
-    left: 0px; 
-    top: 0px; 
-    position: absolute; 
-    border-radius: 30px; 
+    width: 86px;
+    height: 33px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: 30px;
     border: 1px #540006 solid;
 }
 
@@ -207,21 +207,21 @@ main {
 }
 
 .Create {
-    width: 51px; 
-    height: 33px; 
-    padding-bottom: 12px; 
-    padding-right: 3px; 
-    left: 180px; 
-    top: 0px; 
-    position: absolute; 
-    justify-content: center; 
-    align-items: center; 
+    width: 51px;
+    height: 33px;
+    padding-bottom: 12px;
+    padding-right: 3px;
+    left: 180px;
+    top: 0px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
     display: inline-flex;
-    color: #0400BD; 
-    font-size: 14px; 
-    font-family: Poppins; 
-    font-weight: 300; 
-    text-decoration: underline; 
+    color: #0400BD;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 300;
+    text-decoration: underline;
     word-wrap: break-word
 }
 
@@ -246,5 +246,47 @@ main {
     transform-origin: 0 0;
     justify-content: center;
     align-items: center;
-    display: flex;
-}
+    display: flex
+    ;
+} */
+
+/* CSS untuk form */
+.login-input {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .login-input label,
+  .login-input input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .login-input input[type="text"],
+  .login-input input[type="email"],
+  .login-input input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  .login-input button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #7D1219;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* CSS untuk logo */
+  .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
