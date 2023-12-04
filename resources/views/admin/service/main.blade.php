@@ -30,7 +30,7 @@
                         <td>{{$item->nama_service}}</td>
                         <td>
                             @if($item->image)
-                            <img src="{{ asset('serviceimg/'. $item->image)}}" alt="{{$item->image}}"  width="50" >
+                            <img src="{{ asset('serviceimg/'. $item->image)}}" alt="{{$item->image}}"  width="199.99px" height="120.36px" >
                             @else
                             Tidak ada foto
                             @endif

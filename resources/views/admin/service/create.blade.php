@@ -40,7 +40,7 @@
 <div class="row mb-3">
     <label for="image" class="col-sm-2 col-form-label">Upload Foto Pelayanan</label>
     <div class="col-sm-10">
-        <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
+        <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image"width="199.99px" height="120.36px">
         @error('image')
         <div class="invalid-feedback">
             {{ $message }}
