@@ -24,7 +24,7 @@
   .login-input input[type="text"],
   .login-input input[type="email"],
   .login-input input[type="password"] {
-    width: calc(100% - 22px);
+    width: calc(100% - 3px);
     padding: 8px;
     border-radius: 3px;
     border: 1px solid #ccc;
@@ -57,3 +57,4 @@
     color: #7D1219;
   }
 
+/* halo */
