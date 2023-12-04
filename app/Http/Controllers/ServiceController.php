@@ -11,8 +11,11 @@ use Illuminate\Http\Request;
 class ServiceController extends Controller
 {
     public function index(){
-        return view('service');
+        $services = Service::all(); // Fetch all services from the database
+    
+        return view('service', compact('services')); // Pass $services variable to the view
     }
+    
     //CUSTOMER??
     public function formdokter(){
         return view('appoinment.dokter');
