@@ -24,50 +24,22 @@
                         <h1 class="display-5 mb-0">We Offer High-Quality Health Services for Diabetes</h1>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.9s">
-                            <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/service-dokter.jpg" alt="Deskripsi Gambar">
+                        @foreach($services as $service)
+                            <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.9s">
+                                <div class="rounded-top overflow-hidden">
+                                    <img class="img-fluid" src="{{ asset('serviceimg/' . $service->image) }}" alt="Deskripsi Gambar">
+                                </div>
+                                <div class="position-relative bg-light rounded-bottom text-center p-4">
+                                    @guest
+                                        <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                    @else
+                                        <a href="{{ route('service.dokter') }}">
+                                            <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                        </a>
+                                    @endguest
+                                </div>
                             </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                @guest
-                                    <h5 class="m-0">Konsultasi dengan Dokter</h5>
-                                @else
-                                    <a href="service.dokter">
-                                        <h5 class="m-0">Konsultasi dengan Dokter</h5>
-                                    </a>
-                                @endguest
-                            </div>
-                        </div>
-                    
-                        <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.9s">
-                            <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/pembersihan-luka.jpg" alt="">
-                            </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                @guest
-                                    <h5 class="m-0">Pembersihan Luka</h5>
-                                @else
-                                    <a href="service.perawat">
-                                        <h5 class="m-0">Pembersihan Luka</h5>
-                                    </a>
-                                @endguest
-                            </div>
-                        </div>
-                    
-                        <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.9s">
-                            <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/janji-rs.jpg" alt="">
-                            </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                @guest
-                                    <h5 class="m-0">Buat Janji Rs</h5>
-                                @else
-                                    <a href="service.dokter">
-                                        <h5 class="m-0">Buat Janji Rs</h5>
-                                    </a>
-                                @endguest
-                            </div>
-                        </div>
+                        @endforeach
                     </div>                                     
                 </div>
             </div>
