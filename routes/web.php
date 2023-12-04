@@ -127,6 +127,11 @@ Route::get('/admin', function () {
     return view('admin.home');
 });
 
+Route::get('/admin', function () {
+    return view('admin.home');
+})->name('admin.dashboard');
+
+
 Route::get('list', function () {
     return view('admin.list');
 });
@@ -155,6 +160,10 @@ Route::delete('/article/delete/{id}',[UploadArtController::class,'destroy'])->na
 // Route::put('/article/restore/{id}',[UploadArticleontroller::class,'restore'])->name('article.restore');
 // Route::put('/article/restoreall',[UploadArticleontroller::class,'restoreall'])->name('article.restoreall');
 
+
+Route::get('tenagamedis', function () {
+    return view('admin.tenagamedis.index');
+});
 
 // TENAGA MEDIS
 Route::get('/tenagamedis',[TenagaMedisController::class,'index'])->name('tenagamedis.index');
@@ -196,6 +205,9 @@ Route::post('/simpan', [PasienController::class, 'simpan']);
 // INDAH //
 // TES COBA ISO GA //
 
+Route::get('pelayanan', function () {
+    return view('admin.service.main');
+});
 
 Route::get('/service/main',[ServiceController::class,'main'])->name('service.main');
 Route::get('/service/create',[ServiceController::class,'create'])->name('service.create');
