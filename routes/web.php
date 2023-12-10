@@ -68,6 +68,8 @@ Route::get('about', function () {
 Route::get('service', [ServiceController::class, 'index'])->name('service');
 Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
 Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
+Route::get('service/dokter', [ServiceController::class, 'fetchDoctors'])->name('service.dokter');
+
 
 // artikel //
 Route::get('artikel', [UploadArtController::class, 'tampilcust'])->name('artikel.index');
@@ -201,6 +203,8 @@ Route::get('pembayaran', function () {
 Route::get('profile', [PasienController::class, 'index'])->name('index');
 Route::get('/profile/create', [PasienController::class, 'create'])->name('profile.create');
 Route::post('/simpan', [PasienController::class, 'simpan']);
+Route::get('pilihan/pasien', [PasienController::class, 'pilihan'])->name('pilihan_pasien');
+
 
 // INDAH //
 // TES COBA ISO GA //

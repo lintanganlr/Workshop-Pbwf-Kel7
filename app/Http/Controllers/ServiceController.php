@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 namespace App\Http\Controllers;
-// use App\Models\TenagaMedis;
+use App\Models\TenagaMedis;
 use App\Models\Service;
+use App\Models\Roles;
 
 use Illuminate\Http\Request;
 
@@ -134,6 +135,24 @@ public function create()
 
         return redirect()->back();
     }
+    // ServiceController.php (atau TenagaMedisController.php)
 
+    // public function fetchDoctors()
+    // {
+    //     $tenagaMedis = TenagaMedis::where('id_roles', 2)->get();
+    //     return view('appointment.dokter', compact('tenagaMedis'));
+    // }
+    // ServiceController.php
+
+public function fetchDoctors()
+{
+    $tenagaMedis = TenagaMedis::where('id_roles', 2)->get();
+    return view('appointment.dokter', ['tenagaMedis' => $tenagaMedis]);
 }
 
+
+    
+
+
+
+}
