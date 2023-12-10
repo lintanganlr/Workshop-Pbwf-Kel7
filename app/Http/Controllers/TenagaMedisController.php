@@ -13,11 +13,12 @@ class TenagaMedisController extends Controller
      */
     public function index()
     {
-        $tenagamedis = TenagaMedis::all();
-        // $roles = Roles::all();
-        return view('admin.tenagamedis.index', compact('tenagamedis'));
+        $tenagaMedis = TenagaMedis::all();
+        return view('admin.tenagamedis.index', compact('tenagaMedis'));
     }
 
+
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -117,4 +118,11 @@ class TenagaMedisController extends Controller
 
         return redirect()->back();
     }
+    public function tampilan(){
+        return view('doctor', compact('tenagaMedis'));
+    }
+    
+
+
+    
 }

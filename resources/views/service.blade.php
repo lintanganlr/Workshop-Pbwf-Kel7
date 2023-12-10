@@ -33,9 +33,9 @@
                                     @guest
                                         <h5 class="m-0">{{ $service->nama_service }}</h5>
                                     @else
-                                        <a href="{{ route('service.dokter') }}">
-                                            <h5 class="m-0">{{ $service->nama_service }}</h5>
-                                        </a>
+                                    <a href="{{ route('appoinment.dokter') }}">
+                                        <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                    </a>                                    
                                     @endguest
                                 </div>
                             </div>

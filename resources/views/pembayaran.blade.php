@@ -1,5 +1,55 @@
 @extends('layout.main')
 @section('content')
+    <div class="navbar">
+        <div class="navbar-item navbar-left" style="line-height: 40px;">
+            <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
+        </div>
+        <div class="navbar-item navbar-right">
+            @if(session('nama_pasien'))
+                <p style="text-align: center; line-height: 40px;">
+                    <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
+                    <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
+                    <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
+                </p>
+            @endif
+        </div>
+    </div>
+@endsection
+
+
+
+
+<style>
+/* CSS untuk navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.navbar-item {
+    border-right: 4px solid #333; /* Lebar garis samping 4px */
+    padding: 5px 10px;
+}
+
+.navbar-left {
+    text-align: left;
+}
+
+.navbar-right {
+    text-align: right;
+}
+
+</style>
+
+
+
+
+
+{{-- @extends('layout.main')
+@section('content')
 <div class="order-summary-container">
     <div class="order-summary-header">
       <div class="doctor-info">
@@ -52,4 +102,4 @@
     </div>
   </div>
   
-@endsection
+@endsection --}}

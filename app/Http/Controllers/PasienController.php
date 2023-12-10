@@ -52,4 +52,12 @@ class PasienController extends Controller
 
         return redirect()->route('index')->with('success', 'Data pasien berhasil disimpan');
     }
+    public function pilihan()
+    {
+        // Lakukan operasi yang diperlukan sebelum menampilkan view pasien.blade.php
+        // Contoh:
+        $data_pasien = []; // Ganti ini dengan data pasien yang akan Anda gunakan di view
+
+        return view('pasien', compact('data_pasien')); // Menampilkan view pasien.blade.php dengan mengirimkan data_pasien
+    }
 }
