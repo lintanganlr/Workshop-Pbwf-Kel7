@@ -14,6 +14,43 @@
             @endif
         </div>
     </div>
+        <div class="container">
+        <table class="box doctor-box">
+            <tr>
+                <td>
+                    <img src="gambar_dokter.jpg" alt="Gambar Dokter">
+                </td>
+                <td>
+                    <p>Nama Dokter</p>
+                    <p>Spesialis</p>
+                </td>
+            </tr>
+        </table>
+
+        <table class="box price-box">
+            <tr>
+                <td>
+                    <p>Biaya sesi untuk 1 jam</p>
+                    <p>Rp 35.000</p>
+                </td>
+                <td></td>
+                <td>
+                    <p>Biaya Layanan</p>
+                    <p>Rp 1.000</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p>Pembayaranmu</p>
+                    <p>Rp 36.000</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="confirm-box">
+            <a href="#" class="btn-confirm">Konfirmasi</a>
+        </div>
+    </div>
 @endsection
 
 
@@ -41,6 +78,60 @@
 .navbar-right {
     text-align: right;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 693px;
+    height: 255px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 30px;
+    overflow: hidden; /* Mengatasi gambar yang keluar dari kotak */
+    margin-bottom: 5px; /* Jarak 5px antara setiap box */
+}
+
+
+.doctor-box {
+    display: flex;
+    align-items: center;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+}
+
+.doctor-info img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.doctor-details p {
+    margin: 5px 0;
+}
+
+.btn-confirm {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3366ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-confirm:hover {
+    background-color: #254eda;
+}
+
+
 
 </style>
 
