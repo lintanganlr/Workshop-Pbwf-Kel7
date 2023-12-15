@@ -18,7 +18,7 @@ class TenagaMedisController extends Controller
     }
 
 
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -121,8 +121,4 @@ class TenagaMedisController extends Controller
     public function tampilan(){
         return view('doctor', compact('tenagaMedis'));
     }
-    
-
-
-    
 }
