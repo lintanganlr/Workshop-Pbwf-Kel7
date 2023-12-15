@@ -86,13 +86,13 @@ Route::get('review.create', [ReviewController::class, 'create'])->name('review.c
 
 // Tenaga Medis //
 // Dokter //
-Route::get('doctors', function () {
-    return view('doctors');
+Route::get('doctor', function () {
+    return view('doctor');
 });
 
 // perawat //
-Route::get('nurses', function () {
-    return view('nurses');
+Route::get('nurse', function () {
+    return view('nurse');
 });
 
 // INDAH//
@@ -216,7 +216,7 @@ Route::get('pilihan/pasien', [PasienController::class, 'pilihan'])->name('piliha
 // INDAH //
 // TES COBA ISO GA //
 
-Route::get('service', function () {
+Route::get('/service/main', function () {
     return view('admin.service.main');
 });
 
