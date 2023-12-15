@@ -13,10 +13,10 @@ class ServiceController extends Controller
 {
     public function index(){
         $services = Service::all(); // Fetch all services from the database
-    
-        return view('service', compact('services')); // Pass $services variable to the view
+
+        return view('service', compact('service ')); // Pass $services variable to the view
     }
-    
+
     //CUSTOMER??
     public function formdokter(){
         return view('appoinment.dokter');
@@ -88,7 +88,7 @@ public function create()
     public function edit($id)
     {
         $services = Service::find($id);
-        return view('admin.service.edit', ['service' => $services]);
+        return view('admin.service.edit', ['services' => $services]);
     }
 
     /**
@@ -151,7 +151,7 @@ public function fetchDoctors()
 }
 
 
-    
+
 
 
 
