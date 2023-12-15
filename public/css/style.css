@@ -312,6 +312,18 @@ h6,
     margin-top: 7.5rem;
 }
 
+.medis-text {
+    position: relative;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    width: 200px; /* Sesuaikan dengan lebar gambar */
+    margin-top: 7.5rem;
+    max-height: 200px; /* Set tinggi minimum yang diinginkan */
+}
+
+
 .rounded-bottom {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
