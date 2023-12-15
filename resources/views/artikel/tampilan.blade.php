@@ -22,18 +22,17 @@
 
 <div class="container">
     <div class="row g-4">
-        @foreach($artikel as $artikel)
-        <div class="col-lg-4">
+        <div class="col-lg-12">
             <div class="custom-card">
                 <img src="{{ asset('artikelimg/' . $artikel->image) }}" class="card-img-top custom-img" alt="{{ $artikel->judul_artikel }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $artikel->judul_artikel }}</h5>
-                    <p class="card-text">{{ $artikel->tgl_artikel }}</p>
-                    <a href="{{ '/artikel/tampilan/'.$artikel->id }}" class="btn btn-primary">Read More</a>
+                    <p class="card-text">Tanggal: {{ $artikel->tgl_artikel }}</p>
+                    <p class="card-text">{{ $artikel->deskripsi }}</p>
+                    <!-- Other content related to the article -->
                 </div>
             </div>
         </div>
-        @endforeach
     </div>
 </div>
 @endsection

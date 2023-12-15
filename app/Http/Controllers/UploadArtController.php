@@ -133,6 +133,7 @@ class UploadArtController extends Controller
         $artikel = Artikel::findOrFail($id);
         return view('artikel.tampilan', compact('artikel'));
     }
+    
 
 
 }
