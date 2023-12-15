@@ -29,7 +29,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{URL('css/style.css')}}" rel="stylesheet">
+    <link href="{{URL('/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
         <!-- Spinner Start -->
