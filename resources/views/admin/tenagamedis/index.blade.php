@@ -24,7 +24,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($tenagamedis as $item)
+                    @foreach ($tenagaMedis as $item)
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->id_roles}}</td>

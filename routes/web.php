@@ -83,16 +83,23 @@ Route::get('artikel/tampilan', [UploadArtController::class, 'tampilan'])->name('
 Route::get('review', [ReviewController::class, 'index'])->name('review.index');
 Route::get('review.create', [ReviewController::class, 'create'])->name('review.create');
 
+
 // Tenaga Medis //
 // Dokter //
-Route::get('dokter', function () {
-    return view('doctor');
+Route::get('doctors', function () {
+    return view('doctors');
 });
 
 // perawat //
-Route::get('perawat', function () {
-    return view('nurse');
+Route::get('nurses', function () {
+    return view('nurses');
 });
+
+// INDAH//
+Route::get('doctor', [TenagaMedisController::class, 'showDokter'])->name('doctor');
+Route::get('nurse', [TenagaMedisController::class, 'showPerawat'])->name('nurse');
+
+
 
 // contact //
 Route::get('contact', function () {
@@ -209,7 +216,7 @@ Route::get('pilihan/pasien', [PasienController::class, 'pilihan'])->name('piliha
 // INDAH //
 // TES COBA ISO GA //
 
-Route::get('pelayanan', function () {
+Route::get('service', function () {
     return view('admin.service.main');
 });
 
