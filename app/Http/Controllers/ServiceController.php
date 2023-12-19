@@ -15,7 +15,7 @@ class ServiceController extends Controller
         $services = Service::all(); // Fetch all services from the database
 
 
-        return view('service', compact('service')); // Pass $services variable to the view
+        return view('service', compact('services')); // Pass $services variable to the view
 
     }
 
