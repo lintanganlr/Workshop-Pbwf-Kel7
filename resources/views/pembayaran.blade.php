@@ -14,6 +14,50 @@
             @endif
         </div>
     </div>
+    <div class="container">
+      <table class="box doctor-box">
+          <tr>
+              <td>
+                  <img src="gambar_dokter.jpg" alt="Gambar Dokter">
+              </td>
+              <td>
+                  <p>Nama Dokter</p>
+                  <p>Spesialis</p>
+              </td>
+          </tr>
+      </table>
+      <!-- Bagian Informasi Pembayaran -->
+      <table class="box price-box">
+          <tr>
+              <td>
+                  <div class="flex flex-col order-summary__payment-summary">
+                      <div class="flex flex-row justify-between order-summary__fee-container">
+                          <span class="order-summary__fee-label">Biaya sesi untuk <strong>1 jam</strong></span>
+                          <!-- Biaya Sesi -->
+                          <span class="order-summary__fee">Rp 40.000</span>
+                      </div>
+                      <!-- Biaya Layanan -->
+                      <div class="flex flex-row justify-between order-summary__fee-container">
+                          <span class="order-summary__fee-label">Biaya Layanan</span>
+                          <span class="order-summary__fee">Rp 1.000</span>
+                      </div>
+                      <!-- Total Pembayaran -->
+                      <div class="flex flex-row justify-between order-summary__to-pay-container">
+                          <span class="order-summary__to-pay-label">Pembayaranmu</span>
+                          <span class="order-summary__to-pay">Rp 41.000</span>
+                      </div>
+                  </div>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+      <div class="confirm-box">
+          <a href="#" class="btn-confirm">Konfirmasi</a>
+      </div>
+</div>
 @endsection
 
 
@@ -41,8 +85,116 @@
 .navbar-right {
     text-align: right;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 693px;
+    height: 255px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 30px;
+    overflow: hidden; /* Mengatasi gambar yang keluar dari kotak */
+    margin-bottom: 5px; /* Jarak 5px antara setiap box */
+}
+
+
+.doctor-box {
+    display: flex;
+    align-items: center;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+}
+
+.doctor-info img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.doctor-details p {
+    margin: 5px 0;
+}
+
+.btn-confirm {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3366ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-confirm:hover {
+    background-color: #254eda;
+}
+
+
 
 </style>
+<style>
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .box {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+  }
+  .order-summary__payment-summary {
+      width: 100%;
+  }
+  .order-summary__fee-container {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .order-summary__fee-label {
+      width: 50%;
+      text-align: left;
+  }
+  .order-summary__fee {
+      width: 50%;
+      text-align: right;
+  }
+  .order-summary__to-pay-container {
+      width: 100%;
+      margin-top: 20px;
+  }
+  .order-summary__to-pay-label {
+      width: 50%;
+      text-align: left;
+  }
+  .order-summary__to-pay {
+      width: 50%;
+      text-align: right;
+      font-weight: bold;
+  }
+  .confirm-box {
+      display: flex;
+      justify-content: center;
+  }
+  .btn-confirm {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+</style>
+
 
 
 

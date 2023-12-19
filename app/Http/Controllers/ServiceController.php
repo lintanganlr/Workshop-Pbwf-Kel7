@@ -14,7 +14,9 @@ class ServiceController extends Controller
     public function index(){
         $services = Service::all(); // Fetch all services from the database
 
+
         return view('service', compact('service')); // Pass $services variable to the view
+
     }
 
     //CUSTOMER??
@@ -149,6 +151,7 @@ public function fetchDoctors()
     $tenagaMedis = TenagaMedis::where('id_roles', 2)->get();
     return view('appointment.dokter', ['tenagaMedis' => $tenagaMedis]);
 }
+
 
 
 

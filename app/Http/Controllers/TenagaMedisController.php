@@ -31,6 +31,7 @@ class TenagaMedisController extends Controller
      * Store a newly created resource in storage.
      */
 
+
      public function store(Request $request)
      {
          // Validasi input form disini sesuai dengan kebutuhan Anda
@@ -143,6 +144,7 @@ public function showPerawat() {
     {
         $tenagamedis = TenagaMedis::find($id);
         $tenagamedis->delete();
+
 
         return redirect()->back();
     }
