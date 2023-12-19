@@ -15,8 +15,8 @@
             <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">ID_Role</th>
                       <th scope="col">ID_Medis</th>
+                      <th scope="col">ID_Role</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Spesialis</th>
                       <th scope="col">Gambar</th>
