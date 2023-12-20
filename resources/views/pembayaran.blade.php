@@ -18,10 +18,10 @@
       <table class="box doctor-box">
           <tr>
               <td>
-                  <img src="gambar_dokter.jpg" alt="Gambar Dokter">
+                  <img src="gambar.jpg" alt="Gambar">
               </td>
               <td>
-                  <p>Nama Dokter</p>
+                  <p>Nama</p>
                   <p>Spesialis</p>
               </td>
           </tr>

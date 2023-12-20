@@ -66,8 +66,8 @@ Route::get('about', function () {
 
 
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
-Route::get('service.dokter', [ServiceController::class, 'formdokter'])->name('appoinment.dokter');
-Route::get('service.perawat', [ServiceController::class, 'formperawat'])->name('appoinment.perawat');
+Route::get('service.dokter', [ServiceController::class, 'fetchDoctors'])->name('appoinment.dokter');
+Route::get('service.perawat', [ServiceController::class, 'fetchPerawat'])->name('appoinment.perawat');
 Route::get('service/dokter', [ServiceController::class, 'fetchDoctors'])->name('service.dokter');
 
 
@@ -199,9 +199,8 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //PEMBAYARAN//
-Route::get('pembayaran', function () {
-    return view('pembayaran');
-});
+Route::get('pembayaran.dokter', [ServiceController::class, 'pembayaranDoctors'])->name('pembayaran.dokter');
+Route::get('pembayaran.perawat', [ServiceController::class, 'pembayaranPerawat'])->name('pembayaran.perawat');
 
 //PROFILE CUSTOMER//
 // Route::get('profile', function () {

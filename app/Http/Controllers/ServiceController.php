@@ -146,11 +146,34 @@ public function create()
     // }
     // ServiceController.php
 
-public function fetchDoctors()
-{
-    $tenagaMedis = TenagaMedis::where('id_roles', 2)->get();
-    return view('appointment.dokter', ['tenagaMedis' => $tenagaMedis]);
-}
+    public function fetchDoctors()
+    {
+        // Fetch doctors with the specified role (assuming id_roles = 2 corresponds to doctors)
+        $doctors = TenagaMedis::where('id_roles', 2)->get();
+    
+        return view('appoinment.dokter', compact('doctors'));
+    }
+    public function fetchPerawat()
+    {
+        $nurses = TenagaMedis::where('id_roles', 3)->get();
+    
+        return view('appoinment.perawat', compact('nurses'));
+    }
+    public function pembayaranDoctors()
+    {
+        // pembayaran doctors with the specified role (assuming id_roles = 2 corresponds to doctors)
+        $doctors = TenagaMedis::where('id_roles', 2)->get();
+    
+        return view('pembayaran.dokter', compact('doctors'));
+    }
+    public function pembayaranPerawat()
+    {
+        $nurses = TenagaMedis::where('id_roles', 3)->get();
+    
+        return view('pembayaran.perawat', compact('nurses'));
+    }
+    
+    
 
 
 
