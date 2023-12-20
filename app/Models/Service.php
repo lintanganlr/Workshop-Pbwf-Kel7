@@ -12,6 +12,10 @@ class Service extends Model
     protected $fillable = ['nama_service','image', 'updated_at',
     'created_at'];
 
+    public function roles()
+    {
+        return $this->hasOne(Roles::class, 'id', 'id_roles');
+    }
 
 }
 

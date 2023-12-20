@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,13 +24,13 @@
             $('.navbar').removeClass('sticky-top');
         }
     });
-    
+
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -51,8 +51,8 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -116,6 +116,24 @@
             '<i class="bi bi-arrow-right"></i>'
         ],
     });
-    
+
 })(jQuery);
 
+
+    // Button
+    function animateOnScroll() {
+        var elements = document.querySelectorAll('.animate__animated');
+
+        elements.forEach(function(element) {
+            var position = element.getBoundingClientRect();
+
+            // Jika elemen ada di dalam viewport
+            if (position.top >= 0 && position.bottom <= window.innerHeight) {
+                // Tambahkan kelas animasi dari animate.css
+                element.classList.add('animate__tada');
+            }
+        });
+    }
+
+    // Panggil fungsi animateOnScroll saat halaman di-scroll
+    window.addEventListener('scroll', animateOnScroll);

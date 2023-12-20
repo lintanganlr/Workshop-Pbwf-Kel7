@@ -24,14 +24,15 @@
                                     </div>
                                 @endif
                                 <h4 class="card-title">Create service</h4>
-                                {{-- <div class="form-group">
-                                    <label for="tenagamedis">Pilih Tena Medis</label>
-                                    <select name="id_tenagamedis">
-                                        @foreach ($tenagaMedisByRole as $medic)
-                                            <option value="{{ $medic->id }}">{{ $medic->nama_medis }}</option>
-                                        @endforeach
-                                    </select> --}}
-
+                                <div class="form-group">
+                                    <label for="roles">Pilih Role Layanan</label>
+                                    <select name="id_roles" class="form-control" id="roles" type="number">
+                                        <option selected="">Pilih Role</option>
+                                        <option value="2">Dokter</option>
+                                        <option value="3">Perawat</option>
+                                    </select>
+                                </div>
+                                
                 <div class="form-group">
                     <label for="nama_service">Nama Pelayanan</label>
                     <input type="text" id="nama_service" name="nama_service" class="form-control demo">
@@ -51,7 +52,7 @@
 
                             <div class="border-top">
                                 <div class="card-body">
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-info">Submit</button>
                                 </div>
                             </div>
                         </div>

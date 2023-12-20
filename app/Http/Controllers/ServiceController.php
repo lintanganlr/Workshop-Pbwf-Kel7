@@ -56,6 +56,7 @@ public function create()
     {
          // Validasi input form disini sesuai dengan kebutuhan Anda
          $services = new Service();
+         $services->id_roles = $request->input('id_roles');
          $services->nama_service = $request->input('nama_service');
 
         // Mengunggah gambar (foto pekerja)
@@ -104,6 +105,7 @@ public function create()
          // Validasi input form disini sesuai dengan kebutuhan Anda
 
         //  $services->tenagamedis->nama= $request->input('nama_medis');
+        $services->id_roles = $request->input('id_roles');
          $services->nama_service = $request->input('nama_service');
 
          // Mengunggah gambar (foto medis) jika dipilih
@@ -150,30 +152,30 @@ public function create()
     {
         // Fetch doctors with the specified role (assuming id_roles = 2 corresponds to doctors)
         $doctors = TenagaMedis::where('id_roles', 2)->get();
-    
+
         return view('appoinment.dokter', compact('doctors'));
     }
     public function fetchPerawat()
     {
         $nurses = TenagaMedis::where('id_roles', 3)->get();
-    
+
         return view('appoinment.perawat', compact('nurses'));
     }
     public function pembayaranDoctors()
     {
         // pembayaran doctors with the specified role (assuming id_roles = 2 corresponds to doctors)
         $doctors = TenagaMedis::where('id_roles', 2)->get();
-    
+
         return view('pembayaran.dokter', compact('doctors'));
     }
     public function pembayaranPerawat()
     {
         $nurses = TenagaMedis::where('id_roles', 3)->get();
-    
+
         return view('pembayaran.perawat', compact('nurses'));
     }
-    
-    
+
+
 
 
 

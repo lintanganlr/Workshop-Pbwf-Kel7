@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body d-flex justify-content-between align-items-center">
                 <h5 class="card-title m-b-0">Upload Artikel</h5>
-                <a href="{{ route('article.create') }}" class="btn bg-gradient-dark">
+                <a href="{{ route('article.create') }}" class="btn btn-outline-info">
                     <i class="fas fa-plus"></i> Tambah Artikel
                 </a>
             </div>
@@ -53,7 +53,7 @@
                             class="btn btn-link text-danger text-gradient px-4 mb-2"><i class="far fa-trash-alt me-2"></i>Delete</button>
                         </form> --}}
                         <td>
-                            <button onclick="window.location='{{ route('article.edit', $item->id) }}'" type="button" class="btn btn-sm btn-warning" title="Edit data">
+                            <button onclick="window.location='{{ route('article.edit', $item->id) }}'" type="button" class="btn btn-sm btn-info" title="Edit data">
                                 <i class="fas fa-edit"></i> Edit
                             </button>
                             <form method="POST" action="{{ route('article.destroy', $item->id) }}" style="display: inline-block">

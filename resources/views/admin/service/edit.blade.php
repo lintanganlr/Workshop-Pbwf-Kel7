@@ -25,7 +25,21 @@
                                     </div>
                                 @endif
 
-                                <h4 class="card-title">Create Pelayanan</h4>
+                                <h4 class="card-title">Edit Pelayanan</h4>
+                                <div class="form-group">
+                                    <label for="roles">Pilih Role</label>
+                                    <select name="id_roles" class="form-control" id="roles" type="number">
+                                        <option value="{{ $service->roles->id}}" selected="">{{ $service->roles->nama_role}}</option>
+                                        @if($service->roles->id == 3)
+                                        <option value="2">Dokter</option>
+                                    @elseif($service->roles->id == 2)
+                                        <option value="3">Perawat</option>
+                                    @else
+                                        <option value="3">Perawat</option>
+                                        <option value="2">Dokter</option>
+                                    @endif
+                                    </select>
+                                </div>
 
                 <div class="form-group">
                     <label for="nama_service">Nama Pelayanan</label>
@@ -53,7 +67,7 @@
 
 <div class="border-top">
     <div class="card-body">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-info">Submit</button>
     </div>
 </div>
 </div>

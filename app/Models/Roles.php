@@ -13,11 +13,21 @@ class Roles extends Model
     protected $fillable =['updated_at',
     'created_at','nama_role'];
 
+// Model Roles
+public function users()
+{
+    return $this->hasMany(User::class);
+}
 
-    // public function artikels()
-    // {
-    //     return $this->hasMany(uploadart::class);
-    // }
+    public function artikels()
+    {
+        return $this->hasMany(uploadart::class);
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 
 
 }

@@ -234,9 +234,7 @@ h6,
     opacity: 2;
 }
 
-.team-item {
-    display: flex;
-}
+
 
 .position-relative {
     position: relative;
@@ -484,7 +482,6 @@ h6,
     object-fit: cover; /* Mengatur gambar untuk menyesuaikan dengan dimensi yang ditetapkan */
 }
 
-
 .custom-card {
     display: inline-block; /* Membuat div mengikuti lebar kontennya */
     background-color: white; /* Memberikan latar belakang putih */
@@ -498,4 +495,70 @@ h6,
 
 .custom-card .card-body {
     padding: 10px; /* Atur padding untuk konten dalam card */
+}
+
+.medis-card .card-body {
+    padding: 10px; /* Atur padding untuk konten dalam card */
+}
+
+  /* Tampilan untuk tenaga medis */
+  .team-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mengatur lebar kolom dalam grid */
+    gap: 6rem; /* Menambahkan jarak antar elemen dalam satuan rem */
+    grid-auto-flow: row; /* Menentukan tata letak elemen secara vertikal */
+}
+
+
+.team-member {
+    flex: 1 0 10px; /* Setengah dari lebar container dengan jarak 10px */
+    max-width: calc(50% - 10px); /* Batasan lebar maksimum */
+}
+
+.team-img {
+    height: 200px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.medis-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.medis-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: #EEF9FF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Style for the image container */
+/* Style for the image container */
+.image-container {
+    position: relative;
+    max-width: 100%;
+}
+
+/* Style for the button within the image container */
+.image-container .btn {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure it's above the image */
+}
+
+
+/* Style for the image inside the container */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

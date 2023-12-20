@@ -25,7 +25,7 @@
                                     </div>
                                 @endif
 
-                                <h4 class="card-title">Create Artikel</h4>
+                                <h4 class="card-title">Edit Artikel</h4>
                                 <div class="form-group">
                                     <label for="roles">Pilih Role</label>
                                     <select name="id_roles" class="form-control" id="roles" type="number">
@@ -66,7 +66,7 @@
 </div> --}}
 
 <div class="row mb-3">
-    <label for="image" class="col-sm-2 col-form-label">Upload Foto Artikel</label>
+    <label for="image" class="col-sm-2 col-form-label">Edit Foto Artikel</label>
     <div class="col-sm-10">
         <input type="file"
             class="form-control-file @error('image') is-invalid @enderror"
@@ -111,7 +111,7 @@
                 <!-- ============================================================== -->
                             <div class="border-top">
                                 <div class="card-body">
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-info">Submit</button>
                                 </div>
                             </div>
                         </div>

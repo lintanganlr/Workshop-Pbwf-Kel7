@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body d-flex justify-content-between align-items-center">
                 <h5 class="card-title m-b-0">Upload service</h5>
-                <a href="{{ route('service.create') }}" class="btn bg-gradient-dark">
+                <a href="{{ route('service.create') }}" class="btn btn-outline-info">
                     <i class="fas fa-plus"></i> Tambah service
                 </a>
             </div>
@@ -16,7 +16,7 @@
                   <thead>
                     <tr>
                       <th scope="col">ID_Service</th>
-                      {{-- <th scope="col">ID_Medis</th> --}}
+                      <th scope="col">ID Role</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Aksi</th>
@@ -26,7 +26,7 @@
                     @foreach ($services as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        {{-- <td>{{ $item->tenagamedis->nama }}</td> --}}
+                        <td>{{$item->id_roles}}</td>
                         <td>{{$item->nama_service}}</td>
                         <td>
                             @if($item->image)
@@ -36,7 +36,7 @@
                             @endif
                         </td>
                         <td>
-                            <button onclick="window.location='{{ route('service.edit', $item->id) }}'" type="button" class="btn btn-sm btn-warning" title="Edit data">
+                            <button onclick="window.location='{{ route('service.edit', $item->id) }}'" type="button" class="btn btn-sm btn-info" title="Edit data">
                                 <i class="fas fa-edit"></i> Edit
                             </button>
                             <form method="POST" action="{{ route('service.destroy', $item->id) }}" style="display: inline-block">

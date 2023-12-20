@@ -24,6 +24,10 @@
     <link href="{{URL('lib/animate/animate.min.css" rel="stylesheet')}}">
     <link href="{{URL('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
     <link href="{{URL('lib/twentytwenty/twentytwenty.css')}}" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
