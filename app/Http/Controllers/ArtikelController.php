@@ -21,6 +21,6 @@ class ArtikelController extends Controller
     {
         // Fetching a single article using the Artikel model
         $artikel = Artikel::where('judul_artikel', $judul_artikel)->first();
-        return view('artikel.tampilan', compact('artikel'));
+        return view('artikel.tampilan', compact('artikels'));
     }
 }
