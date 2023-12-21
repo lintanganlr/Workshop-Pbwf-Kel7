@@ -95,20 +95,31 @@
              </div>
              <h4 class="text-body fst-italic mb-4">Find the solutions and support you need on our diabetes healthcare service website</h4>
              <p class="mb-4">Tidak perlu biarkan diabetes mengendalikan hidupmu. Kunjungi website layanan kesehatan diabetes kami untuk solusi dan dukungan yang kamu butuhkan. Temukan panduan, tips, dan komunitas yang siap membantu menjalani hidup yang lebih sehat dengan diabetes. Bersama, kita bisa menghadapi diabetes dan meraih kualitas hidup yang lebih baik</p>
-             <h1 class="display-5 mb-0">VISI</h1>
-             <p class="mb-4">Menjadi sumber informasi terpercaya dan penyedia layanan terkemuka dalam perawatan dan manajemen diabetes untuk membantu individu mencapai gaya hidup yang lebih sehat dan bahagia.</p>
 
-             <h1 class="display-5 mb-0">MISI</h1>
-             <div class="row g-3">
-                 <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
-                     <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Memberikan informasi terpercaya, dukungan, dan alat praktis untuk membantu individu dengan diabetes mengelola kondisi mereka dengan lebih baik</h5>
-                     <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i> Bekerja sama dengan organisasi kesehatan, profesional medis, dan ahli diabetes untuk memberikan informasi dan layanan yang berkualitas.</h5>
-                 </div>
-                 <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-                     <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Mempromosikan kesadaran dan pemahaman tentang diabetes</h5>
-                     <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Memfasilitasi kolaborasi dengan profesional kesehatan guna meningkatkan kualitas hidup mereka.</h5>
-                 </div>
-             </div>
+             <div class="vision-mission">
+                <div class="decoration">
+                  <h1 class="vision-title">VISI</h1>
+                </div>
+                <p class="vision-content">Menjadi sumber informasi terpercaya dan penyedia layanan terkemuka dalam perawatan dan manajemen diabetes untuk membantu individu mencapai gaya hidup yang lebih sehat dan bahagia.</p>
+
+                <div class="decoration">
+                  <h1 class="mission-title">MISI</h1>
+                </div>
+
+                <div class="mission-content">
+                  <div class="mission-item wow zoomIn" data-wow-delay="0.3s">
+                    <h5><i class="fa fa-check-circle text-primary me-3"></i>Memberikan informasi terpercaya, dukungan, dan alat praktis untuk membantu individu dengan diabetes mengelola kondisi mereka dengan lebih baik</h5>
+                    <h5><i class="fa fa-check-circle text-primary me-3"></i> Bekerja sama dengan organisasi kesehatan, profesional medis, dan ahli diabetes untuk memberikan informasi dan layanan yang berkualitas.</h5>
+                  </div>
+                  <div class="mission-item wow zoomIn" data-wow-delay="0.6s">
+                    <h5><i class="fa fa-check-circle text-primary me-3"></i>Mempromosikan kesadaran dan pemahaman tentang diabetes</h5>
+                    <h5><i class="fa fa-check-circle text-primary me-3"></i>Memfasilitasi kolaborasi dengan profesional kesehatan guna meningkatkan kualitas hidup mereka.</h5>
+                  </div>
+                </div>
+              </div>
+
+
+
          </div>
          <div class="col-lg-5" style="min-height: 500px;">
              <div class="position-relative h-100">
@@ -160,53 +171,116 @@
  </div>
  <!-- Service End -->
 
+<!-- Medis Start -->
+<div class="container-fluid bg-primary bg-appointment my-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <div class="container">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 py-5">
+                <div class="py-5">
+                    <h1 class="display-5 text-white mb-4">Meet Our Certified & Experienced Medical Personnel!</h1>
+                    <p class="text-white mb-0">
+                        Temukanlah ragam individu berbakat, penuh dedikasi, siap memberikan perawatan kesehatan yang tak tertandingi dan dukungan yang menginspirasi,
+                        memenuhi segala kebutuhan kesehatan Anda dengan keunggulan yang tak terbantahkan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="background-image-div" style="background-image: url('../img/med.jpg'); background-size: cover; height: 400px; position: relative; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center h-100">
+                                <a href="{{ route('nurse') }}" class="btn btn-primary btn-lg rounded-pill animate__animated" id="animatedBtn" style="position: absolute; bottom: 20px;">Nurse</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center h-100">
+                                <a href="{{ route('doctor') }}" class="btn btn-primary btn-lg rounded-pill animate__animated" id="animatedBtn" style="position: absolute; bottom: 20px;">Doctor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Medis End -->
 
 
- <!-- Artikel Start -->
+ <!-- Galery Start -->
  <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
      <div class="container">
          <div class="row g-5">
              <div class="col-lg-5">
                  <div class="section-title mb-4">
-                     <h5 class="position-relative d-inline-block text-primary text-uppercase">Artikel</h5>
-                     <h1 class="display-5 mb-0">Tingkatkan Pemahaman Anda tentang Diabetes dengan Membaca Artikel Kami</h1>
+                     <h5 class="position-relative d-inline-block text-primary text-uppercase">'Welcome to Our Gallery!' </h5>
+                     <h1 class="display-5 mb-0">Tempat di mana kesehatan menjadi yang utama.</h1>
                  </div>
-                 <p class="mb-4">Pilih salah satu artikel dengan klik "Baca Selengkapnya" Coba sekarang juga! Dapatkan fakta menarik lainnya</p>
+                 <p class="mb-4">Join us as we navigate through each health care moment that inspires, motivates, and aids in managing diabetes for a more meaningful and joyful life</p>
 
              </div>
              <div class="col-lg-7">
                  <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
                      <div class="price-item pb-4">
                          <div class="position-relative">
-                             <img class="img-fluid rounded-top" src="img/pricing-1.jpg" alt="">
+                             <img class="img-fluid rounded-top" src="img/galery-3.png" alt="">
                              <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
                              </div>
                          </div>
                          <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                             <h4>Pahami Diabetes: Pengertian, Tipe, dan Gejalanya</h4>
-                             <a href="artikel.tampilan" class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Baca Selengkapnya</a>
+                             <h4>Laboratorium Penelitian</h4>
                          </div>
                      </div>
                      <div class="price-item pb-4">
                          <div class="position-relative">
-                             <img class="img-fluid rounded-top" src="img/pricing-2.jpg" alt="">
+                             <img class="img-fluid rounded-top" src="img/galery-4.png" alt="">
                              <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
                              </div>
                          </div>
                          <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                             <h4>Mengenal Komplikasi Diabetes: Pencegahan dan Pengobatan</h4>
-                             <a href="artikel.tampilan" class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Baca Selengkapnya</a>
+                             <h4>Dokter melakukan analisis</h4>
                          </div>
                      </div>
                      <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/galery-8.png" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Pemeriksaan pasien oleh Dokter</h4>
+                        </div>
+                    </div>
+                    <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/galery-2.png" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Ruang rawat inap pasien</h4>
+                        </div>
+                    </div>
+                    <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/galery-5.png" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Potret Perawat GlucoSync</h4>
+                        </div>
+                    </div>
+                     <div class="price-item pb-4">
                          <div class="position-relative">
-                             <img class="img-fluid rounded-top" src="img/pricing-3.jpg" alt="">
+                             <img class="img-fluid rounded-top" src="img/galery-6.png" alt="">
                              <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle" style="z-index: 2;">
                              </div>
                          </div>
                          <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                             <h4>Pengelolaan Diabetes: Tips Menjaga Gula Darah Tetap Stabil</h4>
-                             <a href="artikel.tampilan" class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Baca Selengkapnya</a>
+                             <h4>Pasien Konsultasi dengan Dokter</h4>
                          </div>
                      </div>
                  </div>
@@ -214,42 +288,41 @@
          </div>
      </div>
  </div>
- <!-- Artikel End -->
+ <!-- Galery End -->
 
 
- <div class="container-fluid py-5">
+ <!-- Artikel Start -->
+ <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
-                <div class="section-title bg-light rounded h-100 p-5">
-                    <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Doctor </h5>
-                    <h1 class="display-6 mb-4">Meet Our Certified & Experienced Doctor</h1>
-                    <a href="service.dokter" class="btn btn-primary py-3 px-5">Appointment</a>
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title mb-4">
+                    <h5 class="position-relative d-inline-block text-primary text-uppercase">Artikel</h5>
+                    <h1 class="display-5 mb-0">Tingkatkan Pemahaman Anda tentang Diabetes dengan Membaca Artikel Kami</h1>
+                    <p class="mb-4">Pilih salah satu artikel dengan klik "Baca Selengkapnya" Coba sekarang juga! Dapatkan fakta menarik lainnya</p>
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="border-top">
-                    <div class="card-body">
-                        <a href="{{ route('service') }}" class="btn btn-primary btn-lg btn-block rounded-pill animate__animated" id="animatedBtn">Click Here!</a>
+            <div class="col-lg-5">
+                <div class="background-image-div" style="background-image: url('../img/artikel.jpg'); background-size: cover; height: 400px; position: relative; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center h-100">
+                        <a href="{{ route('artikel.index') }}" class="btn btn-primary btn-lg rounded-pill animate__animated" id="animatedBtn" style="position: absolute; bottom: 20px;">Click Here!</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="image-container">
-                    <img src="img/pricing-3.jpg" alt="Image Description">
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
 
 
+<!-- Artikel End -->
+
 
 
      <!-- Testimonial Start -->
-     <div class="container-fluid bg-primary bg-testimonial py-5 mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 90px;">
+     <div class="container-fluid bg-testimonial py-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
          <div class="container py-5">
              <div class="row justify-content-center">
                  <div class="col-lg-7">
@@ -273,111 +346,9 @@
      </div>
      <!-- Testimonial End -->
 
- <!-- Nurse Start -->
- <div class="container-fluid py-5">
-     <div class="container">
-         <div class="row g-5">
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
-                 <div class="section-title bg-light rounded h-100 p-5">
-                     <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Nurse </h5>
-                     <h1 class="display-6 mb-4">Meet Our Certified & Experienced Nurse</h1>
-                     <a href="service.perawat" class="btn btn-primary py-3 px-5">Appointment</a>
-                 </div>
-             </div>
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                 <div class="team-item">
-                     <div class="position-relative rounded-top" style="z-index: 1;">
-                         <img class="img-fluid rounded-top w-100" src="img/nurse-1.jpg" alt="">
-                         <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                         </div>
-                     </div>
-                     <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                         <h4 class="mb-2">Dian Novianti, S.Kep.</h4>
-                         <p class="text-primary mb-0">Perawat</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                 <div class="team-item">
-                     <div class="position-relative rounded-top" style="z-index: 1;">
-                         <img class="img-fluid rounded-top w-100" src="img/nurse-2.jpg" alt="">
-                         <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                         </div>
-                     </div>
-                     <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                         <h4 class="mb-2">Balquiss Azzahra, S.Kep</h4>
-                         <p class="text-primary mb-0">Perawat</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
-                 <div class="team-item">
-                     <div class="position-relative rounded-top" style="z-index: 1;">
-                         <img class="img-fluid rounded-top w-100" src="img/nurse-3.jpg" alt="">
-                         <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                         </div>
-                     </div>
-                     <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                         <h4 class="mb-2">Agus Pratama, S.Kep.</h4>
-                         <p class="text-primary mb-0">Perawat</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                 <div class="team-item">
-                     <div class="position-relative rounded-top" style="z-index: 1;">
-                         <img class="img-fluid rounded-top w-100" src="img/nurse-4.jpg" alt="">
-                         <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                         </div>
-                     </div>
-                     <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                         <h4 class="mb-2">Rina Susanto, S.Kep</h4>
-                         <p class="text-primary mb-0">Perawat</p>
-                     </div>
-                 </div>
-             </div>
-         </br>
-             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                 <div class="team-item">
-                     <div class="position-relative rounded-top" style="z-index: 1;">
-                         <img class="img-fluid rounded-top w-100" src="img/nurse-5.jpg" alt="">
-                         <div class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                             <a class="btn btn-primary btn-square m-1" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                         </div>
-                     </div>
-                     <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
-                         <h4 class="mb-2">Cynthia Angelica, S.Kep</h4>
-                         <p class="text-primary mb-0">Perawat</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- Nurse End -->
-
 
  <!-- Offer Start -->
- <div class="container-fluid bg-offer my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+ {{-- <div class="container-fluid bg-offer my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
      <div class="container py-5">
          <div class="row justify-content-center">
              <div class="col-lg-7 wow zoomIn" data-wow-delay="0.6s">
@@ -385,11 +356,11 @@
              </div>
          </div>
      </div>
- </div>
+ </div> --}}
  <!-- Offer End -->
 
     <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
+    {{-- <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
                 <div class="modal-header border-0">
@@ -403,8 +374,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Full Screen Search End -->
+
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container">
