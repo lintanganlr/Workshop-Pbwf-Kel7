@@ -134,6 +134,7 @@ h6,
     z-index: 1;
 }
 
+
 @media (max-width: 576px) {
     .carousel-caption h5 {
         font-size: 14px;
@@ -190,18 +191,15 @@ h6,
 }
 
 .hero-header {
-    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/galery-3.png) center center no-repeat;
     background-size: cover;
 }
 
 .bg-appointment {
-    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/galery-3.png) center center no-repeat;
     background-size: cover;
 }
 
-.appointment-form {
-    background: rgba(6, 163, 218, .7);
-}
 
 .service-item img,
 .service-item .bg-light,
@@ -335,7 +333,7 @@ h6,
 }
 
 .bg-offer {
-    background:url(../img/carousel-1.jpg) center center no-repeat;
+    background:url(../img/galery-5.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -380,12 +378,14 @@ h6,
 }
 
 .bg-testimonial {
-    background: url(../img/carousel-2.jpg) center center no-repeat;
-    background-size: cover;
+    background: url(../img/testi.png) center center no-repeat;
+    width: 1100px;
+    height: 600px; /* Atau tentukan tinggi yang diinginkan dalam satuan px, misalnya height: 500px; */
 }
 
+
 .testimonial-carousel {
-    background: rgba(6, 163, 218, .85);
+    background: rgba(4, 52, 104, 0.85);
 }
 
 .testimonial-carousel .owl-nav {
@@ -562,3 +562,112 @@ h6,
     height: auto;
     display: block;
 }
+.vision-mission {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .vision-mission::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/hospital.png'); /* Ganti 'url_gambar.jpg' dengan URL atau path gambar yang ingin digunakan */
+    background-size: cover;
+    opacity: 0.2; /* Atur tingkat transparansi yang diinginkan di sini */
+    z-index: -1; /* Mengatur lapisan belakang agar berada di bawah konten utama */
+  }
+
+
+
+  .vision-title,
+  .mission-title {
+    text-align: left;
+    font-size: 36px;
+    color: #7D1219; /* Warna yang menonjol */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spasi antar huruf */
+    font-weight: bold;
+    /* Efek shadow atau bayangan */
+    /* text-shadow: 2px 2px 4px rgb(174, 165, 165); */
+  }
+
+
+  .vision-content {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .mission-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .mission-item {
+    flex: 0 0 calc(50% - 10px);
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+  }
+
+  .mission-item h5 {
+    margin-bottom: 10px;
+  }
+  .decoration {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .vision-title,
+  .mission-title {
+    position: relative;
+    font-size: 24px;
+    color: #7D1219;
+  }
+
+  .vision-title::before,
+  .mission-title::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #7D1219;
+  }
+
+  .nav-item.nav-link {
+    transition: font-size 1s ease;
+}
+
+.nav-item.nav-link:hover {
+    font-size: 1.6em; /* Atur ukuran font yang diinginkan */
+}
+
+.navbar-nav .nav-item.nav-link.active {
+    font-size: 1.4em !important;
+    color: #7D1219 !important;
+}
+/* Animasi saat link diklik */
+.navbar-nav .nav-item .nav-link.active {
+    transition: font-size 0.3s ease-in-out !important;
+}
+
+/* Ukuran awal teks */
+.navbar-nav .nav-item .nav-link {
+    font-size: 0.9em !important;
+}
+
+

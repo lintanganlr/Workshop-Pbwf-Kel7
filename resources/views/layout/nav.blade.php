@@ -31,11 +31,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link">Home</a>
-            <a href="/about" class="nav-item nav-link">About</a>
-            <a href="/service" class="nav-item nav-link">Pelayanan</a>
-            <a href="/artikel" class="nav-item nav-link">Artikel</a>
-            <a href="/review" class="nav-item nav-link">Ulasan</a>
+            <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
+            <a href="/about" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
+            <a href="/service" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Pelayanan</a>
+            <a href="/artikel" class="nav-item nav-link {{ request()->is('artikel') ? 'active' : '' }}">Artikel</a>
+            <a href="/review" class="nav-item nav-link {{ request()->is('review') ? 'active' : '' }}">Ulasan</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tenaga Medis</a>
                 <div class="dropdown-menu m-0">
@@ -43,7 +43,7 @@
                     <a href="nurse" class="dropdown-item">Perawat</a>
                 </div>
             </div>
-            <a href="contact" class="nav-item nav-link">Contact</a>
+            <a href="/contact" class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
         </div>
 
         @if (Auth::guest())

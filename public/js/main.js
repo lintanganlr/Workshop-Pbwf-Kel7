@@ -137,3 +137,5 @@
 
     // Panggil fungsi animateOnScroll saat halaman di-scroll
     window.addEventListener('scroll', animateOnScroll);
+
+    
