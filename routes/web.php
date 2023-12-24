@@ -201,7 +201,7 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Reservasi //
-Route::get('reservasi', [ServiceController::class, 'showReservationForm'])->name('reservasi');
+Route::get('reservasi/{id}', [ServiceController::class, 'showReservationForm'])->name('reservasi');
 Route::post('reservasi/process', [ServiceController::class, 'processReservation'])->name('process.reservation');
 
 

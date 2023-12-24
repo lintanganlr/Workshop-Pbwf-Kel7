@@ -34,7 +34,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -51,10 +51,9 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-    @include('layout.nav-profile')
+        
         @yield('content')
-    
+
 
     <!-- Back to Top -->
     {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a> --}}
@@ -72,7 +71,7 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="lib/twentytwenty/jquery.event.move.js"></script>
     <script src="lib/twentytwenty/jquery.twentytwenty.js"></script>
-    
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -8,8 +8,8 @@ use App\Models\TenagaMedis;
 use App\Models\Service;
 use App\Models\Roles;
 use App\Models\Pembayaran; // Example namespace, adjust based on your actual namespace
-use App\Models\Pasien; 
-use App\Models\Reservasi; 
+use App\Models\Pasien;
+use App\Models\Reservasi;
 use Illuminate\Support\Carbon;
 
 
@@ -181,25 +181,25 @@ public function create()
         // Mendapatkan informasi dokter berdasarkan ID
         $doctor = TenagaMedis::findOrFail($id);
         // Kembalikan view pembayaran dengan data dokter yang sesuai
-        
+
         $totalPembayaran = 100000;
-    
+
         // Simpan data pembayaran ke dalam database
         $pembayaran = new \App\Models\Pembayaran();
         $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
         $pembayaran->total_pembayaran = $totalPembayaran;
         $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
         $pembayaran->save();
-    
+
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
-    
+
         /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
         composer require midtrans/midtrans-php
-                                    
-        Alternatively, if you are not using **Composer**, you can download midtrans-php library 
-        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require 
-        the file manually.   
+
+        Alternatively, if you are not using **Composer**, you can download midtrans-php library
+        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require
+        the file manually.
 
         require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
 
@@ -213,7 +213,7 @@ public function create()
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-        
+
         $params = array(
             'transaction_details' => array(
                 'order_id' => $pembayaran->id,
@@ -226,14 +226,14 @@ public function create()
                 'alamat' => $request->alamat_pasien,
             ),
         );
-    
+
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken) ;
-        
+
         return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken'));
     }
-    
-    
+
+
     // public function bayarPerawat($id)
     // {
     //     // Mendapatkan informasi dokter berdasarkan ID
@@ -246,25 +246,25 @@ public function create()
         $nurse = TenagaMedis::findOrFail($id);
 
         // Kembalikan view pembayaran dengan data dokter yang sesuai
-        
+
         $totalPembayaran = 100000;
-    
+
         // Simpan data pembayaran ke dalam database
         $pembayaran = new \App\Models\Pembayaran();
         $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
         $pembayaran->total_pembayaran = $totalPembayaran;
         $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
         $pembayaran->save();
-    
+
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
-    
+
         /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
         composer require midtrans/midtrans-php
-                                    
-        Alternatively, if you are not using **Composer**, you can download midtrans-php library 
-        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require 
-        the file manually.   
+
+        Alternatively, if you are not using **Composer**, you can download midtrans-php library
+        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require
+        the file manually.
 
         require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
 
@@ -278,7 +278,7 @@ public function create()
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-        
+
         $params = array(
             'transaction_details' => array(
                 'order_id' => $pembayaran->id,
@@ -291,10 +291,10 @@ public function create()
                 'alamat' => $request->alamat_pasien,
             ),
         );
-    
+
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken) ;
-        
+
         return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken'));
     }
 
@@ -302,32 +302,32 @@ public function create()
     {
         return view('reservasi');
     }
-    
+
 
     public function processReservation(Request $request)
     {
         $tanggalTindakan = $request->input('tanggal');
-        
+
         // Get the nurse ID based on the role ID (id_roles = 3 for nurses)
         $id_roles = 3; // Assuming the role ID for nurses is 3
         $nurse = TenagaMedis::where('id_roles', $id_roles)->first(); // Fetch nurse based on role ID
-        
+
         if (!is_null($tanggalTindakan)) {
             $reservasi = new \App\Models\Reservasi();
             $reservasi->tgl_reservasi = now();
             $reservasi->status_reservasi = true;
             $reservasi->tgl_tindakan = $tanggalTindakan;
-    
+
             if ($nurse) {
                 $reservasi->id_nurse = $nurse->id; // Associate nurse ID with the reservation
             } else {
                 // Handle the case where no nurse with role ID = 3 is found
                 return view('reservasi')->with('error', 'Nurse not found for the specified role.');
             }
-    
+
             // Melakukan penyimpanan data
             $reservasi->save();
-    
+
             // Redirect ke halaman reservasi dengan pesan sukses
             return view('reservasi', compact('nurse'))->with('success', 'Reservasi berhasil dibuat!');
         } else {
@@ -336,9 +336,9 @@ public function create()
         }
     }
     
-    
-    
-    
+
+
+
 
 
 

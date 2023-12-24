@@ -3,37 +3,38 @@
         <form action="/simpan" method="POST">
             @csrf <!-- Untuk keamanan dalam Laravel -->
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama Pasien:</label>
+                <label for="nama" class="form-label" style="font-family: 'Jost', sans-serif;">Nama Pasien:</label>
                 <input type="text" id="nama" name="nama_pasien" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="noTelepon" class="form-label">No Telepon Pasien:</label>
+                <label for="noTelepon" class="form-label" style="font-family: 'Jost', sans-serif;">No Telepon Pasien:</label>
                 <input type="tel" id="noTelepon" name="no_telp_pasien" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email Pasien:</label>
+                <label for="email" class="form-label" style="font-family: 'Jost', sans-serif;">Email Pasien:</label>
                 <input type="email" id="email" name="email_pasien" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat Pasien:</label>
+                <label for="alamat" class="form-label" style="font-family: 'Jost', sans-serif;">Alamat Pasien:</label>
                 <input type="text" id="alamat" name="alamat_pasien" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="jenisKelamin" class="form-label">Jenis Kelamin Pasien:</label>
-                <select id="jenisKelamin" name="jk_pasien" class="form-select" required>
+                <label for="jenisKelamin" class="form-label" style="font-family: 'Jost', sans-serif;">Jenis Kelamin Pasien:</label>
+                <select id="jenisKelamin" name="jk_pasien" class="form-select" required style="font-family: 'Jost', sans-serif;">
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary" style="font-family: 'Jost', sans-serif;">Simpan</button>
         </form>
     </div>
 </div>
+
 <style>
 /* CSS untuk style card */
 /* dicube */

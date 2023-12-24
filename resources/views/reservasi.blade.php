@@ -1,7 +1,9 @@
 @extends('layout.main')
 @section('content')
 
-    @if(isset($nurse))
+@if(isset($nurse))
+    {{-- Tambahkan ini untuk memeriksa data yang diterima --}}
+    {{ dd($nurse) }}
         <h1>Informasi Perawat</h1>
         <p>Nama Perawat: {{ $nurse->nama_medis }}</p>
         <!-- Tambahkan informasi perawat lainnya yang ingin Anda tampilkan -->
@@ -13,17 +15,17 @@
                 <label for="tanggal">Tanggal</label>
                 <input type="date" name="tanggal" class="datepicker">
             </div>
-    
+
             <input type="submit" value="Buat Janji">
         </form>
         @else
             <p>Nurse data is not available or ID is null.</p>
-        
+
     @endif
 
 
 
-    
+
 @endsection
 
 
