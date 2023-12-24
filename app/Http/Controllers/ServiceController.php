@@ -247,13 +247,14 @@ public function create()
     //     $nurse = TenagaMedis::findOrFail($id);
     //     return view('pembayaran-perawat', compact('nurse'));
     // }
+
+
     public function bayarPerawat(Request $request, $id)
     {
         // Mendapatkan informasi nurse berdasarkan ID
         $nurse = TenagaMedis::findOrFail($id);
 
         // Kembalikan view pembayaran dengan data dokter yang sesuai
-
         $totalPembayaran = 100000;
 
         // Simpan data pembayaran ke dalam database
@@ -266,25 +267,14 @@ public function create()
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
 
-        /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
-        composer require midtrans/midtrans-php
-
-        Alternatively, if you are not using **Composer**, you can download midtrans-php library
-        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require
-        the file manually.
-
-        require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
-
-        //SAMPLE REQUEST START HERE
-
         // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
+        Config::$isProduction = false;
         // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
+        Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
+        Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
@@ -299,8 +289,7 @@ public function create()
             ),
         );
 
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        // dd($snapToken) ;
+        $snapToken = Snap::getSnapToken($params);
 
         return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken'));
     }
