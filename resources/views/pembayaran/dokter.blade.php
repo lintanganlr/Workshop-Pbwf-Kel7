@@ -38,7 +38,7 @@
                     <div class="flex flex-row justify-between order-summary__fee-container">
                         <span class="order-summary__fee-label">Biaya sesi untuk <strong>1 jam</strong></span>
                         <!-- Biaya Sesi -->
-                        <span class="order-summary__fee">Rp 40.000</span>
+                        <span class="order-summary__fee">Rp 80.000</span>
                     </div>
                     <!-- Biaya Layanan -->
                     <div class="flex flex-row justify-between order-summary__fee-container">
@@ -69,7 +69,7 @@
 @endsection
 
 
-{{-- 
+{{--
 @extends('layout.main')
 @section('content')
     <div class="container">
