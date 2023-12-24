@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reservasi', function (Blueprint $table) {
             $table->id();
             $table->date('tgl_reservasi');
-            $table->boolean('sttus_reservasi');
+            $table->boolean('status_reservasi');
             $table->date('tgl_tindakan');
             $table->timestamps();
         });

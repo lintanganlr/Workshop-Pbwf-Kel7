@@ -7,6 +7,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+            <!-- MIDTRANS -->
+    <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
+    <script type="text/javascript"
+    src="https://app.stg.midtrans.com/snap/snap.js"
+    data-client-key="{{config('midtrans.client_key')}}"></script>
+    <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
@@ -30,6 +36,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{URL('../../../css/style.css')}}" rel="stylesheet">
+
+
 </head>
 <body>
         <!-- Spinner Start -->

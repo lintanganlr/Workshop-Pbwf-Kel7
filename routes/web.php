@@ -64,7 +64,7 @@ Route::get('about', function () {
     return view('about');
 });
 
-
+// appointment untuk service //
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('service.dokter', [ServiceController::class, 'fetchDoctors'])->name('appoinment.dokter');
 Route::get('service.perawat', [ServiceController::class, 'fetchPerawat'])->name('appoinment.perawat');
@@ -198,9 +198,14 @@ Route::delete('/tenagamedis/delete/{id}',[TenagaMedisController::class,'destroy'
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Reservasi //
+Route::get('reservasi', [ServiceController::class, 'showReservationForm'])->name('reservasi');
+Route::post('reservasi/process', [ServiceController::class, 'processReservation'])->name('process.reservation');
+
+
 //PEMBAYARAN//
-Route::get('pembayaran.dokter', [ServiceController::class, 'pembayaranDoctors'])->name('pembayaran.dokter');
-Route::get('pembayaran.perawat', [ServiceController::class, 'pembayaranPerawat'])->name('pembayaran.perawat');
+Route::get('pembayaran.dokter/{id}', [ServiceController::class, 'bayarDokter'])->name('pembayaran.dokter');
+Route::get('pembayaran.perawat/{id}', [ServiceController::class, 'bayarPerawat'])->name('pembayaran.perawat');
 
 //PROFILE CUSTOMER//
 // Route::get('profile', function () {

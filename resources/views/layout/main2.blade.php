@@ -7,6 +7,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-0KQCHTCSbr4W8vZL"></script>
+    <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
@@ -53,7 +57,7 @@
     
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a> --}}
 
 
     <!-- JavaScript Libraries -->
@@ -72,5 +76,10 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+
+
+
 </body>
 </html>

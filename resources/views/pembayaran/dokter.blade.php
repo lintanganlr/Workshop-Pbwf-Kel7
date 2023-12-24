@@ -1,33 +1,108 @@
 @extends('layout.main')
 @section('content')
-    <div class="navbar">
-        <div class="navbar-item navbar-left" style="line-height: 40px;">
-            <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
-        </div>
-        <div class="navbar-item navbar-right">
-            @if(session('nama_pasien'))
-                <p style="text-align: center; line-height: 40px;">
-                    <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
-                    <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
-                    <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
-                </p>
-            @endif
-        </div>
-    </div>
+<div class="container">
+    <!-- Bagian navigasi dan informasi lainnya -->
     <div class="container">
-      <table class="box doctor-box">
-          <tr>
-              <td>
-                <img src="{{ asset('medisimg/'. $doctor->image)}}" alt="{{$doctor->image}}">
-              </td>
-              <td>
+        <!-- Bagian navigasi dan informasi lainnya -->
+        <div class="navbar">
+          <div class="navbar-item navbar-left" style="line-height: 40px;">
+              <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
+          </div>
+          <div class="navbar-item navbar-right">
+              @if(session('nama_pasien'))
+                  <p style="text-align: center; line-height: 40px;">
+                      <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
+                      <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
+                      <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
+                  </p>
+              @endif
+          </div>
+        </div>
+
+    @foreach($doctors as $doctor)
+    <div class="box doctor-box">
+        <div class="doctor-info">
+            <img src="{{ asset('medisimg/'. $doctor->image) }}" alt="{{ $doctor->image }}">
+            <div class="doctor-details">
                 <p>{{ $doctor->nama_medis }}</p>
                 <p>{{ $doctor->spesialisasi_medis }}</p>
-              </td>
-          </tr>
-      </table>
-      <!-- Bagian Informasi Pembayaran -->
-      <table class="box price-box">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bagian informasi pembayaran -->
+    <table class="box price-box">
+        <tr>
+            <td>
+                <div class="flex flex-col order-summary__payment-summary">
+                    <div class="flex flex-row justify-between order-summary__fee-container">
+                        <span class="order-summary__fee-label">Biaya sesi untuk <strong>1 jam</strong></span>
+                        <!-- Biaya Sesi -->
+                        <span class="order-summary__fee">Rp 40.000</span>
+                    </div>
+                    <!-- Biaya Layanan -->
+                    <div class="flex flex-row justify-between order-summary__fee-container">
+                        <span class="order-summary__fee-label">Biaya Layanan</span>
+                        <span class="order-summary__fee">Rp 1.000</span>
+                    </div>
+                    <!-- Total Pembayaran -->
+                    <div class="flex flex-row justify-between order-summary__to-pay-container">
+                        <span class="order-summary__to-pay-label">Pembayaranmu</span>
+                        <span class="order-summary__to-pay">Rp 41.000</span>
+                    </div>
+                </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!-- Tombol konfirmasi -->
+    <div class="confirm-box">
+        <button type="submit" class="btn-confirm">Konfirmasi</button>
+    </div>
+    @endforeach
+
+</div>
+@endsection
+
+
+{{-- 
+@extends('layout.main')
+@section('content')
+    <div class="container">
+          <div class="navbar">
+            <div class="navbar-item navbar-left" style="line-height: 40px;">
+                <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
+            </div>
+            <div class="navbar-item navbar-right">
+                @if(session('nama_pasien'))
+                    <p style="text-align: center; line-height: 40px;">
+                        <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
+                        <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
+                        <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
+                    </p>
+                @endif
+            </div>
+        </div>
+
+        <!-- Doctor's Information -->
+        <div class="box doctor-box">
+            @foreach($doctors as $doctor)
+                <div class="doctor-info">
+                    <img src="{{ asset('medisimg/'. $doctor->image)}}" alt="{{$doctor->image}}">
+                    <div class="doctor-details">
+                        <p>{{ $doctor->nama_medis }}</p>
+                        <p>{{ $doctor->spesialisasi_medis }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Payment Information -->
+        <table class="box price-box">
           <tr>
               <td>
                   <div class="flex flex-col order-summary__payment-summary">
@@ -54,11 +129,23 @@
               <td></td>
           </tr>
       </table>
-      <div class="confirm-box">
-          <a href="#" class="btn-confirm">Konfirmasi</a>
-      </div>
-</div>
-@endsection
+
+        <!-- Confirmation Button -->
+        <div class="confirm-box">
+            <!-- Form to submit doctor's details to pembayaran.dokter route -->
+            <form action="{{ route('pembayaran.dokter') }}" method="GET">
+                @foreach($doctors as $doctor)
+                    <input type="hidden" name="doctor_image" value="{{ $doctor->image }}">
+                    <input type="hidden" name="doctor_name" value="{{ $doctor->nama_medis }}">
+                    <input type="hidden" name="doctor_specialization" value="{{ $doctor->spesialisasi_medis }}">
+                @endforeach
+                <button type="submit" class="btn-confirm">Konfirmasi</button>
+            </form>
+        </div>
+    </div>
+@endsection --}}
+
+
 
 
 
@@ -195,63 +282,10 @@
   }
 </style>
 
+<script>
+  window.location = "{{ route('pembayaran.dokter', $doctor->id) }}";
+</script>
 
 
 
 
-
-{{-- @extends('layout.main')
-@section('content')
-<div class="order-summary-container">
-    <div class="order-summary-header">
-      <div class="doctor-info">
-        <div class="doctor-pic-container">
-          <div class="order-summary-doctor-pic">
-            <img class="order-summary-avatar" src="https://d1e8la4lqf1h28.cloudfront.net/images/373873_13-4-2023_14-53-12.jpeg" alt="Doctor Avatar">
-          </div>
-        </div>
-        <div class="doctor-details">
-          <span class="order-summary-doctor-name">Dr. Febri Kurniawarsih</span>
-          <span class="order-summary-doctor-speciality">Dokter Umum</span>
-        </div>
-      </div>
-    </div>
-    <div class="order-summary-body">
-      <div class="payment-details">
-        <div class="payment-summary">
-          <div class="fee-container">
-            <span class="order-summary-fee-label"> Biaya sesi untuk <strong>30 menit</strong></span>
-            <span class="order-summary-fee">Rp 70.000</span>
-          </div>
-          <div class="fee-container">
-            <span class="order-summary-fee-label">Biaya Layanan</span>
-            <span class="order-summary-fee">Rp 1.000</span>
-          </div>
-          <div class="to-pay-container">
-            <span class="order-summary-to-pay-label">Pembayaranmu</span>
-            <span class="order-summary-to-pay">Rp 71.000</span>
-          </div>
-        </div>
-      </div>
-      <div class="promo-code">
-        <div class="promo-code-input-wrapper">
-          <div class="promo-code-input-holder">
-            <input type="text" id="promo-code-input" name="promoCode" placeholder="Masukkan kode promo">
-          </div>
-          <div class="apply-promo-btn-container">
-            <button id="apply-promo-btn" class="apply-promo-btn" disabled> Terapkan </button>
-          </div>
-        </div>
-        <div class="applied-coupons">
-          <div class="applied-coupons-max-msg-container">
-            <span class="applied-coupons-max-msg"> *Kamu bisa pakai hingga 3 kupon. </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="order-summary-footer">
-      <button id="order-next-btn" class="order-next-btn"> Konfirmasi </button>
-    </div>
-  </div>
-  
-@endsection

@@ -44,7 +44,7 @@
                             <div class="section-title bg-light rounded h-100 p-5">
                                 <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Nurse</h5>
                                 <h1 class="display-6 mb-4">Meet Our Certified & Experienced Nurse</h1>
-                                <a href="service.dokter" class="btn btn-primary py-3 px-5">Appointment</a>
+                                <a href="/service" class="btn btn-primary py-3 px-5">Appointment</a>
                             </div>
                         </div>
 

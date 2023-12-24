@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\PasienController;
 use App\Models\TenagaMedis;
 use App\Models\Service;
 use App\Models\Roles;
+use App\Models\Pembayaran; // Example namespace, adjust based on your actual namespace
+use App\Models\Pasien; 
+use App\Models\Reservasi; 
+use Illuminate\Support\Carbon;
+
 
 use Illuminate\Http\Request;
 
@@ -161,19 +167,178 @@ public function create()
 
         return view('appoinment.perawat', compact('nurses'));
     }
-    public function pembayaranDoctors()
-    {
-        // pembayaran doctors with the specified role (assuming id_roles = 2 corresponds to doctors)
-        $doctors = TenagaMedis::where('id_roles', 2)->get();
 
-        return view('pembayaran.dokter', compact('doctors'));
-    }
-    public function pembayaranPerawat()
-    {
-        $nurses = TenagaMedis::where('id_roles', 3)->get();
 
-        return view('pembayaran.perawat', compact('nurses'));
+
+    // public function bayarDokter()
+    // {
+    //     $doctors = TenagaMedis::where('id_roles', 2)->get();
+
+    //     return view('pembayaran', compact('doctors'));
+    // }
+    public function bayarDokter(Request $request, $id)
+    {
+        // Mendapatkan informasi dokter berdasarkan ID
+        $doctor = TenagaMedis::findOrFail($id);
+        // Kembalikan view pembayaran dengan data dokter yang sesuai
+        
+        $totalPembayaran = 100000;
+    
+        // Simpan data pembayaran ke dalam database
+        $pembayaran = new \App\Models\Pembayaran();
+        $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
+        $pembayaran->total_pembayaran = $totalPembayaran;
+        $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
+        $pembayaran->save();
+    
+        // Creating a new Pasien instance from the request
+        $patient = Pasien::create($request->all());
+    
+        /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
+        composer require midtrans/midtrans-php
+                                    
+        Alternatively, if you are not using **Composer**, you can download midtrans-php library 
+        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require 
+        the file manually.   
+
+        require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
+
+        //SAMPLE REQUEST START HERE
+
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+        
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $pembayaran->id,
+                'gross_amount' => $pembayaran->total_pembayaran,
+            ),
+            'customer_details' => array(
+                'name' => $request->nama_pasien,
+                'email' => $request->email_pasien,
+                'phone' => $request->no_telp_pasien,
+                'alamat' => $request->alamat_pasien,
+            ),
+        );
+    
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        // dd($snapToken) ;
+        
+        return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken'));
     }
+    
+    
+    // public function bayarPerawat($id)
+    // {
+    //     // Mendapatkan informasi dokter berdasarkan ID
+    //     $nurse = TenagaMedis::findOrFail($id);
+    //     return view('pembayaran-perawat', compact('nurse'));
+    // }
+    public function bayarPerawat(Request $request, $id)
+    {
+        // Mendapatkan informasi nurse berdasarkan ID
+        $nurse = TenagaMedis::findOrFail($id);
+
+        // Kembalikan view pembayaran dengan data dokter yang sesuai
+        
+        $totalPembayaran = 100000;
+    
+        // Simpan data pembayaran ke dalam database
+        $pembayaran = new \App\Models\Pembayaran();
+        $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
+        $pembayaran->total_pembayaran = $totalPembayaran;
+        $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
+        $pembayaran->save();
+    
+        // Creating a new Pasien instance from the request
+        $patient = Pasien::create($request->all());
+    
+        /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
+        composer require midtrans/midtrans-php
+                                    
+        Alternatively, if you are not using **Composer**, you can download midtrans-php library 
+        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require 
+        the file manually.   
+
+        require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
+
+        //SAMPLE REQUEST START HERE
+
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+        
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $pembayaran->id,
+                'gross_amount' => $pembayaran->total_pembayaran,
+            ),
+            'customer_details' => array(
+                'name' => $request->nama_pasien,
+                'email' => $request->email_pasien,
+                'phone' => $request->no_telp_pasien,
+                'alamat' => $request->alamat_pasien,
+            ),
+        );
+    
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        // dd($snapToken) ;
+        
+        return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken'));
+    }
+
+    public function showReservationForm()
+    {
+        return view('reservasi');
+    }
+    
+
+    public function processReservation(Request $request)
+    {
+        $tanggalTindakan = $request->input('tanggal');
+        
+        // Get the nurse ID based on the role ID (id_roles = 3 for nurses)
+        $id_roles = 3; // Assuming the role ID for nurses is 3
+        $nurse = TenagaMedis::where('id_roles', $id_roles)->first(); // Fetch nurse based on role ID
+        
+        if (!is_null($tanggalTindakan)) {
+            $reservasi = new \App\Models\Reservasi();
+            $reservasi->tgl_reservasi = now();
+            $reservasi->status_reservasi = true;
+            $reservasi->tgl_tindakan = $tanggalTindakan;
+    
+            if ($nurse) {
+                $reservasi->id_nurse = $nurse->id; // Associate nurse ID with the reservation
+            } else {
+                // Handle the case where no nurse with role ID = 3 is found
+                return view('reservasi')->with('error', 'Nurse not found for the specified role.');
+            }
+    
+            // Melakukan penyimpanan data
+            $reservasi->save();
+    
+            // Redirect ke halaman reservasi dengan pesan sukses
+            return view('reservasi', compact('nurse'))->with('success', 'Reservasi berhasil dibuat!');
+        } else {
+            // Handle jika $tanggalTindakan kosong
+            return view('reservasi', compact('nurse'))->with('error', 'Tanggal tindakan tidak valid.');
+        }
+    }
+    
+    
+    
+    
 
 
 

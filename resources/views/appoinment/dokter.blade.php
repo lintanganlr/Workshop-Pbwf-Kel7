@@ -11,7 +11,9 @@
                 <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5 mt-7s w-50">
                     <h4 class="mb-2">{{ $doctor->nama_medis }}</h4>
                     <p class="text-primary mb-0">{{ $doctor->spesialisasi_medis }}</p>
-                    <a href="pembayaran.dokter" class="btn btn-primary mt-3 rounded-pill">Chat</a>
+                    <a href="{{ route('pembayaran.dokter', ['id' => $doctor->id]) }}" class="btn btn-primary mt-3 rounded-pill">Book</a>
+                    <!-- ^ Corrected route name and parameters -->
+
                 </div>
             </div>
         </div>
@@ -19,3 +21,4 @@
     </div>
 </div>
 @endsection
+

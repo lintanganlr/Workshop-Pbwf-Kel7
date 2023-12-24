@@ -11,7 +11,7 @@
                 <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5 mt-7s w-50">
                     <h4 class="mb-2">{{ $nurse->nama_medis }}</h4>
                     <p class="text-primary mb-0">{{ $nurse->spesialisasi_medis }}</p>
-                    <a href="pembayaran.perawat" class="btn btn-primary mt-3 rounded-pill">Chat</a>
+                    <a href="reservasi" class="btn btn-primary mt-3 rounded-pill">Book</a>
                 </div>
             </div>
         </div>

@@ -34,8 +34,13 @@
                     <div class="d-flex">
                         <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                         <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="https://id.linkedin.com/in/rumah-sakit-universitas-airlangga-532330132">
+                            <i class="fab fa-linkedin-in fw-normal"></i>
+                        </a>                        
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.instagram.com/rs.unair?igsh=a3M1NHIwaXR0cWx4">
+                            <i class="fab fa-instagram fw-normal"></i>
+                        </a>
+                        
                     </div>
                 </div>
             </div>

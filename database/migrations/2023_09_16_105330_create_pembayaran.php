@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
             $table->date('tgl_pembayaran');
-            $table->boolean('sttus_pembayaran');
             $table->float('total_pembayaran');
+            $table->enum('status_pembayaran',['unpaid','paid']);
             $table->timestamps();
         });
     }

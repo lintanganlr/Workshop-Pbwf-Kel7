@@ -19,6 +19,7 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Login</button>
     </form>
+    <p>Don't have an account? <a href="{{ route('register') }}">Create New Account</a></p>
   </div>
 
 <script src="assets/js/index.js"></script>

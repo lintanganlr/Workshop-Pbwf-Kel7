@@ -16,18 +16,19 @@
       <label for="name">Nama</label>
       <input type="text" id="name" name="name" required>
       <label for="username">Username</label>
-<input type="text" id="username" name="username" required>
-<label for="password">Password</label>
-<input type="text" id="password" name="password" required>
-<label for="notelp">No. Telp</label>
-<input type="text" id="notelp" name="notelp" required>
-<label for="email">Email</label>
-<input type="email" id="email" name="email" required>
-<label for="alamat">Alamat</label>
-<input type="text" id="alamat" name="alamat" required>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" required>
+        <label for="notelp">No. Telp</label>
+        <input type="text" id="notelp" name="notelp" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="alamat">Alamat</label>
+        <input type="text" id="alamat" name="alamat" required>
       <!-- Sisipkan elemen lainnya sesuai kebutuhan -->
       <button type="submit">Register</button>
     </form>
+    <p>Have an account? <a href="{{ route('login') }}">Sign In Your Account</a></p>
   </div>
 
 <script src="assets/js/index.js"></script>

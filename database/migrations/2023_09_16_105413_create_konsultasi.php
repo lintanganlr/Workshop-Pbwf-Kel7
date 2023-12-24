@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('konsultasi', function (Blueprint $table) {
             $table->id();
-            $table->boolean('sttus_konsul');
+            $table->boolean('status_konsul');
             $table->date('tgl_konsul');
             $table->timestamps();
         });

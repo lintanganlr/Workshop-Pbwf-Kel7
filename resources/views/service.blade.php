@@ -14,15 +14,12 @@
     <!-- Hero End -->
 
 
-    <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+   <!-- Service Start -->
+   <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5 mb-5">
                 <div class="col-lg-10">
-                    <div class="section-title mb-5">
-                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Services</h5>
-                        <h1 class="display-5 mb-0">We Offer High-Quality Health Services for Diabetes</h1>
-                    </div>
+                    <!-- ... (Your existing code) ... -->
                     <div class="row g-5">
                         @foreach($services as $service)
                             <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.9s">
@@ -30,19 +27,26 @@
                                     <img class="img-fluid" src="{{ asset('serviceimg/' . $service->image) }}" alt="Deskripsi Gambar">
                                 </div>
                                 <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                    @guest
-                                        <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                    @if(auth()->check())
+                                        @if($service->id_roles === 2)
+                                            <a href="{{ route('appoinment.dokter') }}">
+                                                <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                            </a>
+                                        @elseif($service->id_roles === 3)
+                                            <a href="{{ route('appoinment.perawat') }}">
+                                                <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                            </a>
+                                        @else
+                                            <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                        @endif
                                     @else
-                                    <a href="{{ route('appoinment.dokter') }}">
                                         <h5 class="m-0">{{ $service->nama_service }}</h5>
-                                    </a>                                    
-                                    @endguest
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
-                    </div>                                     
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>

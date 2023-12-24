@@ -34,7 +34,9 @@
 
     <!-- Template Stylesheet -->
     <link href="{{URL('../../../css/style.css')}}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{ aseet('../../../css/style.css')}}"> --}}
     {{-- <link href="{{URL('../assets/css/styles.css')}}" rel="stylesheet"> --}}
+
 
 </head>
 <body>
@@ -76,5 +78,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+
 </body>
 </html>

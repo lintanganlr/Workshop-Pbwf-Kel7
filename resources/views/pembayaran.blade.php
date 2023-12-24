@@ -1,32 +1,35 @@
-@extends('layout.main')
+@extends('layout.main2')
 @section('content')
-    <div class="navbar">
-        <div class="navbar-item navbar-left" style="line-height: 40px;">
-            <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
-        </div>
-        <div class="navbar-item navbar-right">
-            @if(session('nama_pasien'))
-                <p style="text-align: center; line-height: 40px;">
-                    <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
-                    <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
-                    <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
-                </p>
-            @endif
-        </div>
-    </div>
+<div class="container">
+    <!-- Bagian navigasi dan informasi lainnya -->
     <div class="container">
-      <table class="box doctor-box">
-          <tr>
-              <td>
-                  <img src="gambar.jpg" alt="Gambar">
-              </td>
-              <td>
-                  <p>Nama</p>
-                  <p>Spesialis</p>
-              </td>
-          </tr>
-      </table>
-      <!-- Bagian Informasi Pembayaran -->
+        <!-- Bagian navigasi dan informasi lainnya -->
+        <div class="navbar">
+          <div class="navbar-item navbar-left" style="line-height: 40px;">
+              <p style="font-size: 20px; text-align: center; margin: 0;">Tulisan Konsultasi untuk:</p>
+          </div>
+          <div class="navbar-item navbar-right">
+              @if(session('nama_pasien'))
+                  <p style="text-align: center; line-height: 40px;">
+                      <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
+                      <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
+                      <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
+                  </p>
+              @endif
+          </div>
+        </div>
+
+      <div class="box doctor-box">
+          <div class="doctor-info">
+              <img src="{{ asset('medisimg/'. $doctor->image) }}" alt="{{ $doctor->image }}">
+              <div class="doctor-details">
+                  <p>{{ $doctor->nama_medis }}</p>
+                  <p>{{ $doctor->spesialisasi_medis }}</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Bagian informasi pembayaran -->
       <table class="box price-box">
           <tr>
               <td>
@@ -34,7 +37,7 @@
                       <div class="flex flex-row justify-between order-summary__fee-container">
                           <span class="order-summary__fee-label">Biaya sesi untuk <strong>1 jam</strong></span>
                           <!-- Biaya Sesi -->
-                          <span class="order-summary__fee">Rp 40.000</span>
+                          <span class="order-summary__fee">Rp 99.000</span>
                       </div>
                       <!-- Biaya Layanan -->
                       <div class="flex flex-row justify-between order-summary__fee-container">
@@ -43,9 +46,10 @@
                       </div>
                       <!-- Total Pembayaran -->
                       <div class="flex flex-row justify-between order-summary__to-pay-container">
-                          <span class="order-summary__to-pay-label">Pembayaranmu</span>
-                          <span class="order-summary__to-pay">Rp 41.000</span>
-                      </div>
+                        <span class="order-summary__to-pay-label">Pembayaranmu</span>
+                        <!-- Display the fetched totalPembayaran here -->
+                        <span class="order-summary__to-pay">Rp {{ number_format($totalPembayaran, 0, ',', '.') }}</span>
+                    </div>
                   </div>
               </td>
               <td></td>
@@ -54,11 +58,75 @@
               <td></td>
           </tr>
       </table>
-      <div class="confirm-box">
-          <a href="#" class="btn-confirm">Konfirmasi</a>
-      </div>
+
+      {{-- <!-- Tombol konfirmasi -->
+      <button id="pay-button">Pay!</button>
+
+      <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+          // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+          window.snap.pay('{{$snapToken}}', {
+            onSuccess: function(result){
+              /* You may add your own implementation here */
+              alert("payment success!"); console.log(result);
+            },
+            onPending: function(result){
+              /* You may add your own implementation here */
+              alert("wating your payment!"); console.log(result);
+            },
+            onError: function(result){
+              /* You may add your own implementation here */
+              alert("payment failed!"); console.log(result);
+            },
+            onClose: function(){
+              /* You may add your own implementation here */
+              alert('you closed the popup without finishing the payment');
+            }
+          })
+        });
+      </script> --}}
+      <button id="pay-button">Pay!</button>
+
+<script type="text/javascript">
+  var payButton = document.getElementById('pay-button');
+  payButton.addEventListener('click', function () {
+    window.snap.pay('{{$snapToken}}', {
+      onSuccess: function(result){
+        // Redirect to WhatsApp API when payment is successful
+        var waNumber = '6285854926835'; // Ganti dengan nomor WhatsApp yang diinginkan
+
+        // Construct the URL for WhatsApp API
+        var waURL = 'https://api.whatsapp.com/send?phone=' + waNumber;
+
+        // Open WhatsApp API link in a new tab
+        window.open(waURL, '_blank');
+
+        // Log success message
+        console.log('Payment success!');
+        console.log(result);
+      },
+      onPending: function(result){
+        alert("Waiting for your payment!");
+        console.log(result);
+      },
+      onError: function(result){
+        alert("Payment failed!");
+        console.log(result);
+      },
+      onClose: function(){
+        alert('You closed the popup without finishing the payment');
+      }
+    })
+  });
+</script>
+
+      
+
 </div>
 @endsection
+
 
 
 
