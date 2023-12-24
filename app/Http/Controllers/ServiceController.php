@@ -182,13 +182,20 @@ public function create()
         $doctor = TenagaMedis::findOrFail($id);
         // Kembalikan view pembayaran dengan data dokter yang sesuai
 
+        
+        // Mengambil ID Tenaga Medis yang ingin dihubungkan dengan pembayaran
+        
+        $id_tenagamedis = $doctor->id;
         $totalPembayaran = 100000;
+
 
         // Simpan data pembayaran ke dalam database
         $pembayaran = new \App\Models\Pembayaran();
+        $pembayaran->id_tenagamedis = $id_tenagamedis;
         $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
         $pembayaran->total_pembayaran = $totalPembayaran;
         $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
+        $pembayaran->id = substr(uniqid(), 0, 4);
         $pembayaran->save();
 
         // Creating a new Pasien instance from the request
@@ -230,8 +237,8 @@ public function create()
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken) ;
 
-        return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken'));
-    }
+        return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken','id_tenagamedis'));
+
 
 
     // public function bayarPerawat($id)

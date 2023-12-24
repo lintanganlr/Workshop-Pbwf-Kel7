@@ -11,6 +11,7 @@ class Pembayaran extends Model
     protected $table = 'pembayaran'; // Nama tabel yang sesuai dengan skema database
 
     protected $fillable = [
+        'id_tenagamedis' ,
         'tgl_pembayaran',
         'total_pembayaran',
         'status_pembayaran',
@@ -23,7 +24,10 @@ class Pembayaran extends Model
     ];
 
     // Tambahan jika diperlukan: relasi, akses, mutator, accessor, dll.
-
+    public function tenagamedis()
+    {
+        return $this->belongsTo(TenagaMedis::class, 'id_tenagamedis');
+    }
     // Contoh metode tambahan:
     public function getStatusPembayaranAttribute($value)
     {

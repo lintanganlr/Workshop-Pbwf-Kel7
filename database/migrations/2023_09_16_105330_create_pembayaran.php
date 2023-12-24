@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_tenagamedis');
+            $table->foreign('id_tenagamedis')->references('id')->on('tenagamedis');
             $table->date('tgl_pembayaran');
             $table->float('total_pembayaran');
             $table->enum('status_pembayaran',['unpaid','paid']);

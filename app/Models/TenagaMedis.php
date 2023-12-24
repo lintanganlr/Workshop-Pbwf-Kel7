@@ -43,6 +43,15 @@ class TenagaMedis extends Model
         ]);
     }
 
+    // protected $table = 'tenagamedis'; // Assuming your table name is 'tenagamedis'
+
+    // Define the relationship between TenagaMedis and Pembayaran
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class, 'id_tenagamedis', 'id');
+    }
+
+
 
 }
 

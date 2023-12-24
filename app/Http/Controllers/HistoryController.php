@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pembayaran;
+
 
 class HistoryController extends Controller
 {
@@ -11,7 +13,9 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view('history'); 
+        $payments = Pembayaran::with('tenagamedis')->get();
+
+        return view('history', compact('payments'));
     }
 
     /**

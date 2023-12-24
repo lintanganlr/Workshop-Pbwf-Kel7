@@ -32,4 +32,35 @@
         </div>
     </div>
     <!-- Hero End -->
+    <div class="container">
+        <div class="row">
+            @foreach($payments as $payment)
+                @if($payment->tenagamedis)
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="{{ asset('medisimg/'. $payment->tenagamedis->image) }}" class="card-img-top" alt="{{ $payment->tenagamedis->image }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $payment->tenagamedis->nama_medis }}</h5>
+                                <p class="card-text">{{ $payment->tenagamedis->spesialisasi_medis }}</p>
+                                <p class="card-text">ID Pembayaran: {{ $payment->id }}</p>
+                                <p class="card-text">Tanggal: {{ $payment->tgl_pembayaran }}</p>
+                                <a href="#" class="btn btn-primary btn-sm float-end">Beri Ulasan</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+    
+    
+    
 @endsection
+
+<style>
+    .card-img-top {
+        object-fit: cover; /* Memastikan gambar tetap sesuai proporsi */
+        /* width: 130px; Lebar gambar */
+        height: 310px; /* Tinggi gambar */
+    }
+</style>
