@@ -33,8 +33,9 @@
         <div class="navbar-nav ms-auto py-0">
             <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
             <a href="/about" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-            <a href="/service" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Pelayanan</a>
             <a href="/artikel" class="nav-item nav-link {{ request()->is('artikel') ? 'active' : '' }}">Artikel</a>
+            <a href="/service" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Pelayanan</a>
+            <a href="/history" class="nav-item nav-link {{ request()->is('artikel') ? 'active' : '' }}">Riwayat</a>
             <a href="/review" class="nav-item nav-link {{ request()->is('review') ? 'active' : '' }}">Ulasan</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tenaga Medis</a>

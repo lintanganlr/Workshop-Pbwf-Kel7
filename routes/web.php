@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
-use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UploadArtController;
 use App\Http\Controllers\TenagaMedisController;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\HistoryController;
 
 /*
 |------------------------------------------------------------------------
@@ -83,6 +83,8 @@ Route::get('artikel/tampilan', [UploadArtController::class, 'tampilan'])->name('
 Route::get('review', [ReviewController::class, 'index'])->name('review.index');
 Route::get('review.create', [ReviewController::class, 'create'])->name('review.create');
 
+//history
+Route::get('/history', [HistoryController::class, 'index'])->name('history');
 
 // Tenaga Medis //
 // Dokter //
