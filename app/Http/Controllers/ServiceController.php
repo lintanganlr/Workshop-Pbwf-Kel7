@@ -11,6 +11,7 @@ use App\Models\Pembayaran; // Example namespace, adjust based on your actual nam
 use App\Models\Pasien;
 use App\Models\Reservasi;
 use Illuminate\Support\Carbon;
+use Ramsey\Uuid\Uuid;
 
 
 use Illuminate\Http\Request;
@@ -195,9 +196,11 @@ public function create()
         $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
         $pembayaran->total_pembayaran = $totalPembayaran;
         $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
-        $pembayaran->id = substr(uniqid(), 0, 4);
+         // Menghasilkan UUID v4 yang unik
         $pembayaran->save();
 
+        $pembayaran_id = Uuid::uuid4()->toString();
+        
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
 
@@ -238,6 +241,7 @@ public function create()
         // dd($snapToken) ;
 
         return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken','id_tenagamedis'));
+    }
 
 
 

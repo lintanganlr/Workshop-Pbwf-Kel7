@@ -9,6 +9,21 @@ class Pembayaran extends Model
 
 
     protected $table = 'pembayaran'; // Nama tabel yang sesuai dengan skema database
+    protected $primaryKey = 'id'; // Pastikan primary key diatur sebagai 'id'
+
+    protected $keyType = 'string'; // Tentukan tipe data untuk kunci utama sebagai string
+
+    public $incrementing = false; 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (!$model->getKey()) {
+                $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
+            }
+        });
+    }
 
     protected $fillable = [
         'id_tenagamedis' ,
