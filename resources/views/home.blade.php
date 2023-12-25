@@ -328,7 +328,7 @@
                  <div class="col-lg-7">
                      <div class="owl-carousel testimonial-carousel rounded p-5 wow zoomIn" data-wow-delay="0.6s">
                          <div class="testimonial-item text-center text-white">
-                             <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-1.jpg" alt="">
+                             <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-1 .jpg" alt="">
                              <p class="fs-5">Saya telah menggunakan layanan kesehatan diabetes ini selama beberapa bulan sekarang dan saya sangat terkesan.</p>
                              <hr class="mx-auto w-25">
                              <h4 class="text-white mb-0">Mirna Salihin</h4>

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         @foreach($nurses as $nurse)
-        <div class="col-lg-6 py-4">
+        <div class="col-lg-3 py-4 mb-4">
             <div class="position-relative" style="width: 240px; height: 200px;"> <!-- Menyesuaikan ukuran div untuk foto -->
                 <img class="img-fluid rounded-top" src="{{ asset('medisimg/'. $nurse->image)}}" alt="{{$nurse->image}}" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
