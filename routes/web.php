@@ -89,6 +89,12 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('review.store'
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 
 
+//baruu
+Route::get('/choose-date', [ServiceController::class, 'chooseDate'])->name('choose.date');
+Route::post('/process-date', [ServiceController::class, 'processDate'])->name('service.process-date');
+Route::get('/book-nurse/{id}', [ServiceController::class, 'bookNurse'])->name('book.nurse');
+
+
 // Tenaga Medis //
 // Dokter //
 Route::get('doctor', function () {

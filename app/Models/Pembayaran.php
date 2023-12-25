@@ -45,10 +45,15 @@ class Pembayaran extends Model
 
 
     // Tambahan jika diperlukan: relasi, akses, mutator, accessor, dll.
-    public function tenagamedis()
-    {
+    public function tenagamedis() {
         return $this->belongsTo(TenagaMedis::class, 'id_tenagamedis');
     }
+
+    public function reservasi()
+    {
+        return $this->belongsTo(Reservasi::class, 'id_reservasi');
+    }
+
     // Contoh metode tambahan:
     public function getStatusPembayaranAttribute($value)
     {

@@ -35,6 +35,16 @@
                 </div>
             </div>
 
+            <form method="get" action="{{ route('pembayaran.perawat', ['id' => $nurse->id]) }}">
+                @csrf 
+
+                <div class="container">
+                        <div class="form-group">
+                            <label for="tanggal">Pilih Tanggal:</label>
+                            <input type="date" id="tgl_tindakan" name="tgl_tindakan" class="form-control" required>
+                        </div>
+                </div>
+
             <!-- Informasi Pembayaran -->
             <div class="payment-summary">
                 <div class="fee-container">
@@ -50,6 +60,7 @@
                     <span class="total-fee">Rp {{ number_format($totalPembayaran, 0, ',', '.') }}</span>
                 </div>
             </div>
+            
         </div>
     </div>
 
@@ -58,7 +69,8 @@
         <div class="confirm-box">
             <button id="pay-button" class="btn-confirm">Bayar!</button>
         </div>
-    </div>
+    </form>
+
 
     <!-- Script untuk menangani pembayaran -->
     <script type="text/javascript">

@@ -53,7 +53,6 @@
             </div>
         </div>
         <!-- Spinner End -->
-
         @yield('content')
 
 

@@ -51,6 +51,10 @@ class TenagaMedis extends Model
         return $this->hasMany(Pembayaran::class, 'id_tenagamedis', 'id');
     }
 
+    public function reservasi()
+    {
+        return $this->hasMany(Reservasi::class, 'id_tenagamedis', 'id');
+    }
 
 
 }

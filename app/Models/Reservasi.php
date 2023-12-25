@@ -19,6 +19,14 @@ class Reservasi extends Model
         'tgl_reservasi' => 'date',
         'tgl_tindakan' => 'date',
     ];
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class, 'id_reservasi', 'id');
+    }
 
+    public function tenagamedis()
+    {
+        return $this->belongsTo(TenagaMedis::class, 'id_tenagamedis');
+    }
     // Jika ada relasi atau method lain yang perlu ditambahkan, Anda dapat menambahkannya di sini.
 }

@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('reservasi', function (Blueprint $table) {
             $table->id();
-            $table->date('tgl_reservasi');
-            $table->boolean('status_reservasi');
-            $table->date('tgl_tindakan');
+            $table->unsignedBigInteger('id_tenagamedis');
+            $table->foreign('id_tenagamedis')->references('id')->on('tenagamedis');
+            $table->date('tgl_reservasi')->nullable();
+            // $table->boolean('status_reservasi');
+            $table->date('tgl_tindakan')->nullable();
             $table->timestamps();
         });
     }

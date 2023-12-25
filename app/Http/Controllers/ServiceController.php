@@ -7,7 +7,7 @@ use App\Http\Controllers\PasienController;
 use App\Models\TenagaMedis;
 use App\Models\Service;
 use App\Models\Roles;
-use App\Models\Pembayaran; // Example namespace, adjust based on your actual namespace
+use App\Models\Pembayaran;
 use App\Models\Pasien;
 use App\Models\Reservasi;
 use Illuminate\Support\Carbon;
@@ -251,34 +251,52 @@ public function create()
     //     $nurse = TenagaMedis::findOrFail($id);
     //     return view('pembayaran-perawat', compact('nurse'));
     // }
-
-
     public function bayarPerawat(Request $request, $id)
     {
-        // Mendapatkan informasi nurse berdasarkan ID
+        // Mendapatkan informasi dokter berdasarkan ID
         $nurse = TenagaMedis::findOrFail($id);
-
         // Kembalikan view pembayaran dengan data dokter yang sesuai
+
+        
+        // Mengambil ID Tenaga Medis yang ingin dihubungkan dengan pembayaran
+        
+        $id_tenagamedis = $nurse->id;
         $totalPembayaran = 100000;
+
 
         // Simpan data pembayaran ke dalam database
         $pembayaran = new \App\Models\Pembayaran();
+        $pembayaran->id_tenagamedis = $id_tenagamedis;
         $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
         $pembayaran->total_pembayaran = $totalPembayaran;
         $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
+         // Menghasilkan UUID v4 yang unik
         $pembayaran->save();
 
+        $pembayaran_id = Uuid::uuid4()->toString();
+        
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
 
+        /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
+        composer require midtrans/midtrans-php
+
+        Alternatively, if you are not using **Composer**, you can download midtrans-php library
+        (https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require
+        the file manually.
+
+        require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
+
+        //SAMPLE REQUEST START HERE
+
         // Set your Merchant Server Key
-        Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        Config::$isProduction = false;
+        \Midtrans\Config::$isProduction = false;
         // Set sanitization on (default)
-        Config::$isSanitized = true;
+        \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
-        Config::$is3ds = true;
+        \Midtrans\Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
@@ -293,59 +311,126 @@ public function create()
             ),
         );
 
-        $snapToken = Snap::getSnapToken($params);
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        // dd($snapToken) ;
 
-        return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken'));
+        return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken','id_tenagamedis'));
     }
-
+    
     public function showReservationForm()
     {
         return view('reservasi');
     }
 
 
-    public function processReservation(Request $request)
-    {
-        $tanggalTindakan = $request->input('tanggal');
+    // public function processReservation(Request $request)
+    // {
+    //     $tanggalTindakan = $request->input('tanggal');
 
-        // Get the nurse ID based on the role ID (id_roles = 3 for nurses)
-        $id_roles = 3; // Assuming the role ID for nurses is 3
-        $nurse = TenagaMedis::where('id_roles', $id_roles)->first(); // Fetch nurse based on role ID
+    //     // Get the nurse ID based on the role ID (id_roles = 3 for nurses)
+    //     $id_roles = 3; // Assuming the role ID for nurses is 3
+    //     $nurse = TenagaMedis::where('id_roles', $id_roles)->first(); // Fetch nurse based on role ID
 
-        if (!is_null($tanggalTindakan)) {
-            $reservasi = new \App\Models\Reservasi();
-            $reservasi->tgl_reservasi = now();
-            $reservasi->status_reservasi = true;
-            $reservasi->tgl_tindakan = $tanggalTindakan;
+    //     if (!is_null($tanggalTindakan)) {
+    //         $reservasi = new \App\Models\Reservasi();
+    //         $reservasi->tgl_reservasi = now();
+    //         $reservasi->status_reservasi = true;
+    //         $reservasi->tgl_tindakan = $tanggalTindakan;
 
-            if ($nurse) {
-                $reservasi->id_nurse = $nurse->id; // Associate nurse ID with the reservation
-            } else {
-                // Handle the case where no nurse with role ID = 3 is found
-                return view('reservasi')->with('error', 'Nurse not found for the specified role.');
-            }
+    //         if ($nurse) {
+    //             $reservasi->id_nurse = $nurse->id; // Associate nurse ID with the reservation
+    //         } else {
+    //             // Handle the case where no nurse with role ID = 3 is found
+    //             return view('reservasi')->with('error', 'Nurse not found for the specified role.');
+    //         }
 
-            // Melakukan penyimpanan data
-            $reservasi->save();
+    //         // Melakukan penyimpanan data
+    //         $reservasi->save();
 
-            // Redirect ke halaman reservasi dengan pesan sukses
-            return view('reservasi', compact('nurse'))->with('success', 'Reservasi berhasil dibuat!');
-        } else {
-            // Handle jika $tanggalTindakan kosong
-            return view('reservasi', compact('nurse'))->with('error', 'Tanggal tindakan tidak valid.');
-        }
+    //         // Redirect ke halaman reservasi dengan pesan sukses
+    //         return view('reservasi', compact('nurse'))->with('success', 'Reservasi berhasil dibuat!');
+    //     } else {
+    //         // Handle jika $tanggalTindakan kosong
+    //         return view('reservasi', compact('nurse'))->with('error', 'Tanggal tindakan tidak valid.');
+    //     }
+
+public function chooseDate()
+{
+    return view('choose_date'); // Nama view yang akan menampilkan halaman input tanggal
+}
+
+// public function processDate(Request $request)
+// {
+//     // Validasi request di sini jika diperlukan
+//     $validatedData = $request->validate([
+//         'tgl_tindakan' => 'required|date',
+//     ]);
+
+//     // Ambil ID reservasi dari URL
+//     $reservasi = $request->input('id_reservasi');
+
+//     // Simpan tanggal reservasi ke dalam basis data
+//     Reservasi::where('id', $reservasi)->update([
+//         'tgl_tindakan' => $validatedData['tgl_tindakan'],
+//     ]);
+
+//     // Redirect ke halaman pembayaran sambil melewatkan ID reservasi
+//     return redirect()->route('pembayaran.perawat', ['id_reservasi' => $reservasi->id]);
+// }
+public function processDate(Request $request)
+{
+    // Validasi request di sini jika diperlukan
+    $validatedData = $request->validate([
+        'tgl_tindakan' => 'required|date',
+    ]);
+
+    // Ambil ID reservasi dari URL
+    $reservasi = $request->input('id_reservasi');
+
+    // Temukan reservasi berdasarkan ID
+    $reservasiData = Reservasi::find($reservasi);
+
+    if ($reservasiData) {
+        // Simpan tanggal reservasi ke dalam basis data
+        $reservasiData->tgl_tindakan = $validatedData['tgl_tindakan'];
+        $reservasiData->save();
+
+        // Temukan data nurse berdasarkan ID yang terkait dengan reservasi
+        $nurse = TenagaMedis::findOrFail($reservasiData->id_nurse);
+
+        // Redirect ke halaman pembayaran sambil melewatkan ID reservasi
+        return redirect()->route('pembayaran.perawat', ['id' => $nurse->id]);
+    } else {
+        // Tindakan jika nilai $reservasi null atau tidak valid
+        // Misalnya, kembali ke halaman sebelumnya dengan pesan error
+        return redirect()->back()->with('error', 'Nilai reservasi tidak valid');
     }
-    
+}
 
 
 
 
+public function bookNurse(Request $request, $id)
+{
+    // Temukan Tenaga Medis berdasarkan ID yang diberikan
+    $tenagaMedis = TenagaMedis::findOrFail($id);
 
+    // Pastikan role yang cocok dengan pilihan perawat
+    if ($tenagaMedis->role == '3') {
+        // Catat pilihan perawat ke dalam data reservasi
+        $reservasi = Reservasi::create([
+            'id_tenagamedis' => $tenagaMedis->id,
+            'tgl_reservasi' => Carbon::now(),
+            // Informasi lainnya sesuai kebutuhan
+        ]);
 
+        // Redirect ke halaman pilih tanggal dengan menyertakan ID reservasi
+        return redirect()->route('pembayaran.perawat', ['id_reservasi' => $reservasi->id]);
+    } else {
+        // Jika rolenya bukan perawat, tindakan yang sesuai dapat dilakukan di sini
+        // Misalnya, mengarahkan pengguna ke halaman lain dengan pesan kesalahan
+        return redirect()->back()->with('error', 'Pilihan tidak valid');
+    }
 
-
-
-
-
-
+}
 }
