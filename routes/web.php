@@ -80,11 +80,14 @@ Route::get('artikel/tampilan', [UploadArtController::class, 'tampilan'])->name('
 
 
 // review //
-Route::get('review', [ReviewController::class, 'index'])->name('review.index');
-Route::get('review.create', [ReviewController::class, 'create'])->name('review.create');
+Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
+Route::get('/review/{payment_id}', [ReviewController::class, 'createReview'])->name('review.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('review.store');
+
 
 //history
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
+
 
 // Tenaga Medis //
 // Dokter //

@@ -48,9 +48,11 @@
         </div>
 
         @if (Auth::guest())
-            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
-            <a class="btn-getstart" href="{{ route('login') }}">Sign In</a>
-            <a class="btn-getstarted" href="{{ route('register') }}">Sign Up</a>
+
+        <button type="button" class="btn text-dark small-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+        <a class="btn-getstart small-btn" href="{{ route('login') }}">Sign In</a>
+        <a class="btn-getstarted small-btn" href="{{ route('register') }}">Sign Up</a>
+        
         @else
             <span class="text-truncate mr-2" title="profile">
                 <!-- Teks dan tautan ke halaman profil -->
@@ -65,4 +67,11 @@
     </div>
 </nav>
 
+<style>
+    .small-btn {
+      font-size: 12px;
+      padding: 5px 10px;
+      /* Sesuaikan ukuran dan padding sesuai kebutuhan */
+    }
+  </style>
 <!-- Navbar End -->

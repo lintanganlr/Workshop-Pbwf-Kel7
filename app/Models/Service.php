@@ -17,5 +17,12 @@ class Service extends Model
         return $this->hasOne(Roles::class, 'id', 'id_roles');
     }
 
+    public function s()
+    {
+        return $this->hasOne(Roles::class, 'id', 'id_roles');
+    }
+
+
+
 }
 

@@ -12,12 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('review', function (Blueprint $table) {
-            $table->id();
-            $table->date('tgl_review');
-            $table->string('komentar', 1000);
+            $table->id('id_review')->increments();
+            // $table->unsignedBigInteger('id_users');
+            // $table->foreign('id_users')->references('id')->on('users');
+            $table->string('id_pembayaran'); // Sesuaikan tipe data dengan yang direferensikan
+            $table->foreign('id_pembayaran')->references('id')->on('pembayaran');
+            $table->enum('rating', ['Kurang Memuaskan', 'Cukup', 'Bagus', 'Sangat Bagus', 'Luar Biasa'])->default('Cukup');
+            $table->text('ulasan');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

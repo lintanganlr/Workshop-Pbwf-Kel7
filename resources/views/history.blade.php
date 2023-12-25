@@ -44,7 +44,7 @@
                                 <p class="card-text">{{ $payment->tenagamedis->spesialisasi_medis }}</p>
                                 <p class="card-text">ID Pembayaran: {{ $payment->id }}</p>
                                 <p class="card-text">Tanggal: {{ $payment->tgl_pembayaran }}</p>
-                                <a href="#" class="btn btn-primary btn-sm float-end">Beri Ulasan</a>
+                                <a href="{{ route('review.create', ['payment_id' => $payment->id]) }}">Buat Ulasan</a>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,9 @@
             @endforeach
         </div>
     </div>
-    
-    
-    
+
+
+
 @endsection
 
 <style>

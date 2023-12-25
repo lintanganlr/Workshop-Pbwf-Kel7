@@ -52,7 +52,6 @@
         </div>
         <!-- Spinner End -->
         
-        @include('layout.nav-profile')
         @yield('content')
 
 

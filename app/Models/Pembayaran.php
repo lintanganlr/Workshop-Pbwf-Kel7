@@ -13,7 +13,7 @@ class Pembayaran extends Model
 
     protected $keyType = 'string'; // Tentukan tipe data untuk kunci utama sebagai string
 
-    public $incrementing = false; 
+    public $incrementing = false;
     protected static function boot()
     {
         parent::boot();
@@ -37,6 +37,12 @@ class Pembayaran extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'id_pembayaran');
+    }
+
 
     // Tambahan jika diperlukan: relasi, akses, mutator, accessor, dll.
     public function tenagamedis()

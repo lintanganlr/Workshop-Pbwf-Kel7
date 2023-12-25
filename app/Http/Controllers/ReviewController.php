@@ -3,62 +3,50 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Review; // Sesuaikan dengan model yang tepat
+use App\Models\Pembayaran;
+use App\Models\User;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('review.index');
+        $reviews = Review::all(); // Mendapatkan daftar users
+
+        return view('review.index', compact('reviews'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('review.create');
+        $users = User::all(); // Mendapatkan daftar users
+        $pembayarans = Pembayaran::all(); // Mendapatkan daftar pembayaran
+
+        return view('review.create', compact('users', 'pembayarans'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pembayaran' => 'required',
+            'rating' => 'required',
+            'ulasan' => 'required',
+        ]);
+    
+        // Simpan ulasan ke dalam database
+        Review::create($validatedData);
+    
+        // Redirect ke halaman tertentu setelah ulasan disimpan
+        return redirect()->route('review.index')->with('success', 'Ulasan berhasil ditambahkan!');
     }
+    
+    
+    public function createReview($paymentId)
+{
+    $payment = Pembayaran::findOrFail($paymentId);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    return view('review.create', compact('payment'));
+}
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
