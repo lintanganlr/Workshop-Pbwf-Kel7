@@ -44,7 +44,11 @@
                                 <p class="card-text">{{ $payment->tenagamedis->spesialisasi_medis }}</p>
                                 <p class="card-text">ID Pembayaran: {{ $payment->id }}</p>
                                 <p class="card-text">Tanggal: {{ $payment->tgl_pembayaran }}</p>
+                                @if($payment->reviews->isEmpty())
+                                <!-- Show the "Buat Ulasan" button if there are no reviews for this payment -->
                                 <a href="{{ route('review.create', ['payment_id' => $payment->id]) }}" class="btn btn-primary">Buat Ulasan</a>
+                                @endif
+
                                 <a href="{{ route('struk', ['id' => $payment->id]) }}" class="btn btn-primary">Struk</a>
                             </div>
                         </div>
