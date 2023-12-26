@@ -221,6 +221,9 @@ Route::get('/struk/{id}', [ServiceController::class, 'struk'])->name('struk');
 Route::get('pembayaran.dokter/{id}', [ServiceController::class, 'bayarDokter'])->name('pembayaran.dokter');
 Route::get('pembayaran.perawat/{id}', [ServiceController::class, 'bayarPerawat'])->name('pembayaran.perawat');
 
+//MIDTRANS CALLBACK//
+// Route::post('/midtrans-callback',[ServiceController::class,'callback']);
+
 //PROFILE CUSTOMER//
 // Route::get('profile', function () {
 //     return view('profile-user');

@@ -478,25 +478,15 @@ public function struk($id)
 }
 
 
-
-
-
-
-
-// public function struk($id)
-// {
-//     // Mendapatkan informasi Tenaga Medis berdasarkan ID
-//     $doctor = TenagaMedis::findOrFail($id);
-//     $id_tenagamedis = $doctor->id;
-    
-//     // Mendapatkan informasi pembayaran atau informasi lain yang dibutuhkan untuk struk
-//     $totalPembayaran = 100000; // Ganti dengan nilai yang sesuai dari pembayaran yang sudah ada
-
-//     // Mungkin Anda memiliki suatu variabel $status yang menandakan status pembayaran
-//     $status = isset($_COOKIE['paymentStatus']) ? $_COOKIE['paymentStatus'] : 'defaultStatus'; // Ganti dengan status default jika perlu
-
-//     // Pass variabel-variabel tersebut ke view 'struk'
-//     return view('struk', compact('totalPembayaran', 'status'));
-// }
+public function callback(Request $request){
+    $serverKey = config('midtrans.server_key');
+    $hashed = hash("sha512",$request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+    if($hashed == $request->signature_key){
+        if($request->transaction_status == 'capture'){
+            $pembayaran = Pembayaran::find($request->pembayaran_id);
+            $pembayaran->update(['status'=>'paid']);
+        }
+    }
+}
 
 }

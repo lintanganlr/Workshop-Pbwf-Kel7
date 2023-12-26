@@ -22,30 +22,39 @@
         margin-bottom: 5px;
     }
 </style>
-
+@if (Auth::guest())
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h3>Daftar Ulasan</h3>
-            @if($reviews->isEmpty())
-                <p>Tidak ada ulasan yang tersedia.</p>
             @else
-                <div class="review-list">
-                    @foreach($reviews as $index => $review)
-                        <div class="review-card">
-                            <div class="review-content">
-                                <h5>Rating: {{ $review->rating }}</h5>
-                                <p>{{ $review->ulasan }}</p>
-                                <!-- Tampilkan ID Pembayaran -->
-                                <p>ID Pembayaran: {{ $review->id_pembayaran }}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Daftar Ulasan</h3>
+                        @if($reviews->isEmpty())
+                            <p>Tidak ada ulasan yang tersedia.</p>
+                        @else
+                            <div class="review-list">
+                                @foreach($reviews as $index => $review)
+                                    <div class="review-card">
+                                        <div class="review-content">
+                                            <h5>Rating: {{ $review->rating }}</h5>
+                                            <p>{{ $review->ulasan }}</p>
+                                            <!-- Tampilkan ID Pembayaran -->
+                                            <p>ID Pembayaran: {{ $review->id_pembayaran }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
-                    @endforeach
+                        @endif
+                    </div>
                 </div>
-            @endif
+            </div>
         </div>
     </div>
 </div>
+@endif
 
 <!-- Konten footer Anda -->
 @endsection
