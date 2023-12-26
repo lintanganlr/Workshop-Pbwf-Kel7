@@ -671,6 +671,17 @@ h6,
 }
 
 
+/* Style for article content */
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article {
+    width: 80%; /* Adjust width as needed */
+    /* Add other styles for your article content */
+}
 
 .article-wrapper {
     max-width: 800px;

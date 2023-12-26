@@ -55,11 +55,11 @@
     </div>
 </div>
 
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                </div>
-                            </div>
+<div class="border-top">
+    <div class="card-body">
+        <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+</div>
                         </div>
                     </div>
 

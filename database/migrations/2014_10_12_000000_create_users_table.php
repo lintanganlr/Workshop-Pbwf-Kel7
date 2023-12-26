@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('notelp', 15);
             $table->string('email', 30)->unique;
             $table->string('alamat', 100);
-            // $table->rememberToken();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

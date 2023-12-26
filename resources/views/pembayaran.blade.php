@@ -1,4 +1,4 @@
-@extends('layout.main2')
+@extends('layout.main4')
 @section('content')
 
 <div class="container">
@@ -8,7 +8,7 @@
             <a href="{{ route('home') }}" style="text-decoration: none;">
                 <h1 class="title-glucosync" style="margin: 0;">GlucoSync</h1>
             </a>
-            
+
             <div class="profile-details">
                 <a href="/profile" style="display: flex; align-items: center; text-decoration: none;">
                     <div class="doctor-pic-container">
@@ -121,10 +121,6 @@
 <style>
 
 <style>
-    body {
-        font-family: 'Jost', sans-serif;
-    }
-
     .receipt-wrapper {
     width: 300px;
     padding: 20px;
@@ -280,7 +276,7 @@
         font-size: 2.5rem;
         margin-bottom: 20px;
         font-weight: bold;
-        font-family: 'Jost', sans-serif;
+
     }
 
     .profile-details {
@@ -300,14 +296,25 @@
         font-size: 1.8rem;
         margin-bottom: 5px;
         color: #333;
-        font-family: 'Jost', sans-serif;
+
     }
 
     .profile-info p {
         font-size: 1.2rem;
         color: #666;
         margin-bottom: 0;
-        font-family: 'Jost', sans-serif;
-    }
 
+    }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+        font-family: 'Jost', sans-serif;
+        /* Sesuaikan ukuran font dan properti lainnya jika diperlukan */
+    }
 </style>

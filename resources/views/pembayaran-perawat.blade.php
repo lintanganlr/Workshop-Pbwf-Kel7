@@ -1,14 +1,17 @@
-@extends('layout.main2')
+@extends('layout.main4')
 @section('content')
 
 <div class="container">
 
     <div class="receipt">
         <div class="profile-section" style="display: flex; justify-content: space-between; align-items: center; background-color: #7D1219; padding: 10px;">
-            <h1 class="title-glucosync" style="margin: 0;"> GlucoSync.</h1>
+            <a href="{{ route('home') }}" style="text-decoration: none;">
+                <h1 class="title-glucosync" style="margin: 0;">GlucoSync</h1>
+            </a>
+
             <div class="profile-details">
                 <a href="/profile" style="display: flex; align-items: center; text-decoration: none;">
-                    <div class="nurse-pic-container">
+                    <div class="doctor-pic-container">
                         <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
                     </div>
                     <div class="profile-info">
@@ -19,6 +22,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div class="receipt-container">
@@ -36,7 +40,7 @@
             </div>
 
             <form method="get" action="{{ route('pembayaran.perawat', ['id' => $nurse->id]) }}">
-                @csrf 
+                @csrf
 
                 <div class="container">
                         <div class="form-group">
@@ -60,7 +64,7 @@
                     <span class="total-fee">Rp {{ number_format($totalPembayaran, 0, ',', '.') }}</span>
                 </div>
             </div>
-            
+
         </div>
     </div>
 

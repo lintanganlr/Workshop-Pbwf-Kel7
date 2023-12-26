@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Daftar Ulasan</h1>
+            <h3>Daftar Ulasan</h3>
             @if($reviews->isEmpty())
                 <p>Tidak ada ulasan yang tersedia.</p>
             @else

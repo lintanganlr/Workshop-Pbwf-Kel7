@@ -52,12 +52,12 @@
         <button type="button" class="btn text-dark small-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
         <a class="btn-getstart small-btn" href="{{ route('login') }}">Sign In</a>
         <a class="btn-getstarted small-btn" href="{{ route('register') }}">Sign Up</a>
-        
+
         @else
             <span class="text-truncate mr-2" title="profile">
                 <!-- Teks dan tautan ke halaman profil -->
                 <a href="profile" style="display: flex; align-items: center;">
-                    <img src="img/profile.jpg" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
+                    <img src="img/profile.png" alt="Profile Image" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 8px;">
                     <span style="font-size: 18px;">
                        Hi, {{ auth()->user()->name }}!
                     </span>
