@@ -1,24 +1,21 @@
 <?php
-
-namespace Database\Seeders;
-
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class UsersSeeder extends Seeder
+class AddUsersData extends Migration
 {
     /**
-     * Run the database seeds.
+     * Run the migrations.
+     *
+     * @return void
      */
-    public function run(): void
+    public function up()
     {
-        // Data ADMIN
         DB::table('users')->insert([
             [
                 'name' => 'Lintang',
-                'password' => '123456',
+                'password' => Hash::make('123456'),
                 'notelp' => '082232803001',
                 'email' => 'lintangan.lr@admin.com',
                 'alamat' => 'pontianak',
@@ -31,5 +28,15 @@ class UsersSeeder extends Seeder
                 'alamat' => 'sidoarjo',
             ],
         ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+
     }
 }
