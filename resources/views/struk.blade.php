@@ -1,22 +1,26 @@
 @extends('layout.main3')
 @section('content')
 <!-- Struktur HTML untuk tampilan struk -->
-<div class="popup-container">
-    <div class="popup-content">
+<div class="container">
+    <div class="receipt-container">
         <h2>Struk Pembayaran</h2>
+
+        <!-- Display Tenaga Medis Details -->
         <div class="doctor-details">
-            <img src="path_to_your_image/{{ $pembayaran->id_tenagamedis }}.jpg" alt="Foto Tenaga Medis">
-            <h3>Nama Tenaga Medis</h3>
-            <p>Spesialisasi Medis</p>
+            <img src="{{ $tenagaMedis->img }}" alt="gambar tenaga medis">
+            <h5 class="card-title">{{ $tenagaMedis->nama_medis }}</h5>
+            <p class="card-text">Spesialisasi : {{ $tenagaMedis->spesialisasi_medis }}</p>
         </div>
-        <div class="status">
+
+        <p class="card-text">ID Pembayaran: {{$pembayaran->id}}</p>
+        <div class="status">  
             @if($status === 'onSuccess')
                 <p>Status: Selesai</p>
             @else
-                <p>Status: Menunggu</p>
+                <p>Status: Selesai</p>
             @endif
         </div>
-        <h3>Tulisan Ringkasan Pembayaran</h3>
+        <h3>Ringkasan Pembayaran</h3>
         <div class="payment-summary">
             <div class="fee-container">
                 <span class="fee">Biaya Sesi (1 Jam)</span>
@@ -31,10 +35,20 @@
                 <span class="total-fee">Rp {{ number_format($totalPembayaran, 0, ',', '.') }}</span>
             </div>
         </div>
-        <p>Metode Pembayaran: {{ $metodePembayaran }}</p>
-        <button onclick="closePopup()">Tutup</button>
+        <a href="/home">Tutup</a>
+
     </div>
 </div>
+@endsection
+
+
+
+<script>
+    // Function to close the popup
+    function closePopup() {
+        document.querySelector('.popup-container').style.display = 'none';
+    }
+</script>
 
 <style>
     /* Gaya CSS untuk tampilan struk */
@@ -75,12 +89,3 @@
     /* Add your remaining styles here */
 
 </style>
-
-<script>
-    // Function to close the popup
-    function closePopup() {
-        document.querySelector('.popup-container').style.display = 'none';
-    }
-</script>
-
-@endsection

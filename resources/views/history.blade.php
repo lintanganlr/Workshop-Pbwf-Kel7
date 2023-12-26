@@ -44,7 +44,8 @@
                                 <p class="card-text">{{ $payment->tenagamedis->spesialisasi_medis }}</p>
                                 <p class="card-text">ID Pembayaran: {{ $payment->id }}</p>
                                 <p class="card-text">Tanggal: {{ $payment->tgl_pembayaran }}</p>
-                                <a href="{{ route('review.create', ['payment_id' => $payment->id]) }}">Buat Ulasan</a>
+                                <a href="{{ route('review.create', ['payment_id' => $payment->id]) }}" class="btn btn-primary">Buat Ulasan</a>
+                                <a href="{{ route('struk', ['id' => $payment->id]) }}" class="btn btn-primary">Struk</a>
                             </div>
                         </div>
                     </div>

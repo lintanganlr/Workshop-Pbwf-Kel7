@@ -5,7 +5,10 @@
 
     <div class="receipt">
         <div class="profile-section" style="display: flex; justify-content: space-between; align-items: center; background-color: #7D1219; padding: 10px;">
-            <h1 class="title-glucosync" style="margin: 0;"> GlucoSync.</h1>
+            <a href="{{ route('home') }}" style="text-decoration: none;">
+                <h1 class="title-glucosync" style="margin: 0;">GlucoSync</h1>
+            </a>
+            
             <div class="profile-details">
                 <a href="/profile" style="display: flex; align-items: center; text-decoration: none;">
                     <div class="doctor-pic-container">
@@ -22,6 +25,7 @@
 
 
     <div class="receipt-container">
+
         <div class="box">
             <!-- Informasi Dokter -->
             <div class="doctor-info">
@@ -32,6 +36,18 @@
                     <p class="doctor-name">{{ $doctor->nama_medis }}</p>
                     <p class="doctor-specialization" style="color: #7D1219;">{{ $doctor->spesialisasi_medis }}</p>
                     <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+                </div>
+                {{-- <div class="navbar-item navbar-left" style="line-height: 40px;">
+                    <p style="font-size: 20px; text-align: center; margin: 0;">Konsultasi untuk:</p>
+                </div> --}}
+                <div class="navbar-item navbar-right">
+                    @if(session('nama_pasien'))
+                        <p style="text-align: center; line-height: 40px;">
+                            <span style="font-weight: 600; font-size: 18px;">Pasien:</span>
+                            <span style="font-weight: 500; font-size: 18px; vertical-align: middle;"> {{ session('nama_pasien') }}</span>
+                            <a href="{{ route('pilihan_pasien') }}" style="margin-left: 10px;">Ganti</a>
+                        </p>
+                    @endif
                 </div>
             </div>
 
@@ -65,12 +81,25 @@
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function () {
             window.snap.pay('{{$snapToken}}', {
+                // onSuccess: function(result){
+                //     var waNumber = '6285854926835'; // Nomor WhatsApp tujuan
+                //     var waURL = 'https://api.whatsapp.com/send?phone=' + waNumber;
+                //     window.open(waURL, '_blank');
+                //     console.log('Pembayaran berhasil!');
+                //     console.log(result);
+                // },
                 onSuccess: function(result){
                     var waNumber = '6285854926835'; // Nomor WhatsApp tujuan
                     var waURL = 'https://api.whatsapp.com/send?phone=' + waNumber;
                     window.open(waURL, '_blank');
                     console.log('Pembayaran berhasil!');
                     console.log(result);
+                    localStorage.setItem('paymentStatus', 'onSuccess');
+                    // Redirect ke halaman struk setelah pembayaran berhasil
+                    // Mengarahkan pengguna ke halaman 'struk' menggunakan route yang telah Anda tentukan
+                    window.location.href = "{{ route('home') }}";
+
+
                 },
                 onPending: function(result){
                     alert("Menunggu pembayaran!");

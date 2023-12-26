@@ -213,6 +213,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('reservasi/{id}', [ServiceController::class, 'showReservationForm'])->name('reservasi');
 Route::post('reservasi/process', [ServiceController::class, 'processReservation'])->name('process.reservation');
 
+//struk//
+Route::get('/struk/{id}', [ServiceController::class, 'struk'])->name('struk');
+
 
 //PEMBAYARAN//
 Route::get('pembayaran.dokter/{id}', [ServiceController::class, 'bayarDokter'])->name('pembayaran.dokter');

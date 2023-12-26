@@ -238,7 +238,7 @@ public function create()
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        // dd($snapToken) ;
+
 
         return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken','id_tenagamedis'));
     }
@@ -433,4 +433,70 @@ public function bookNurse(Request $request, $id)
     }
 
 }
+
+
+// public function struk($id)
+// {
+//     // Mendapatkan informasi pembayaran atau informasi lain yang dibutuhkan untuk struk
+//     $doctor = TenagaMedis::findOrFail($id);        
+//     $id_tenagamedis = $doctor->id;
+//     $totalPembayaran = 100000; // Ubah dengan nilai yang sesuai dari pembayaran yang sudah ada
+//     $pembayaran = new \App\Models\Pembayaran();
+//     $pembayaran->id_tenagamedis = $id_tenagamedis;
+//     $pembayaran->tgl_pembayaran = now(); // Atur tanggal pembayaran sesuai dengan kebutuhan
+//     $pembayaran->total_pembayaran = $totalPembayaran;
+//     $pembayaran->status_pembayaran = 'unpaid'; // Status default saat pembayaran dibuat
+//      // Menghasilkan UUID v4 yang unik
+//     $pembayaran->save();
+
+//     $pembayaran_id = Uuid::uuid4()->toString();
+//     $payment = Pembayaran::with('tenagamedis')->get();
+
+//     // Mungkin Anda memiliki suatu variabel $status yang menandakan status pembayaran
+//     $status = isset($_COOKIE['paymentStatus']) ? $_COOKIE['paymentStatus'] : 'defaultStatus'; // Ganti dengan status default jika perlu
+
+//     // Mem-pass variabel-variabel tersebut ke view 'struk'
+//     return view('struk', compact('totalPembayaran', 'status','id_tenagamedis','payment'));
+// }
+
+public function struk($id)
+{
+    // Find the payment by ID
+    $pembayaran = \App\Models\Pembayaran::find($id);
+
+    // Retrieve the associated medical staff using the payment's tenagamedis relationship
+    $tenagaMedis = $pembayaran->tenagamedis;
+
+    // Fetch the total payment amount
+    $totalPembayaran = $pembayaran->total_pembayaran;
+
+    // Retrieve the payment status (assuming it's stored in a cookie)
+    $status = isset($_COOKIE['paymentStatus']) ? $_COOKIE['paymentStatus'] : 'defaultStatus';
+
+    // Pass the retrieved data to the view
+    return view('struk', compact('pembayaran', 'totalPembayaran', 'status', 'tenagaMedis'));
+}
+
+
+
+
+
+
+
+// public function struk($id)
+// {
+//     // Mendapatkan informasi Tenaga Medis berdasarkan ID
+//     $doctor = TenagaMedis::findOrFail($id);
+//     $id_tenagamedis = $doctor->id;
+    
+//     // Mendapatkan informasi pembayaran atau informasi lain yang dibutuhkan untuk struk
+//     $totalPembayaran = 100000; // Ganti dengan nilai yang sesuai dari pembayaran yang sudah ada
+
+//     // Mungkin Anda memiliki suatu variabel $status yang menandakan status pembayaran
+//     $status = isset($_COOKIE['paymentStatus']) ? $_COOKIE['paymentStatus'] : 'defaultStatus'; // Ganti dengan status default jika perlu
+
+//     // Pass variabel-variabel tersebut ke view 'struk'
+//     return view('struk', compact('totalPembayaran', 'status'));
+// }
+
 }
