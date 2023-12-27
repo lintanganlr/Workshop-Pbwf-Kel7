@@ -162,7 +162,7 @@ public function create()
 
         return view('appoinment.dokter', compact('doctors'));
     }
-    
+
     public function fetchPerawat()
     {
         $nurses = TenagaMedis::where('id_roles', 3)->get();
@@ -184,9 +184,9 @@ public function create()
         $doctor = TenagaMedis::findOrFail($id);
         // Kembalikan view pembayaran dengan data dokter yang sesuai
 
-        
+
         // Mengambil ID Tenaga Medis yang ingin dihubungkan dengan pembayaran
-        
+
         $id_tenagamedis = $doctor->id;
         $totalPembayaran = 100000;
 
@@ -201,7 +201,7 @@ public function create()
         $pembayaran->save();
 
         $pembayaran_id = Uuid::uuid4()->toString();
-        
+
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
 
@@ -259,9 +259,9 @@ public function create()
         $nurse = TenagaMedis::findOrFail($id);
         // Kembalikan view pembayaran dengan data dokter yang sesuai
 
-        
+
         // Mengambil ID Tenaga Medis yang ingin dihubungkan dengan pembayaran
-        
+
         $id_tenagamedis = $nurse->id;
         $totalPembayaran = 100000;
 
@@ -276,7 +276,7 @@ public function create()
         $pembayaran->save();
 
         $pembayaran_id = Uuid::uuid4()->toString();
-        
+
         // Creating a new Pasien instance from the request
         $patient = Pasien::create($request->all());
 
@@ -318,7 +318,7 @@ public function create()
 
         return view('pembayaran-perawat', compact('nurse', 'totalPembayaran', 'snapToken','id_tenagamedis'));
     }
-    
+
     public function showReservationForm()
     {
         return view('reservasi');
@@ -440,7 +440,7 @@ public function bookNurse(Request $request, $id)
 // public function struk($id)
 // {
 //     // Mendapatkan informasi pembayaran atau informasi lain yang dibutuhkan untuk struk
-//     $doctor = TenagaMedis::findOrFail($id);        
+//     $doctor = TenagaMedis::findOrFail($id);
 //     $id_tenagamedis = $doctor->id;
 //     $totalPembayaran = 100000; // Ubah dengan nilai yang sesuai dari pembayaran yang sudah ada
 //     $pembayaran = new \App\Models\Pembayaran();

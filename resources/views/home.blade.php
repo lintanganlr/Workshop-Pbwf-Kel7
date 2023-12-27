@@ -98,7 +98,7 @@
 
              <div class="vision-mission">
                 <div class="decoration">
-                  <h1 class="vision-title">VISI</h1>
+                  <h1 class="vision-title">VISI-INDAH</h1>
                 </div>
                 <p class="vision-content">Menjadi sumber informasi terpercaya dan penyedia layanan terkemuka dalam perawatan dan manajemen diabetes untuk membantu individu mencapai gaya hidup yang lebih sehat dan bahagia.</p>
 

@@ -42,7 +42,7 @@
                                 @else
                                     <h5 class="m-0">{{ $service->nama_service }}</h5>
                                 @endif
-                                
+
                                 </div>
                             </div>
                         @endforeach
