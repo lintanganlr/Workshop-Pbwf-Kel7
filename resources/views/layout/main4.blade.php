@@ -34,7 +34,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../css/appoinment.css" rel="stylesheet">
+    <link href="/../css/appoinment.css" rel="stylesheet">
 
 </head>
 <body>
@@ -51,9 +51,7 @@
             </div>
         </div>
         <!-- Spinner End -->
-        @include('layout.nav-profile')
         @yield('content')
-    @include('layout.footer')
 
 
     <!-- Back to Top -->

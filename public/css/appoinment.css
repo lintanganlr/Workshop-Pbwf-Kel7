@@ -35,24 +35,6 @@ body {
     padding: 0 15px;
 }
 
-/* Styling untuk gambar */
-.img-fluid {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-/* Styling untuk teks tim */
-.team-text {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: -40px; /* Menyesuaikan teks */
-}
-
 /* Styling untuk judul nama dokter */
 .team-text h4 {
     font-size: 1.2rem;
@@ -62,13 +44,13 @@ body {
 /* Styling untuk spesialisasi */
 .team-text p {
     font-size: 0.9rem;
-    color: #007bff;
+    color: #7D1219;
     margin-bottom: 10px;
 }
 
 /* Styling untuk tombol */
 .btn-primary {
-    background-color: #007bff;
+    background-color: #7D1219;
     color: #fff;
     border-radius: 20px;
     padding: 8px 20px;
@@ -78,6 +60,112 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #b30000;
     color: #fff;
+}
+
+
+.container-fluid {
+    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/newbg.jpg) center center no-repeat;
+    background-size: cover;
+    padding-top: 5rem; /* Sesuaikan dengan kebutuhan */
+    padding-bottom: 5rem; /* Sesuaikan dengan kebutuhan */
+    text-align: center; /* Memastikan teks berada di tengah */
+    color: white; /* Warna teks */
+}
+
+.article-title {
+    font-size: 45px;
+    margin-bottom: 20px; /* Sesuaikan dengan kebutuhan */
+}
+
+.h4.text-white {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Sesuaikan dengan kebutuhan */
+}
+
+.far.fa-circle {
+    font-size: 20px;
+    color: white;
+    margin: 0 5px; /* Sesuaikan dengan kebutuhan */
+}
+
+/* Styling untuk kolom */
+.col-lg-4 {
+    flex: 0 0 33.333333%; /* 33.3333% lebar pada layar besar */
+    max-width: 33.333333%;
+}
+
+/* Media query untuk layar yang lebih kecil */
+@media (max-width: 991px) {
+    .col-lg-4 {
+        flex: 0 0 50%; /* 50% lebar pada layar sedang */
+        max-width: 50%;
+    }
+}
+
+/* Media query untuk layar yang lebih kecil lagi */
+@media (max-width: 767px) {
+    .col-lg-4 {
+        flex: 0 0 100%; /* 100% lebar pada layar kecil */
+        max-width: 100%;
+    }
+}
+
+.container-fluid {
+    /* Properti CSS lainnya */
+    margin-bottom: 30px; /* Sesuaikan jarak yang diinginkan */
+}
+
+/* CSS */
+.doctor-info {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Ukuran kolom untuk gambar dan teks */
+    grid-gap: 10px; /* Jarak antara gambar dan teks */
+}
+
+.doctor-img {
+    width: 150px;
+    height: 150px; /* Ukuran gambar */
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.row-cols-custom {
+    margin: -15px;
+}
+
+.col-custom {
+    padding: 0 15px;
+}
+
+/* Style untuk gambar medis */
+.position-relative {
+    position: relative;
+    width: 240px; /* Sesuaikan dengan kebutuhan */
+    height: 300px; /* Sesuaikan dengan kebutuhan */
+    overflow: hidden; /* Memastikan gambar dalam batas div */
+}
+
+.img-fluid {
+    width: 80%;
+    height: 60%;
+    object-fit: cover;
+}
+
+/* Style untuk teks di atas gambar medis */
+.team-text {
+    width: 240px; /* Sesuaikan dengan lebar div gambar medis */
+    margin-top: -50px; /* Sesuaikan dengan posisi teks di atas gambar */
+    padding: 15px 0;
+    position: relative; /* Atur teks menjadi relatif */
+    background-color: white; /* Warna latar belakang teks */
+    border-radius: 10px; /* Membuat sudut yang lebih lembut */
+    text-align: center; /* Pusatkan teks */
 }

@@ -191,12 +191,12 @@ h6,
 }
 
 .hero-header {
-    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/galery-3.png) center center no-repeat;
+    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/newbg.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .bg-appointment {
-    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/galery-3.png) center center no-repeat;
+    background: linear-gradient(rgba(94, 2, 2, 0.719),rgba(94, 2, 2, 0.719)), url(../img/newbg.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -290,23 +290,28 @@ h6,
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
+/* Styling untuk gambar */
 .img-fluid {
-    width: 348px;
-    height: 313,2px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    position: relative;
+    z-index: 10; /* Pastikan nilai z-index lebih tinggi dari background putih */
 }
 
+/* Styling untuk div background putih */
 .team-text {
-    position: relative;
-    background-color: #f8f9fa;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 10px;
-    padding: 4rem 2rem;
-    width: 50%;
-    margin-top: 7.5rem;
+    margin-top: -70px; /* Menyesuaikan teks */
+    position: relative;
+    z-index: 0; /* Pastikan nilai z-index lebih rendah dari gambar */
 }
+
 
 .medis-text {
     position: relative;
@@ -730,4 +735,60 @@ h6,
     line-height: 1.6;
     font-family: 'Jost', sans-serif;
     text-align: center;
+}
+
+
+/* Styling untuk gambar */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Styling untuk teks tim */
+.team-text {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: -40px; /* Menyesuaikan teks */
+}
+
+/* Styling untuk judul nama dokter */
+.team-text h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Styling untuk spesialisasi */
+.team-text p {
+    font-size: 0.9rem;
+    color: #7D1219;
+    margin-bottom: 10px;
+}
+
+
+
+
+.review-card:hover {
+    box-shadow: 0 8px 16px rgba(107, 100, 100, 0.648);
+    transform: translateY(-5px);
+}
+
+.review-card {
+    border: 1px solid #0e0c21;
+    border-radius: 8px;
+    background-color: #7D1219;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.review-content h5,
+.review-content p {
+    color: #ffffff; /* Ubah warna font menjadi putih */
+    font-size: 16px;
+    margin-bottom: 5px;
 }

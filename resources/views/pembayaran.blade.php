@@ -1,4 +1,4 @@
-@extends('layout.main4')
+@extends('layout.main3')
 @section('content')
 
 <div class="container">
@@ -89,7 +89,7 @@
                 //     console.log(result);
                 // },
                 onSuccess: function(result){
-                    var waNumber = '6285854926835'; // Nomor WhatsApp tujuan
+                    var waNumber = '6281525954792'; // Nomor WhatsApp tujuan
                     var waURL = 'https://api.whatsapp.com/send?phone=' + waNumber;
                     window.open(waURL, '_blank');
                     console.log('Pembayaran berhasil!');
