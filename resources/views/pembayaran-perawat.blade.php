@@ -39,16 +39,6 @@
                 </div>
             </div>
 
-            <form method="get" action="{{ route('pembayaran.perawat', ['id' => $nurse->id]) }}">
-                @csrf
-
-                <div class="container">
-                        <div class="form-group">
-                            <label for="tanggal">Pilih Tanggal:</label>
-                            <input type="date" id="tgl_tindakan" name="tgl_tindakan" class="form-control" required>
-                        </div>
-                </div>
-
             <!-- Informasi Pembayaran -->
             <div class="payment-summary">
                 <div class="fee-container">
