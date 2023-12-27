@@ -162,6 +162,7 @@ public function create()
 
         return view('appoinment.dokter', compact('doctors'));
     }
+    
     public function fetchPerawat()
     {
         $nurses = TenagaMedis::where('id_roles', 3)->get();
@@ -240,7 +241,8 @@ public function create()
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
 
-        return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken','id_tenagamedis'));
+
+        return view('pembayaran', compact('doctor', 'totalPembayaran', 'snapToken','id_tenagamedis','patient'));
     }
 
 
@@ -480,11 +482,11 @@ public function struk($id)
 
 public function callback(Request $request){
     $serverKey = config('midtrans.server_key');
-    $hashed = hash("sha512",$request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+    $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){
         if($request->transaction_status == 'capture'){
             $pembayaran = Pembayaran::find($request->pembayaran_id);
-            $pembayaran->update(['status'=>'paid']);
+            $pembayaran->update(['status_pembayaran'=>'paid']);
         }
     }
 }

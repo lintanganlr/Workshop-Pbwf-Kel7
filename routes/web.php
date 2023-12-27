@@ -66,9 +66,9 @@ Route::get('about', function () {
 
 // appointment untuk service //
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
-Route::get('service.dokter', [ServiceController::class, 'fetchDoctors'])->name('appoinment.dokter');
-Route::get('service.perawat', [ServiceController::class, 'fetchPerawat'])->name('appoinment.perawat');
 Route::get('service/dokter', [ServiceController::class, 'fetchDoctors'])->name('service.dokter');
+Route::get('/service/perawat', [ServiceController::class, 'fetchPerawat'])->name('service.perawat');
+// Route::get('service/dokter', [ServiceController::class, 'fetchDoctors'])->name('service.dokter');
 
 
 // artikel //
@@ -218,11 +218,11 @@ Route::get('/struk/{id}', [ServiceController::class, 'struk'])->name('struk');
 
 
 //PEMBAYARAN//
-Route::get('pembayaran.dokter/{id}', [ServiceController::class, 'bayarDokter'])->name('pembayaran.dokter');
-Route::get('pembayaran.perawat/{id}', [ServiceController::class, 'bayarPerawat'])->name('pembayaran.perawat');
+Route::get('pembayaran/dokter/{id}', [ServiceController::class, 'bayarDokter'])->name('pembayaran.dokter');
+Route::get('pembayaran/perawat/{id}', [ServiceController::class, 'bayarPerawat'])->name('pembayaran.perawat');
 
 //MIDTRANS CALLBACK//
-// Route::post('/midtrans-callback',[ServiceController::class,'callback']);
+Route::post('/midtrans-callback',[ServiceController::class,'callback']);
 
 //PROFILE CUSTOMER//
 // Route::get('profile', function () {

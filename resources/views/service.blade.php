@@ -28,20 +28,21 @@
                                 </div>
                                 <div class="position-relative bg-light rounded-bottom text-center p-4">
                                     @if(auth()->check())
-                                        @if($service->id_roles === 2)
-                                            <a href="{{ route('appoinment.dokter') }}">
-                                                <h5 class="m-0">{{ $service->nama_service }}</h5>
-                                            </a>
-                                        @elseif($service->id_roles === 3)
-                                            <a href="{{ route('appoinment.perawat') }}">
-                                                <h5 class="m-0">{{ $service->nama_service }}</h5>
-                                            </a>
-                                        @else
+                                    @if($service->id_roles === 2)
+                                        <a href="{{ route('service.dokter') }}">
                                             <h5 class="m-0">{{ $service->nama_service }}</h5>
-                                        @endif
+                                        </a>
+                                    @elseif($service->id_roles === 3)
+                                        <a href="{{ route('service.perawat') }}">
+                                            <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                        </a>
                                     @else
                                         <h5 class="m-0">{{ $service->nama_service }}</h5>
                                     @endif
+                                @else
+                                    <h5 class="m-0">{{ $service->nama_service }}</h5>
+                                @endif
+                                
                                 </div>
                             </div>
                         @endforeach

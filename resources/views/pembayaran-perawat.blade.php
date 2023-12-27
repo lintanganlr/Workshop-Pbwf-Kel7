@@ -77,6 +77,12 @@
                     window.open(waURL, '_blank');
                     console.log('Pembayaran berhasil!');
                     console.log(result);
+                    localStorage.setItem('paymentStatus', 'onSuccess');
+                    // Redirect ke halaman struk setelah pembayaran berhasil
+                    // Mengarahkan pengguna ke halaman 'struk' menggunakan route yang telah Anda tentukan
+                    window.location.href = "{{ route('home') }}";
+
+
                 },
                 onPending: function(result){
                     alert("Menunggu pembayaran!");

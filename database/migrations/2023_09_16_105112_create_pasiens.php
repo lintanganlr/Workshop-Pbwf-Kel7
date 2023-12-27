@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pasiens', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pasien', 100)->nullable();
-
             $table->string('no_telp_pasien', 15)->nullable();
             $table->string('email_pasien', 50)->nullable();
             $table->string('alamat_pasien', 250)->nullable();
