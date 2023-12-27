@@ -383,14 +383,14 @@ h6,
 }
 
 .bg-testimonial {
-    background: url(../img/testi.png) center center no-repeat;
+    background: url(../img/red.png) center center no-repeat;
     width: 1100px;
     height: 600px; /* Atau tentukan tinggi yang diinginkan dalam satuan px, misalnya height: 500px; */
 }
 
 
 .testimonial-carousel {
-    background: rgba(4, 52, 104, 0.85);
+    background: rgba(4, 40, 79, 0.85);
 }
 
 .testimonial-carousel .owl-nav {
